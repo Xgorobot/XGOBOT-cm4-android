@@ -1,0 +1,69 @@
+//签名password:Luwutech
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+    defaultConfig {
+        applicationId "com.luwu.xgo_robot"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 15
+        versionName "2.3.3"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        android.applicationVariants.all {
+            variant ->
+                variant.outputs.all {
+                    //在这里修改apk文件名，引号内的字符串都可以随便定义
+                    if (variant.buildType.isDebuggable()) {
+                        outputFileName = "XGO_v${variant.versionName}_debug.apk"  //debug 名字
+                    } else {
+                        outputFileName = "XGO_v${variant.versionName}.apk" //release 名字
+                    }
+                }
+        }
+    }
+    signingConfigs {
+        debug {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':bannerlayout')
+    implementation 'io.netty:netty-all:4.1.16.Final'
+//    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.5.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':blocklylib-vertical')
+    implementation project(path: ':autosize')
+}
+
+//allprojects {
+//    gradle.projectsEvaluated {
+//        tasks.withType(JavaCompile) {
+//            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+//        }
+//    }
+//}
+

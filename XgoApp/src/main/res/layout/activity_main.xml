@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical"
+    tools:context=".mActivity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/mainBtnConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="17dp"
+                android:background="#00000000"
+                android:scaleType="centerInside"
+                android:src="@drawable/main_bluetooth_dis" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/mainBtnDebug"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="27dp"
+                android:background="#00000000"
+                android:scaleType="centerInside"
+                android:src="@drawable/main_debug"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/mainBtnSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="27dp"
+                android:background="#00000000"
+                android:scaleType="centerInside"
+                android:src="@drawable/main_setting" />
+
+            <ImageButton
+                android:id="@+id/mainBtnAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="17dp"
+                android:background="#00000000"
+                android:scaleType="centerInside"
+                android:src="@drawable/main_about" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+
+        <yoop.bannerlayout.BannerViewLayout
+            android:id="@+id/main_banner"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:bl_vp_margin_left="400dp"
+            app:bl_vp_margin_right="400dp"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <yoop.bannerlayout.PageIndicator
+            android:id="@+id/main_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:dotColor="#E5E5E5"
+            app:dotColorSelected="#FFFFFF"
+            app:dotHeight="5dp"
+            app:dotSelectedWidth="10dp"
+            app:dotSpace="5dp"
+            app:dotWidth="7dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

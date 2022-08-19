@@ -1,0 +1,21 @@
+[
+  {
+    "type": "system_defined0",
+    "message0": "招手",
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 231,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+,
+  {
+    "type": "system_defined1",
+    "message0": "撒尿",
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 208,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+]

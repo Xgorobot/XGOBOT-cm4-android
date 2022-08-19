@@ -1,0 +1,7 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="move_direction_speed_time" id="5480fd16-8fd3-4f5e-9386-60adea8eb8d3" x="42.0" y="95.0">
+        <field name="direction">1</field>
+        <field name="speed">100</field>
+        <field name="time">1</field>
+    </block>
+</xml>

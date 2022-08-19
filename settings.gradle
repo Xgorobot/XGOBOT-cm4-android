@@ -1,0 +1,2 @@
+include ':XgoApp',':blocklylib-core', ':blocklylib-vertical', ':blocklytest',':autosize','bannerlayout'
+rootProject.name='Xgo-public'

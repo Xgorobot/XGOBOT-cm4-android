@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlueTooth.BleConnectedActivity"
+    android:background="@drawable/ble_conected_bg">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_hor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_hor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_ver1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_ver2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_ver3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ble_conected_line_ver4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+    <TextView
+        android:id="@+id/ble_conected_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:text="@string/btConnected"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/ble_conected_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/home_close"
+        android:contentDescription="image"
+        />
+
+    <ImageView
+        android:id="@+id/ble_conected_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toLeftOf="@id/ble_conected_close"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/home_search"
+        android:contentDescription="image"
+        />
+
+    <Button
+        android:id="@+id/ble_conected_disconected"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ble_button_bg_green"
+        android:text="@string/btDisconnect"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/ble_conected_line_hor2"
+        app:layout_constraintLeft_toLeftOf="@id/ble_conected_line_ver1"
+        app:layout_constraintRight_toRightOf="@id/ble_conected_line_ver2"
+        app:layout_constraintTop_toTopOf="@id/ble_conected_line_hor1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/ble_conected_rename"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ble_button_bg_green"
+        android:text="@string/btRename"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/ble_conected_line_hor2"
+        app:layout_constraintLeft_toLeftOf="@id/ble_conected_line_ver3"
+        app:layout_constraintRight_toRightOf="@id/ble_conected_line_ver4"
+        app:layout_constraintTop_toTopOf="@id/ble_conected_line_hor1"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

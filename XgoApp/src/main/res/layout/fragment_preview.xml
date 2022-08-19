@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:blockly="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/blockly_workspace"
+        android:name="com.google.blockly.android.WorkspaceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        blockly:drawGrid="false"/>
+
+    <Button
+        android:id="@+id/previewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ffffff"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/previewZoomInBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/bigger"
+            android:layout_margin="5dp"/>
+
+        <ImageButton
+            android:id="@+id/previewZoomOutBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/smaller"
+            android:layout_margin="5dp"/>
+
+        <ImageButton
+            android:id="@+id/previewCenterBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/center"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+</RelativeLayout>

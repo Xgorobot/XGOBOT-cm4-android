@@ -1,0 +1,126 @@
+[
+  {
+    "type": "open_led",
+    "message0": " %1 %2 LED灯光",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "state",
+        "options": [
+          [
+            "打开",
+            "1"
+          ],
+          [
+            "关闭",
+            "2"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "which",
+        "options": [
+          [
+            "前方",
+            "1"
+          ],
+          [
+            "后方",
+            "2"
+          ],
+          [
+            "左侧",
+            "3"
+          ],
+          [
+            "右侧",
+            "4"
+          ]
+        ]
+      }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 180,
+      "tooltip": "",
+      "helpUrl": ""
+  },
+  {
+    "type": "state_led",
+    "message0": " %1 LED灯光是否开启",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "which",
+        "options": [
+          [
+            "前方",
+            "1"
+          ],
+          [
+            "后方",
+            "2"
+          ],
+          [
+            "左侧",
+            "3"
+          ],
+          [
+            "右侧",
+            "4"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 214,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "play_radio",
+    "message0": "录放音模块播放音频",
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "open_ledRGB",
+    "message0": "设置彩灯颜色R: %1 G: %2 B: %3",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "ledR",
+        "value": 255,
+        "min": 0,
+        "max": 255
+      },
+      {
+        "type": "field_number",
+        "name": "ledG",
+        "value": 255,
+        "min": 0,
+        "max": 255
+      },
+      {
+        "type": "field_number",
+        "name": "ledB",
+        "value": 255,
+        "min": 0,
+        "max": 255
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 80,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+]

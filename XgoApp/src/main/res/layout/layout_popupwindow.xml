@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333">
+
+    <TextView
+        android:id="@+id/popTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:text="@string/morefc"
+        android:gravity="center"/>
+    <Switch
+        android:id="@+id/popMoveSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/autoPowerOn"
+        android:textColor="#ffffff"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:checked="false"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/popIMUTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="@string/gyroscope"
+            android:gravity="left|center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"/>
+        <Switch
+            android:id="@+id/IMUSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:checked="false"
+            android:gravity="right|center"
+            android:layout_marginRight="15dp"
+            android:switchMinWidth="60dp"
+            android:layout_weight="2"/>
+        <!--
+        <Button
+            android:id="@+id/popIMUOnBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:text="@string/gyroscopeOn"
+            android:gravity="center"
+            android:background="@drawable/button_press"
+            android:paddingHorizontal="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/popIMUOffBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:text="@string/gyroscopeOff"
+            android:gravity="center"
+            android:background="@drawable/button_press"
+            android:paddingHorizontal="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="1"/>
+            -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:id="@+id/popSpeedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="@string/motion"
+            android:gravity="left|center"
+            android:layout_marginLeft="5dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <Button
+                android:id="@+id/popSpeedLowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_enable"
+                android:gravity="center"
+                android:text="@string/lowspeed"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/popSpeedNormalBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_enable"
+                android:gravity="center"
+                android:text="@string/normalspeed"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/popSpeedHighBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:text="@string/highspeed"
+                android:gravity="center"
+                android:background="@drawable/button_enable" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mFragment.RockerLeftFragment"
+    android:background="#00000000">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rockerLineVer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rockerLineVer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rockerLineHor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rockerLineHor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <com.luwu.xgo_robot.mView.RockerView
+        android:id="@+id/controlRockViewLeft"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        app:areaBackground="@drawable/control_rocker_background"
+        app:rockerBackground="@drawable/control_rocker_circle"
+        app:layout_constraintBottom_toTopOf="@+id/rockerLineHor2"
+        app:layout_constraintStart_toStartOf="@+id/rockerLineVer1" />
+
+    <ImageView
+        android:id="@+id/rockerTxtBattery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttery0"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/rockerLineHor1"
+        app:layout_constraintEnd_toEndOf="@+id/rockerLineVer2" />
+
+    <ImageView
+        android:id="@+id/rockerTxtSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/speed0"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/rockerLineHor1"
+        app:layout_constraintStart_toEndOf="@+id/rockerTxtBattery" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-black"
+        android:gravity="bottom|center"
+        android:text="@string/battery"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/rockerTxtBattery"
+        app:layout_constraintStart_toStartOf="@id/rockerTxtBattery"
+        app:layout_constraintEnd_toEndOf="@id/rockerTxtBattery" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-black"
+        android:gravity="bottom|center"
+        android:text="@string/speed"
+        android:textColor="@color/colorRed"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/rockerTxtSpeed"
+        app:layout_constraintStart_toStartOf="@id/rockerTxtSpeed"
+        app:layout_constraintEnd_toEndOf="@id/rockerTxtSpeed" />
+
+    <com.luwu.xgo_robot.mView.VerticalSeekBar
+        android:id="@+id/heightSeekBar"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        app:allBackground="@drawable/seekbar_background"
+        app:thumbBackground="@drawable/seekbar_thumb"
+        app:pastBackground="@drawable/seekbar_past_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rockerLineHor2"/>
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rockerLineHor2">
+        <TextView
+            android:id="@+id/textHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="60"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/rockerLeftBtnReset"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_press"
+        android:textColor="#ffffff"
+        android:text="@string/resetheight"
+        app:layout_constraintTop_toBottomOf="@+id/rockerLineHor2"
+        app:layout_constraintLeft_toRightOf="@+id/heightSeekBar"
+        android:layout_marginHorizontal="10dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

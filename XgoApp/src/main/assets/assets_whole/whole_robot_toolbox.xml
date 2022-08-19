@@ -1,0 +1,54 @@
+<toolbox>
+
+    <category name="运动">
+        <block type="move_direction_speed" />
+        <block type="move_direction_speed_time" />
+        <block type="move_zero_speed" />
+        <block type="move_zero_speed_time" />
+        <block type="move_stop" />
+        <block type="shake_direction_speed" />
+        <block type="shake_direction_speed_time" />
+        <block type="shake_stop" />
+        <block type="all_stop" />
+        <block type="open_imu" />
+        <block type="state_imu" />
+    </category>
+
+    <category name="声光">
+        <block type="open_led"></block>
+        <block type="state_led"></block>
+        <block type="play_radio"></block>
+        <block type="open_ledRGB"></block>
+    </category>
+
+    <category name="探测">
+        <block type="sensor_avoid"></block>
+        <block type="sensor_Ultrasonic"></block>
+        <block type="sensor_Magnet"></block>
+    </category>
+
+    <category name="逻辑">
+        <block type="control_wait" />
+        <block type="logic_boolean"></block>
+        <block type="logic_and"></block>
+        <block type="logic_or"></block>
+        <block type="logic_number"></block>
+        <block type="logic_compare"></block>
+        <block type="controls_if"></block>
+        <block type="controls_ifelse"></block>
+        <block type="controls_repeat_ext">
+            <value name="TIMES">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_whileUntil"></block>
+    </category>
+
+    <category name="自定义">
+        <block type="system_defined0"></block>
+        <block type="system_defined1"></block>
+    </category>
+
+</toolbox>

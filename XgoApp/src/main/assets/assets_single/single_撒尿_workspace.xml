@@ -1,0 +1,132 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="input_reset" id="7e3cb8f7-001f-47f1-b686-2d76aa1df2f9" x="50.0" y="26.0">
+        <next>
+            <block type="control_wait" id="c7f65e15-aba1-4896-88ae-e88530a99306">
+                <field name="time">1</field>
+                <field name="unit">1</field>
+                <next>
+                    <block type="input_position" id="4f05f56c-19dc-44df-8d66-81bd3b6df5dd">
+                        <field name="which">1</field>
+                        <field name="top">128</field>
+                        <field name="middle">255</field>
+                        <field name="bottom">80</field>
+                        <next>
+                            <block type="input_position" id="6ac7a7bc-18a3-4252-b826-933a9435d460">
+                                <field name="which">2</field>
+                                <field name="top">128</field>
+                                <field name="middle">255</field>
+                                <field name="bottom">80</field>
+                                <next>
+                                    <block type="input_position" id="b6235a05-2481-4080-a478-d30843a994df">
+                                        <field name="which">3</field>
+                                        <field name="top">128</field>
+                                        <field name="middle">255</field>
+                                        <field name="bottom">80</field>
+                                        <next>
+                                            <block type="input_position" id="0aa005c8-95f6-4eee-b5f8-f3c01a283d63">
+                                                <field name="which">4</field>
+                                                <field name="top">128</field>
+                                                <field name="middle">255</field>
+                                                <field name="bottom">80</field>
+                                                <next>
+                                                    <block type="control_wait" id="1d6ae200-5d3b-407b-86a8-4e3079b8bb39">
+                                                        <field name="time">1</field>
+                                                        <field name="unit">1</field>
+                                                        <next>
+                                                            <block type="input_position" id="a76b35f3-8c34-4533-934a-d5afee2c3759">
+                                                                <field name="which">1</field>
+                                                                <field name="top">110</field>
+                                                                <field name="middle">255</field>
+                                                                <field name="bottom">80</field>
+                                                                <next>
+                                                                    <block type="input_position" id="c7c2d6fb-8927-4389-999a-b153b1a61b45">
+                                                                        <field name="which">2</field>
+                                                                        <field name="top">146</field>
+                                                                        <field name="middle">220</field>
+                                                                        <field name="bottom">120</field>
+                                                                        <next>
+                                                                            <block type="input_position" id="05d8fca2-9f7c-48b6-9589-687e7f3bc1d1">
+                                                                                <field name="which">3</field>
+                                                                                <field name="top">146</field>
+                                                                                <field name="middle">220</field>
+                                                                                <field name="bottom">120</field>
+                                                                                <next>
+                                                                                    <block type="input_position" id="fbc3673a-a525-4abe-9efe-7d5ea4762726">
+                                                                                        <field name="which">4</field>
+                                                                                        <field name="top">110</field>
+                                                                                        <field name="middle">255</field>
+                                                                                        <field name="bottom">80</field>
+                                                                                        <next>
+                                                                                            <block type="control_wait" id="9dcb55c1-b6dd-4e58-bb8c-6690b04d878b">
+                                                                                                <field name="time">1</field>
+                                                                                                <field name="unit">1</field>
+                                                                                                <next>
+                                                                                                    <block type="input_position" id="3cc74d2c-03d7-4adc-a7df-1b432f9c0a53">
+                                                                                                        <field name="which">3</field>
+                                                                                                        <field name="top">250</field>
+                                                                                                        <field name="middle">220</field>
+                                                                                                        <field name="bottom">120</field>
+                                                                                                        <next>
+                                                                                                            <block type="control_wait" id="89b3349e-7ec3-468e-9433-ee1c3a4c7b26">
+                                                                                                                <field name="time">2</field>
+                                                                                                                <field name="unit">1</field>
+                                                                                                                <next>
+                                                                                                                    <block type="input_position" id="3673b840-6f20-4dc9-b0ee-30773958e244">
+                                                                                                                        <field name="which">3</field>
+                                                                                                                        <field name="top">250</field>
+                                                                                                                        <field name="middle">220</field>
+                                                                                                                        <field name="bottom">128</field>
+                                                                                                                        <next>
+                                                                                                                            <block type="control_wait" id="c8600593-d09e-4ee1-8d4f-141f1ac2a169">
+                                                                                                                                <field name="time">1</field>
+                                                                                                                                <field name="unit">1</field>
+                                                                                                                                <next>
+                                                                                                                                    <block type="input_position" id="cbd91aac-8b1c-48b1-9af0-42dc01aca934">
+                                                                                                                                        <field name="which">3</field>
+                                                                                                                                        <field name="top">110</field>
+                                                                                                                                        <field name="middle">255</field>
+                                                                                                                                        <field name="bottom">80</field>
+                                                                                                                                        <next>
+                                                                                                                                            <block type="control_wait" id="c3a7bc30-ca85-42c3-b87e-46de0f7b360a">
+                                                                                                                                                <field name="time">2</field>
+                                                                                                                                                <field name="unit">1</field>
+                                                                                                                                                <next>
+                                                                                                                                                    <block type="input_reset" id="d33198c4-98b2-473b-a177-f78eaa896314" />
+                                                                                                                                                </next>
+                                                                                                                                            </block>
+                                                                                                                                        </next>
+                                                                                                                                    </block>
+                                                                                                                                </next>
+                                                                                                                            </block>
+                                                                                                                        </next>
+                                                                                                                    </block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

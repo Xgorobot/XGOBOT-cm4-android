@@ -1,0 +1,117 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="input_reset" id="6d173edd-621b-47ee-8db5-c3745e021337" x="28.0" y="12.0">
+        <next>
+            <block type="control_wait" id="679f5e0e-a265-4503-81a3-e83595ccab89">
+                <field name="time">1</field>
+                <field name="unit">1</field>
+                <next>
+                    <block type="input_position" id="1c8d4e76-ef03-4031-b05a-9b1885ae87f8">
+                        <field name="which">1</field>
+                        <field name="top">128</field>
+                        <field name="middle">180</field>
+                        <field name="bottom">128</field>
+                        <next>
+                            <block type="input_position" id="faf268e4-9b06-4013-901f-fb3b916fd0a9">
+                                <field name="which">2</field>
+                                <field name="top">100</field>
+                                <field name="middle">180</field>
+                                <field name="bottom">128</field>
+                                <next>
+                                    <block type="input_position" id="11af4b3e-b38f-41e1-9007-7b9b824a9c5e">
+                                        <field name="which">3</field>
+                                        <field name="top">128</field>
+                                        <field name="middle">200</field>
+                                        <field name="bottom">110</field>
+                                        <next>
+                                            <block type="input_position" id="a0b0b200-0907-4368-9e81-21006f036a83">
+                                                <field name="which">4</field>
+                                                <field name="top">128</field>
+                                                <field name="middle">200</field>
+                                                <field name="bottom">110</field>
+                                                <next>
+                                                    <block type="control_wait" id="25231842-596d-4cc8-9e72-a112eb214909">
+                                                        <field name="time">1</field>
+                                                        <field name="unit">1</field>
+                                                        <next>
+                                                            <block type="input_position" id="f9cf9afc-5627-49f1-9edf-cb1b547813ef">
+                                                                <field name="which">1</field>
+                                                                <field name="top">128</field>
+                                                                <field name="middle">50</field>
+                                                                <field name="bottom">70</field>
+                                                                <next>
+                                                                    <block type="control_wait" id="41289be1-f18a-4046-95ef-313b0df273ff">
+                                                                        <field name="time">2</field>
+                                                                        <field name="unit">1</field>
+                                                                        <next>
+                                                                            <block type="controls_repeat_ext" id="2b5ec30c-43d6-49d7-85a7-9488340bebd9">
+                                                                                <value name="TIMES">
+                                                                                    <shadow type="math_number" id="0c3e5b0b-a0bf-4ab6-800c-5270a4ea0f73">
+                                                                                        <field name="NUM">3</field>
+                                                                                    </shadow>
+                                                                                </value>
+                                                                                <statement name="DO">
+                                                                                    <block type="input_position" id="6c2ef290-c4dd-44e1-a866-4749809bb59e">
+                                                                                        <field name="which">1</field>
+                                                                                        <field name="top">80</field>
+                                                                                        <field name="middle">50</field>
+                                                                                        <field name="bottom">70</field>
+                                                                                        <next>
+                                                                                            <block type="control_wait" id="efd5247e-5c27-49ce-bb6f-4968acb1ef4b">
+                                                                                                <field name="time">1</field>
+                                                                                                <field name="unit">1</field>
+                                                                                                <next>
+                                                                                                    <block type="input_position" id="bd8ec1e6-7d24-468c-a7f9-7025e4477576">
+                                                                                                        <field name="which">1</field>
+                                                                                                        <field name="top">200</field>
+                                                                                                        <field name="middle">50</field>
+                                                                                                        <field name="bottom">70</field>
+                                                                                                        <next>
+                                                                                                            <block type="control_wait" id="71bb01e6-44da-480a-aa91-e8411e6f77dc">
+                                                                                                                <field name="time">1</field>
+                                                                                                                <field name="unit">1</field>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                    <block type="input_position" id="2f08d974-1330-4d94-a348-7fa85ba839e2">
+                                                                                        <field name="which">1</field>
+                                                                                        <field name="top">128</field>
+                                                                                        <field name="middle">180</field>
+                                                                                        <field name="bottom">128</field>
+                                                                                        <next>
+                                                                                            <block type="control_wait" id="49fcfca5-662a-428b-a618-a295fd78c4ce">
+                                                                                                <field name="time">3</field>
+                                                                                                <field name="unit">1</field>
+                                                                                                <next>
+                                                                                                    <block type="input_reset" id="5f350db0-006d-4fcb-aaed-cdb71593292b" />
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

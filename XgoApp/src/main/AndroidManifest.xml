@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luwu.xgo_robot">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 如果您希望应用适用于不支持 BLE 的设备，设置 required="false" 运行时使用 PackageManager.hasSystemFeature() 确定 BLE 的可用性： -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps" />
+    <!--
+ If your app targets Android 9 or lower, you can declare
+         ACCESS_COARSE_LOCATION instead.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--Android 12的蓝牙权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <application
+        android:name="com.luwu.xgo_robot.AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/xgo_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/xgo_icon_round"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/AppTheme">
+        <service android:name="com.luwu.xgo_robot.BlueTooth.BluetoothLeService"/>
+        <activity android:name="com.luwu.xgo_robot.BlueTooth.BleConnectedActivity"
+            android:screenOrientation="sensorLandscape"/>
+        <activity android:name="com.luwu.xgo_robot.BlueTooth.BleActivity"
+            android:screenOrientation="sensorLandscape"/>
+        <activity android:name="com.luwu.xgo_robot.BlueTooth.BleSearchActivity"
+            android:theme="@style/Theme.FloatActivity"/>
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.MotorActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.LegActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.ActorActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.DebugActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.TestBtActivity"
+            android:screenOrientation="sensorLandscape" />
+
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.SingleBlocklyActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/BlocklyVerticalTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.WholeBlocklyActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/BlocklyVerticalTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.ProgramActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/BlocklyVerticalTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.ControlActivity"
+            android:screenOrientation="sensorLandscape"/>
+        <!--            android:screenOrientation="landscape" -->
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.AboutActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.PrivacyActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.SettingActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.AnimationActivity"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luwu.xgo_robot.mActivity.MainActivity"
+            android:screenOrientation="sensorLandscape" /> <!-- use autosize to adjustfy screen -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="1066" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="600" />
+    </application>
+
+
+</manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="40dp"
+    android:background="@drawable/ble_list_item_background">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/ble_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginStart="24dp"
+        />
+
+    <TextView
+        android:id="@+id/ble_macId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="#666666"
+        android:textSize="18sp"
+        android:layout_toEndOf="@id/ble_name"
+        android:layout_marginStart="6dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/ble_rssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#666666"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/ble_rssi_image"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="image"
+        />
+</RelativeLayout>

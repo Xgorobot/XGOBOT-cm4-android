@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorYellow">#FFFF00</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="controlFragmentUnchecked">#92a1b6</color>
+    <color name="programActive">#00dffa</color>
+    <color name="programInactive">#92a1b6</color>
+    <color name="transparent">#00000000</color>
+</resources>

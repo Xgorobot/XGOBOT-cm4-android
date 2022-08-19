@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:blockly="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".mActivity.SingleBlocklyActivity">
+
+    <com.luwu.xgo_robot.mView.LollipopFixedWebView
+        android:id="@+id/singleBlocklyWebView"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <fragment
+            android:id="@+id/blockly_workspace"
+            android:name="com.google.blockly.android.WorkspaceFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/blockly_categories"
+            android:layout_toRightOf="@id/blockly_categories"
+            android:background="#00000000"
+            blockly:drawGrid="false" />
+
+        <fragment
+            android:id="@+id/blockly_trash_ui"
+            android:name="com.google.blockly.android.FlyoutFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/blockly_categories"
+            android:layout_toRightOf="@id/blockly_categories"
+            blockly:closeable="true"
+            blockly:scrollOrientation="horizontal"
+            tools:ignore="MissingPrefix" />
+
+        <ImageButton
+            android:id="@+id/singleBlocklyBtnBack"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="#111111"
+            android:paddingTop="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/program_back" />
+
+        <fragment
+            android:id="@+id/blockly_categories"
+            android:name="com.google.blockly.android.CategorySelectorFragment"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="50dp"
+            blockly:labelRotation="none"
+            blockly:scrollOrientation="vertical"
+            tools:ignore="MissingPrefix" />
+
+        <View
+            android:id="@+id/singleBlocklyLine"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/blockly_categories"
+            android:layout_toRightOf="@id/blockly_categories"
+            android:background="@drawable/program_line" />
+
+        <fragment
+            android:id="@+id/blockly_toolbox_ui"
+            android:name="com.google.blockly.android.FlyoutFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/blockly_categories"
+            android:layout_toRightOf="@id/blockly_categories"
+            blockly:closeable="true"
+            blockly:scrollOrientation="vertical"
+            tools:ignore="MissingPrefix" />
+
+        <LinearLayout
+            android:id="@+id/singleBlocklyLinear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--            <Button-->
+            <!--                android:id="@+id/singleBlocklyBtnClear"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:layout_marginBottom="5dp"-->
+            <!--                android:text="清空"/>-->
+            <com.google.blockly.android.ui.TrashCanView
+                android:id="@+id/blockly_trash_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:background="#00000000"
+                blockly:defaultIcon="@drawable/program_delete1"
+                blockly:onHoverIcon="@drawable/program_delete2" />
+
+            <ImageButton
+                android:id="@+id/singleBlocklyBtnSave"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#00000000"
+                android:scaleType="centerCrop"
+                android:src="@drawable/program_save" />
+        </LinearLayout>
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/singleBlocklyLinear2"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/singleBlocklyLinear1"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_marginRight="10dp"-->
+        <!--            android:orientation="vertical">-->
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/blockly_zoom_in_button"-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_gravity="center_horizontal"-->
+        <!--                android:background="@color/translucent"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:src="@drawable/bigger" />-->
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/blockly_zoom_out_button"-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_gravity="center_horizontal"-->
+        <!--                android:layout_marginTop="5dp"-->
+        <!--                android:layout_marginBottom="5dp"-->
+        <!--                android:background="@color/translucent"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:src="@drawable/smaller" />-->
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/blockly_center_view_button"-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_gravity="center_horizontal"-->
+        <!--                android:layout_marginBottom="5dp"-->
+        <!--                android:background="@color/translucent"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:src="@drawable/center" />-->
+
+        <!--            <com.google.blockly.android.ui.TrashCanView-->
+        <!--                android:id="@+id/blockly_trash_icon"-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_marginTop="5dp"-->
+        <!--                android:background="@color/translucent"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:scaleType="fitXY" />-->
+        <!--        </LinearLayout>-->
+        <LinearLayout
+            android:id="@+id/singleBlocklyLinearTeach"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/layoutCheckBoxLeg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leftforeleg"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:checked="true"/>
+
+                    <CheckBox
+                        android:id="@+id/layoutCheckBoxLeg2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/rightforeleg"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:checked="true"/>
+
+                    <CheckBox
+                        android:id="@+id/layoutCheckBoxLeg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/righthindleg"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:checked="true"/>
+
+                    <CheckBox
+                        android:id="@+id/layoutCheckBoxLeg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/lefthindleg"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:checked="true"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/singleBlocklyBtnRecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:text="@string/recordtick"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/singleBlocklyBtnRecordLeg1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="@string/leftforeleg"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <RadioGroup
+                                android:id="@+id/singleBlocklyRG1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBX1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
+                                    android:text="@string/uninstall"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBH1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:checked="true"
+                                    android:text="@string/recovery"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+                            </RadioGroup>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/singleBlocklyBtnRecordLeg2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="@string/rightforeleg"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <RadioGroup
+                                android:id="@+id/singleBlocklyRG2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBX2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
+                                    android:text="@string/uninstall"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBH2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:checked="true"
+                                    android:text="@string/recovery"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/singleBlocklyBtnRecordLeg3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="@string/righthindleg"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <RadioGroup
+                                android:id="@+id/singleBlocklyRG3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBX3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
+                                    android:text="@string/uninstall"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBH3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:checked="true"
+                                    android:text="@string/recovery"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/singleBlocklyBtnRecordLeg4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="@string/lefthindleg"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <RadioGroup
+                                android:id="@+id/singleBlocklyRG4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBX4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
+                                    android:text="@string/uninstall"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+
+                                <RadioButton
+                                    android:id="@+id/singleBlocklyRBH4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:checked="true"
+                                    android:text="@string/recovery"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/singleBlocklyBtnMotor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:text="@string/viewAngle"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/singleBlocklyLinearMotor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="11:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="12:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="13:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="21:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="22:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="23:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="31:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="32:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="33:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="41:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="42:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="43:"
+                                android:textColor="@color/blue"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/singleBlocklyTxtMotor12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/singleBlocklyLinear1"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/singleBlocklyBtnTeach"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="@string/teachingModel"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/singleBlocklyBtnRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="#00000000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/program_start" />
+
+</FrameLayout>

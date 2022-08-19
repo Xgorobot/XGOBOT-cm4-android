@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".mFragment.PostureFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/postureLineVer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/postureLineVer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/postureLineVer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/postureLineHor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/postureLineHor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <com.luwu.xgo_robot.mView.ThreeDimensionView
+        android:id="@+id/postureView"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        app:ball="@drawable/posture_ball"
+        app:ballBackground="@drawable/posture_ball_under"
+        app:dimensionBackground="@drawable/posture_background"
+        app:layout_constraintBottom_toBottomOf="@+id/postureLineHor2"
+        app:layout_constraintLeft_toLeftOf="@+id/postureLineVer1"
+        app:roundBackground="@drawable/posture_z" />
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/posture_instrucment"
+        app:layout_constraintBottom_toBottomOf="@+id/postureLineHor2"
+        app:layout_constraintRight_toLeftOf="@+id/postureLineVer3" />
+
+    <ImageView
+        android:id="@+id/postureTxtBattery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/buttery0"
+        app:layout_constraintBottom_toTopOf="@+id/postureLineHor1"
+        app:layout_constraintEnd_toEndOf="@+id/postureLineVer2" />
+
+    <ImageView
+        android:id="@+id/postureTxtSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/speed0"
+        app:layout_constraintBottom_toTopOf="@+id/postureLineHor1"
+        app:layout_constraintStart_toEndOf="@+id/postureTxtBattery" />
+
+    <ImageView
+        android:id="@+id/postureTxt"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:background="#00000000"
+        android:src="@drawable/posture_background"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/postureView"
+        app:layout_constraintLeft_toLeftOf="@+id/postureView" />
+
+    <ImageButton
+        android:id="@+id/postureLockBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="80dp"
+        android:background="#00000000"
+        android:scaleType="centerInside"
+        android:src="@drawable/posture_lock"
+        app:layout_constraintBottom_toBottomOf="@+id/postureLineHor2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.luwu.xgo_robot.mView.VerticalSeekBar
+        android:id="@+id/postureSeekBar"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        app:allBackground="@drawable/seekbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/postureLineHor2"
+        app:pastBackground="@drawable/seekbar_past_shape"
+        app:thumbBackground="@drawable/seekbar_thumb" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RockerView">
+        <attr name="areaBackground" format="color|reference" />
+        <attr name="rockerBackground" format="color|reference" />
+        <attr name="rockerRadiusPersent" format="float" />
+    </declare-styleable>
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="allBackground" format="color|reference" />
+        <attr name="thumbBackground" format="color|reference" />
+        <attr name="pastBackground" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="ThreeDimension">
+        <attr name="dimensionBackground" format="color|reference" />
+        <attr name="roundBackground" format="color|reference" />
+        <attr name="ballBackground" format="color|reference" />
+        <attr name="ball" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="ButtonView">
+        <attr name="noPress" format="color|reference" />
+        <attr name="upPress" format="color|reference" />
+        <attr name="downPress" format="color|reference" />
+        <attr name="rightPress" format="color|reference" />
+        <attr name="leftPress" format="color|reference" />
+    </declare-styleable>
+</resources>

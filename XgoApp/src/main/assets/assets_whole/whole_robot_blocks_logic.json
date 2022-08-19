@@ -1,0 +1,157 @@
+[
+  {
+    "type": "control_wait",
+    "message0": "等待 %1 %2",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "time",
+        "value": 1,
+        "min": 1,
+        "max": 1000
+      },
+      {
+        "type": "field_dropdown",
+        "name": "unit",
+        "options": [
+          [
+            "秒",
+            "1"
+          ],
+          [
+            "毫秒",
+            "2"
+          ]
+        ]
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 188,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "logic_and",
+    "message0": "%1 并且 %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Boolean"
+      },
+      {
+        "type": "input_value",
+        "name": "B",
+        "check": "Boolean"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 100,
+    "tooltip": "",
+    "helpUrl": "https://github.com/google/blockly/wiki/Logic#logical-operations"
+  },
+  {
+    "type": "logic_or",
+    "message0": "%1 或者 %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Boolean"
+      },
+      {
+        "type": "input_value",
+        "name": "B",
+        "check": "Boolean"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 100,
+    "tooltip": "",
+    "helpUrl": "https://github.com/google/blockly/wiki/Logic#logical-operations"
+  },
+  {
+    "type": "logic_boolean",
+    "message0": "为 %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "BOOL",
+        "options": [
+          [
+            "真",
+            "TRUE"
+          ],
+          [
+            "假",
+            "FALSE"
+          ]
+        ]
+      }
+    ],
+    "output": "Boolean",
+    "colour": 100,
+    "tooltip": "Returns either true or false.",
+    "helpUrl": "https://github.com/google/blockly/wiki/Logic#values"
+  },
+  {
+    "type": "logic_compare",
+    "message0": "数字%1 %2 数字%3",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Int"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "symbol",
+        "options": [
+          [
+            "大于",
+            "1"
+          ],
+          [
+            "小于",
+            "2"
+          ],
+          [
+            "等于",
+            "3"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "B",
+        "check": "Int"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": "https://github.com/google/blockly/wiki/Logic#logical-operations"
+  },
+  {
+    "type": "logic_number",
+    "message0": "数字 %1",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "NUM",
+        "value": 1,
+        "min": 0,
+        "max": 1000
+      }
+    ],
+    "inputsInline": true,
+    "output": "Int",
+    "colour": 420,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "type": "sensor_avoid",
+    "message0": " %1 距离传感器检测到障碍物",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "which",
+        "options": [
+          [
+            "前方",
+            "1"
+          ],
+          [
+            "后方",
+            "2"
+          ],
+          [
+            "左侧",
+            "3"
+          ],
+          [
+            "右侧",
+            "4"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 214,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "sensor_Ultrasonic",
+    "message0": "超声波传感器距离(mm)",
+    "inputsInline": true,
+    "output": "Int",
+    "colour": 126,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "sensor_Magnet",
+    "message0": "磁传感器感受到磁场",
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 260,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+
+]
