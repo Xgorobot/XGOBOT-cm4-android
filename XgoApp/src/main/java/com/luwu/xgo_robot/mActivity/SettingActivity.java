@@ -8,20 +8,29 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.luwu.xgo_robot.BlueTooth.BleActivity;
+import com.luwu.xgo_robot.BlueTooth.BleClient;
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
 import com.luwu.xgo_robot.mView.XRadioGroup;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 public class SettingActivity extends AppCompatActivity {

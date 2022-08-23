@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 //提供全局静态方法和静态变量
 public class PublicMethod {
     public static String localeLanguage; //语言
-    public static boolean isSocketConnect = false;//Socket是否连接
+    public static boolean isBluetoothConnect = false;//蓝牙是否连接
 
     //定义XGO的内存表
     public static class XGORAM_ADDR {

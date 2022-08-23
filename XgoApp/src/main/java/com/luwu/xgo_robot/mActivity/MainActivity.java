@@ -12,6 +12,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -26,9 +27,11 @@ import com.luwu.xgo_robot.AppContext;
 import com.luwu.xgo_robot.BlueTooth.BleActivity;
 import com.luwu.xgo_robot.BlueTooth.BleConnectedActivity;
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -38,7 +41,7 @@ import yoop.bannerlayout.PageIndicator;
 import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT;
 import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT_TITLE;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.isSocketConnect;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 
@@ -242,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
                 BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
                 if ((adapter != null) && (adapter.isEnabled())) {
-                    if (isSocketConnect) {
+                    if (isBluetoothConnect) {
                         if (setting_close.equals("yes")) {
                             switch(localeLanguage){
                                 case "zh":

@@ -1,10 +1,18 @@
 package com.luwu.xgo_robot;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 import com.luwu.xgo_robot.BlueTooth.BleClient;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
+
+import java.util.Locale;
+
+import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 public class AppContext extends Application {
 
@@ -29,13 +37,13 @@ public class AppContext extends Application {
         mBleClient.setmConnectRequest(new BleClient.ConnectionRequest() {
             @Override
             public void connectSuccess() {
-                PublicMethod.isSocketConnect = true;
+                PublicMethod.isBluetoothConnect = true;
                 mToast.show(AppContext.this,"device connected");
             }
 
             @Override
             public void connectFailed() {
-                PublicMethod.isSocketConnect = false;
+                PublicMethod.isBluetoothConnect = false;
                 mToast.show(AppContext.this,"device disconnect");
             }
         });

@@ -2,14 +2,18 @@ package com.luwu.xgo_robot.mActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.mFragment.ButtonFragment;
@@ -17,9 +21,11 @@ import com.luwu.xgo_robot.mFragment.RockerFragment;
 import com.luwu.xgo_robot.mFragment.RockerLeftFragment;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
+import com.luwu.xgo_robot.mView.VerticalSeekBar;
 
+import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIDialog;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.isSocketConnect;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.toOrderRange;
 
@@ -112,7 +118,7 @@ public class ControlActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (isSocketConnect) {
+        if (isBluetoothConnect) {
             controlBtnConnect.setImageResource(R.drawable.bluetooth2);
         } else {
             controlBtnConnect.setImageResource(R.drawable.bluetooth);
