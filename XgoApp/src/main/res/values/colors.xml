@@ -11,4 +11,8 @@
     <color name="programActive">#00dffa</color>
     <color name="programInactive">#92a1b6</color>
     <color name="transparent">#00000000</color>
+    <color name="blue21">#021336</color>
+    <color name="blue1b">#1B3153</color>
+    <color name="blue36">#3689F9</color>
+    <color name="gray_8b">#8BA4C7</color>
 </resources>

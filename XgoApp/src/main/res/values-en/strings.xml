@@ -98,4 +98,11 @@
     <string name="cancel">cancel</string>
     <string name="renameText">Your Robot’s Name can have up to 4 Chinese or 13 English Characters</string>
     <string name="all_rights_reserved">Luwu Dynamics. All Rights Reserved.</string>
+    <!--index-->
+    <string name="index_pleasechose">请选择您的设备:</string>
+    <string name="wifilist_seach">搜索中...</string>
+    <!--main-->
+    <string name="performance">表演</string>
+    <string name="control">控制</string>
+    <string name="aimodule">AI模组</string>
 </resources>

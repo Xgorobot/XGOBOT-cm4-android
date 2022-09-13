@@ -107,6 +107,7 @@ public class BleActivity extends AppCompatActivity implements View.OnClickListen
 
     private void initBluetooth() {
         //申请定位权限，才能用蓝牙
+/*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 if (this.checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED ||
@@ -131,6 +132,7 @@ public class BleActivity extends AppCompatActivity implements View.OnClickListen
         if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
             mBluetoothAdapter.enable();
         }
+*/
     }
 
 
