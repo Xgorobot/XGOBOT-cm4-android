@@ -315,8 +315,8 @@ public class MainActivity extends AppCompatActivity {
             updateLocale();
             Intent intent;
             if (position == 0-1) {
-                intent = new Intent(MainActivity.this, ProgramActivity.class);
-                startActivity(intent);
+//                intent = new Intent(MainActivity.this, ProgramActivity.class);
+//                startActivity(intent);
             } else if (position == 1-1) {
                 intent = new Intent(MainActivity.this, ActorActivity.class);
                 startActivity(intent);

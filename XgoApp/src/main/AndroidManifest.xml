@@ -57,21 +57,6 @@
             android:screenOrientation="sensorLandscape" />
 
         <activity
-            android:name="com.luwu.xgo_robot.mActivity.SingleBlocklyActivity"
-            android:screenOrientation="sensorLandscape"
-            android:theme="@style/BlocklyVerticalTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
-            android:name="com.luwu.xgo_robot.mActivity.WholeBlocklyActivity"
-            android:screenOrientation="sensorLandscape"
-            android:theme="@style/BlocklyVerticalTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
-            android:name="com.luwu.xgo_robot.mActivity.ProgramActivity"
-            android:screenOrientation="sensorLandscape"
-            android:theme="@style/BlocklyVerticalTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
             android:name="com.luwu.xgo_robot.mActivity.ControlActivity"
             android:screenOrientation="sensorLandscape" />
         <!--            android:screenOrientation="landscape" -->

@@ -67,7 +67,7 @@
         android:fontFamily="sans-serif-black"
         android:gravity="bottom|center"
         android:text="@string/battery"
-        android:textColor="@color/green"
+        android:textColor="@color/gray_8b"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/buttonTxtBattery"
         app:layout_constraintStart_toStartOf="@id/buttonTxtBattery"
