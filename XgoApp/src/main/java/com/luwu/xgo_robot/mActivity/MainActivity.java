@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //TODO @yibin 数据收发统一整理整理到DataManager里
 
     //供外界调用
     public static void MsgThreadStop(){
