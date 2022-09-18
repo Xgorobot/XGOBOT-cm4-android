@@ -2,6 +2,11 @@ package com.luwu.xgo_robot.data;
 
 import com.luwu.xgo_robot.AppContext;
 
+/**
+ * 该类用于数据封装 数据处理
+ * 例如拼装包头包尾
+ * 实际收发数据功能写到 TCPClient 里
+ */
 public interface DataApi {
     //发送数据
     void sendData(byte[] datas);
