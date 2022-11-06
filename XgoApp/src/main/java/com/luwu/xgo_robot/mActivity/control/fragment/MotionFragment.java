@@ -34,6 +34,7 @@ public class MotionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_motionmode, null);
         initView(view);
+        mWeb.loadUrl(RobotFunction.getWebUrl(""));
         return view;
     }
 
@@ -44,7 +45,7 @@ public class MotionFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initListener();
-        mWeb.loadUrl(RobotFunction.getWebUrl(""));
+
     }
 
     private void initListener() {
