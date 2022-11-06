@@ -72,11 +72,6 @@
             android:name=".mActivity.control.ControlActivity"
             android:screenOrientation="sensorLandscape"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -85,7 +80,14 @@
             android:theme="@style/translucent" />
 
         <activity android:name=".mActivity.main.XgoMainActivity"
-            android:screenOrientation="sensorLandscape"/>
+            android:screenOrientation="sensorLandscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".mActivity.aimode.AiModeActivity"
             android:screenOrientation="sensorLandscape"/>

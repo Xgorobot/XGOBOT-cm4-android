@@ -60,7 +60,7 @@ public class SocketManager implements TCPListener {
     }
 
     public boolean connect(final String address,final int port) {
-        if (tcpSocket == null || address == null) {
+        if (tcpSocket == null) {
             tcpSocket = new TCPClient();
             tcpSocket.setConfig(address,port);
             tcpSocket.setListener(this);
@@ -75,14 +75,12 @@ public class SocketManager implements TCPListener {
                 mConnectionState = STATE_CONNECTING;
                 return true;
             } else {
-                tcpSocket.setConfig(address,port);
-                tcpSocket.connect();
                 return false;
             }
         }
-        //连接之前先关掉GATT
-        close();
 
+        tcpSocket.setConfig(address,port);
+        tcpSocket.connect();
         Log.d(TAG, "Trying to create a new connection.");
         mRobotAddress = address;
         mConnectionState = STATE_CONNECTING;
@@ -124,8 +122,10 @@ public class SocketManager implements TCPListener {
         if (tcpSocket == null) {
             return;
         }
-        tcpSocket.disconnect();
-        tcpSocket = null;
+        if (tcpSocket.isConnected()){
+            tcpSocket.disconnect();
+            tcpSocket = null;
+        }
     }
 
     private void startHeartBeat(){
@@ -144,7 +144,7 @@ public class SocketManager implements TCPListener {
         }
     };
 
-    public void sendHeartBeat(){
+    private void sendHeartBeat(){
         if (tcpSocket==null)
             return;
         if (!tcpSocket.isConnected()){

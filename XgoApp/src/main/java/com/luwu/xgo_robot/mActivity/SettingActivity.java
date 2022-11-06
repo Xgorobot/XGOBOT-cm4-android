@@ -78,6 +78,8 @@ public class SettingActivity extends AppCompatActivity {
 
     private void test(){
         SocketManager socketManager = SocketManager.getInstance();
+        socketManager.connect("192.168.31.82",9998);
+
     }
 
     @Override
