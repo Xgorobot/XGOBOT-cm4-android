@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
@@ -32,9 +33,9 @@ public class ActorActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {//动作轮播
-                    MainActivity.addMessage(new byte[]{0x03, 0x01});
+                    DataHelper.addMessage(new byte[]{0x03, 0x01});
                 } else {
-                    MainActivity.addMessage(new byte[]{0x03, 0x00});
+                    DataHelper.addMessage(new byte[]{0x03, 0x00});
                 }
             }
         });
@@ -101,7 +102,7 @@ public class ActorActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.actorResetBtn:
-                    MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
+                    DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
                     break;
                 case R.id.actorBtn1:
                     sendAction(action[0]);
@@ -166,7 +167,7 @@ public class ActorActivity extends AppCompatActivity {
             }
         }
         private void sendAction(byte action){
-            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte) action});
+            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte) action});
         }
     }
 }

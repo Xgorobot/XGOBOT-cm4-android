@@ -2,13 +2,11 @@ package com.luwu.xgo_robot.mActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -18,10 +16,10 @@ import com.luwu.xgo_robot.Product.Lite;
 import com.luwu.xgo_robot.Product.Mini;
 import com.luwu.xgo_robot.Product.Product;
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.toOrderRange;
 
 public class MotorActivity extends AppCompatActivity {
@@ -117,7 +115,7 @@ public class MotorActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.motorBtnReset:
-                    MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
+                    DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
                     motorSeekBarX.setProgress(0);
                     motorSeekBarY.setProgress(43);
                     motorSeekBarZ.setProgress(20);
@@ -135,13 +133,13 @@ public class MotorActivity extends AppCompatActivity {
                     nowTime = System.currentTimeMillis();
                     if ((nowTime - saveTime1) > 200) {//200ms刷新
                         if (motorChioce == 0) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_13, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_13, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
                         } else if (motorChioce == 1) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_23, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_23, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
                         } else if (motorChioce == 2) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_33, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_33, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
                         } else if (motorChioce == 3) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_43, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_43, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_UPPER_MIN(), product.getMOTOR_LIMIT_UPPER_MAX())});
                         }
                         saveTime1 = nowTime;
                     }
@@ -151,13 +149,13 @@ public class MotorActivity extends AppCompatActivity {
                     nowTime = System.currentTimeMillis();
                     if ((nowTime - saveTime2) > 200) {//200ms刷新
                         if (motorChioce == 0) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_12, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_12, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
                         } else if (motorChioce == 1) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_22, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_22, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
                         } else if (motorChioce == 2) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_32, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_32, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
                         } else if (motorChioce == 3) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_42, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_42, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_MIDDLE_MIN(), product.getMOTOR_LIMIT_MIDDLE_MAX())});
                         }
                         saveTime2 = nowTime;
                     }
@@ -167,13 +165,13 @@ public class MotorActivity extends AppCompatActivity {
                     nowTime = System.currentTimeMillis();
                     if ((nowTime - saveTime3) > 200) {//200ms刷新
                         if (motorChioce == 0) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_11, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_11, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
                         } else if (motorChioce == 1) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_21, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_21, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
                         } else if (motorChioce == 2) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_31, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_31, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
                         } else if (motorChioce == 3) {
-                            MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_41, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
+                            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.motor_41, (byte) toOrderRange(progress, product.getMOTOR_LIMIT_LOWER_MIN(), product.getMOTOR_LIMIT_LOWER_MAX())});
                         }
                         saveTime3 = nowTime;
                     }

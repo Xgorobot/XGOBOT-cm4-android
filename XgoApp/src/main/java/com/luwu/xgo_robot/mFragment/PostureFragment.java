@@ -15,8 +15,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mControl.gyrControl;
-import com.luwu.xgo_robot.mActivity.MainActivity;
 import com.luwu.xgo_robot.mMothed.mToast;
 import com.luwu.xgo_robot.mView.ThreeDimensionView;
 import com.luwu.xgo_robot.mView.VerticalSeekBar;
@@ -89,7 +89,7 @@ public class PostureFragment extends Fragment {
                                 postureView.setThreeDimension((int) pitch, (int) roll, (int) yaw);
                                 nowTime = System.currentTimeMillis();
                                 if ((nowTime - saveTime1) > 200) {
-                                    MainActivity.addMessage(new byte[]{XGORAM_ADDR.bodyRoll,  toOrderRange((int) pitch, -90, 90),toOrderRange((int) roll, -90, 90), toOrderRange((int) (-yaw), -60, 60)});
+                                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyRoll,  toOrderRange((int) pitch, -90, 90),toOrderRange((int) roll, -90, 90), toOrderRange((int) (-yaw), -60, 60)});
                                     saveTime1 = nowTime;
                                 }
                                 //线程延时
@@ -107,7 +107,7 @@ public class PostureFragment extends Fragment {
                     mToast.show(PostureFragment.this.getActivity(), "姿态控制已开启");
                 } else {
                     postureView.setThreeDimension(0, 0, 0);
-                    MainActivity.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80, (byte) 0x80, (byte) 0x80});
+                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80, (byte) 0x80, (byte) 0x80});
                     postureLockBtn.setImageResource(R.drawable.posture_lock);
                     postureTxt.setVisibility(View.VISIBLE);
                     mToast.show(PostureFragment.this.getActivity(), "姿态控制已停止");
@@ -132,7 +132,7 @@ public class PostureFragment extends Fragment {
                 nowTime = System.currentTimeMillis();
                 progress = seekBar.getProgress();
                 if ((nowTime - saveTime2) > 200) {
-                    MainActivity.addMessage(new byte[]{XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
+                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
                     saveTime2 = nowTime;
                 }
             }
@@ -159,7 +159,7 @@ public class PostureFragment extends Fragment {
     public void onPause() {
         super.onPause();
         gryFlagThread = false;
-        MainActivity.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80, (byte) 0x80, (byte) 0x80});
+        DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80, (byte) 0x80, (byte) 0x80});
         flagLoop = false;
     }
 
@@ -168,7 +168,7 @@ public class PostureFragment extends Fragment {
         public void run() {
             while (flagLoop) {
                 //查询电池电量并更新
-                MainActivity.addMessageRead(new byte[]{XGORAM_ADDR.battery, 0x01});
+                DataHelper.addMessageRead(new byte[]{XGORAM_ADDR.battery, 0x01});
                 Message message = new Message();
                 message.what = 0;
                 mHandler.sendMessageDelayed(message, 200);//200ms以后拿结果

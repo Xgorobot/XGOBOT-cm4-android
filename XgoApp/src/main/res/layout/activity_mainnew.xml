@@ -118,12 +118,16 @@
             android:layout_marginLeft="24dp"
             android:src="@drawable/icon_back"/>
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/btn_setting"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/icon_set" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:background="@color/transparent"
+            android:src="@drawable/icon_set"
+            android:contentDescription="@string/setting" />
+
         <ImageView
             android:id="@+id/main_set_img"
             android:layout_width="42dp"

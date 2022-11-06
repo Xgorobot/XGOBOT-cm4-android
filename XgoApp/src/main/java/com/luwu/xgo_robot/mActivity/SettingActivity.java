@@ -8,29 +8,21 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.luwu.xgo_robot.BlueTooth.BleActivity;
-import com.luwu.xgo_robot.BlueTooth.BleClient;
 import com.luwu.xgo_robot.R;
-import com.luwu.xgo_robot.mMothed.PublicMethod;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.mToast;
 import com.luwu.xgo_robot.mView.XRadioGroup;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 public class SettingActivity extends AppCompatActivity {
@@ -80,6 +72,23 @@ public class SettingActivity extends AppCompatActivity {
 
         setSelected();//设置监听之前调用
         setListener();//监听事件
+        test();
+    }
+
+    private void test(){
+//        TCPClient tcpClient = new TCPClient("192.168.31.82",9998);
+//        tcpClient.setListener(new TCPListener() {
+//            @Override
+//            public void onMessageResponse(Object msg) {
+//
+//            }
+//
+//            @Override
+//            public void onServiceStatusConnectChanged(int statusCode) {
+//
+//            }
+//        });
+//        tcpClient.connect();
     }
 
     @Override
@@ -360,11 +369,11 @@ public class SettingActivity extends AppCompatActivity {
     }
     private void updateHex(){
         while(true){
-            if (MainActivity.getMsgListState() == 0){
-                MainActivity.addMessage(new byte[]{0x05, 0x01});
+            if (DataHelper.getMsgListState() == 0){
+                DataHelper.addMessage(new byte[]{0x05, 0x01});
                 try {
                     Thread.sleep(10);
-                    MainActivity.MsgThreadStop();
+                    DataHelper.MsgThreadStop();
                     Thread.sleep(5000);
                     //System.out.println("no");
                 } catch (InterruptedException e) {
@@ -377,13 +386,13 @@ public class SettingActivity extends AppCompatActivity {
                     int i = -1;
                     while ((n = inputStream.read(data,0,20)) != -1) {
                         System.out.println(String.valueOf(i++));
-                        MainActivity.sendHugeMessage(data);
+                        DataHelper.sendHugeMessage(data);
                     }
                     inputStream.close();
                 } catch (Exception e){
                     e.printStackTrace();
                 }
-                MainActivity.MsgThreadWork();
+                DataHelper.MsgThreadWork();
                 progressDialog.dismiss();
                 break;
             }

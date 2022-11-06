@@ -2,28 +2,23 @@ package com.luwu.xgo_robot.mActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mFragment.ButtonFragment;
 import com.luwu.xgo_robot.mFragment.RockerFragment;
 import com.luwu.xgo_robot.mFragment.RockerLeftFragment;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
-import com.luwu.xgo_robot.mView.VerticalSeekBar;
 
-import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIDialog;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
 import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
@@ -380,9 +375,9 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {//开启动作自启动
-                    MainActivity.addMessage(new byte[]{0x03, 0x01});
+                    DataHelper.addMessage(new byte[]{0x03, 0x01});
                 } else {
-                    MainActivity.addMessage(new byte[]{0x03, 0x00});
+                    DataHelper.addMessage(new byte[]{0x03, 0x00});
                 }
             }
         });
@@ -401,7 +396,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     IMUChecked = 1;
-                    MainActivity.addMessage(new byte[]{0x61, 0x01});
+                    DataHelper.addMessage(new byte[]{0x61, 0x01});
                     switch (localeLanguage) {
                         case "zh":
                             mToast.show(ControlActivity.this, "自稳定模式已开启");
@@ -411,7 +406,7 @@ public class ControlActivity extends AppCompatActivity {
                     }
                 } else {
                     IMUChecked = 0;
-                    MainActivity.addMessage(new byte[]{0x61, 0x00});
+                    DataHelper.addMessage(new byte[]{0x61, 0x00});
                     switch (localeLanguage) {
                         case "zh":
                             mToast.show(ControlActivity.this, "陀螺仪已关闭");
@@ -470,13 +465,13 @@ public class ControlActivity extends AppCompatActivity {
         ModeLowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.addMessage(new byte[]{0x3D, 0x01});
+                DataHelper.addMessage(new byte[]{0x3D, 0x01});
                 SpeedMode = 1;
                 ModeLowBtn.setActivated(true);
                 ModeNormalBtn.setActivated(false);
                 ModeHighBtn.setActivated(false);
                 progress = 0;
-                MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
+                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
                 switch (nowFragment){
                     case NORMALFRAGMENT:
                         buttonFragment.updateProgress();
@@ -504,13 +499,13 @@ public class ControlActivity extends AppCompatActivity {
         ModeNormalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.addMessage(new byte[]{0x3D, 0x00});
+                DataHelper.addMessage(new byte[]{0x3D, 0x00});
                 SpeedMode = 0;
                 ModeLowBtn.setActivated(false);
                 ModeNormalBtn.setActivated(true);
                 ModeHighBtn.setActivated(false);
                 progress = progressInit;
-                MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progressInit, 0, 100)});
+                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progressInit, 0, 100)});
                 switch (nowFragment){
                     case NORMALFRAGMENT:
                         buttonFragment.updateProgress();
@@ -538,13 +533,13 @@ public class ControlActivity extends AppCompatActivity {
         ModeHighBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.addMessage(new byte[]{0x3D, 0x02});
+                DataHelper.addMessage(new byte[]{0x3D, 0x02});
                 SpeedMode = 2;
                 ModeLowBtn.setActivated(false);
                 ModeNormalBtn.setActivated(false);
                 ModeHighBtn.setActivated(true);
                 progress = 80;
-                MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
+                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
                 switch (nowFragment){
                     case NORMALFRAGMENT:
                         buttonFragment.updateProgress();

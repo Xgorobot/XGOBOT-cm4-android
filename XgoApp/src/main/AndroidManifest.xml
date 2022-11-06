@@ -19,6 +19,7 @@
     <!--Android 12的蓝牙权限-->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="com.luwu.xgo_robot.AppContext"
@@ -29,17 +30,6 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme">
-        <service android:name="com.luwu.xgo_robot.BlueTooth.BluetoothLeService" />
-
-        <activity
-            android:name="com.luwu.xgo_robot.BlueTooth.BleConnectedActivity"
-            android:screenOrientation="sensorLandscape" />
-        <activity
-            android:name="com.luwu.xgo_robot.BlueTooth.BleActivity"
-            android:screenOrientation="sensorLandscape" />
-        <activity
-            android:name="com.luwu.xgo_robot.BlueTooth.BleSearchActivity"
-            android:theme="@style/Theme.FloatActivity" />
         <activity
             android:name="com.luwu.xgo_robot.mActivity.MotorActivity"
             android:screenOrientation="sensorLandscape" />
@@ -51,9 +41,6 @@
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name="com.luwu.xgo_robot.mActivity.DebugActivity"
-            android:screenOrientation="sensorLandscape" />
-        <activity
-            android:name="com.luwu.xgo_robot.mActivity.TestBtActivity"
             android:screenOrientation="sensorLandscape" />
 
         <activity

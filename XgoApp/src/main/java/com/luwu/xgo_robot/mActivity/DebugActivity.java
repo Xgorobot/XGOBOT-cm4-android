@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.mToast;
 
 import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIDialog;
@@ -57,8 +58,8 @@ public class DebugActivity extends AppCompatActivity {
         debugImgMsg.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Intent intent = new Intent(DebugActivity.this, TestBtActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(DebugActivity.this, TestBtActivity.class);
+//                startActivity(intent);
                 return true;
             }
         });
@@ -105,7 +106,7 @@ public class DebugActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.debugBtnConfirm:
-                    MainActivity.addMessage(new byte[]{0x04, (byte) 0x01}); //舵机卸载
+                    DataHelper.addMessage(new byte[]{0x04, (byte) 0x01}); //舵机卸载
                     switch(localeLanguage){
                         case "zh":
                             mToast.show(DebugActivity.this,"已进入标定模式");
@@ -116,7 +117,7 @@ public class DebugActivity extends AppCompatActivity {
                     break;
                 case R.id.debugBtnFinish:
                     if(!isFastDoubleClick()){
-                        MainActivity.addMessage(new byte[]{0x04, (byte) 0x00});//记录位置
+                        DataHelper.addMessage(new byte[]{0x04, (byte) 0x00});//记录位置
                         switch(localeLanguage){
                             case "zh":
                                 mToast.show(DebugActivity.this,"完成标定");
@@ -130,7 +131,7 @@ public class DebugActivity extends AppCompatActivity {
                     ShowDialog();
                     break;
                 case R.id.debugBtnBack:
-                    MainActivity.addMessage(new byte[]{0x04, (byte) 0x02});//不保存退出
+                    DataHelper.addMessage(new byte[]{0x04, (byte) 0x02});//不保存退出
                     finish();
                     break;
             }

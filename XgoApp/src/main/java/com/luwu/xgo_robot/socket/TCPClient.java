@@ -1,6 +1,5 @@
 package com.luwu.xgo_robot.socket;
 
-import android.database.DatabaseUtils;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -45,22 +44,19 @@ public class TCPClient {
     private boolean isConnecting = false;//是否正在连接
     private long reconnectIntervalTime = 5000;//重连的时间
 
-    public String host;//ip
-    public int tcp_port;//端口
+    private String host;//ip
+    private int tcp_port;//端口
 
-    /*
-    构造 传入 ip和端口
-     */
-    public TCPClient(String host, int tcp_port) {
+
+    public void setConfig(String host, int port){
         this.host = host;
-        this.tcp_port = tcp_port;
+        this.tcp_port = port;
     }
 
     /*
     连接方法
      */
     public void connect() {
-
         if (isConnecting) {
             return;
         }
@@ -215,7 +211,16 @@ public class TCPClient {
         return flag;
     }
 
-    //重连时间
+    //发送消息到服务端。 Bootstrap设置的时候我没有设置解码，这边才转的
+    public boolean sendMsgToServer(byte[] data, ChannelFutureListener listener) {
+        boolean flag = channel != null && isConnect;
+        if (flag) {
+            channel.writeAndFlush(data).addListener(listener);
+        }
+        return flag;
+    }
+
+    //重连次数
     public void setReconnectNum(int reconnectNum) {
         this.reconnectNum = reconnectNum;
     }
@@ -224,7 +229,7 @@ public class TCPClient {
         this.reconnectIntervalTime = reconnectIntervalTime;
     }
     //现在连接的状态
-    public boolean getConnectStatus() {
+    public boolean isConnected() {
         return isConnect;
     }
 

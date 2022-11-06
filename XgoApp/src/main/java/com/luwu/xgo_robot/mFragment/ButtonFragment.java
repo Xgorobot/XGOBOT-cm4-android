@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.luwu.xgo_robot.R;
-import com.luwu.xgo_robot.mActivity.MainActivity;
+import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mView.ButtonView;
 import com.luwu.xgo_robot.mView.VerticalSeekBar;
@@ -109,7 +109,7 @@ public class ButtonFragment extends Fragment {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
+                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
                 seekBar.updateProgress(progressInit);
                 textHeight.setText(String.valueOf(progressInit));
             }
@@ -129,7 +129,7 @@ public class ButtonFragment extends Fragment {
                 progress = seekBar.getProgress();
                 textHeight.setText(String.valueOf(progress));
                 if ((nowTime - saveTime) > 200) {
-                    MainActivity.addMessage(new byte[]{XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
+                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyZ, toOrderRange(progress, 0, 100)});
                     saveTime = nowTime;
                 }
             }
@@ -139,16 +139,16 @@ public class ButtonFragment extends Fragment {
             public void actionDown(int num) {
                 switch (num) {
                     case UPPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0xDA});//小于最大速度
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0xDA});//小于最大速度
                         break;
                     case DOWNPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x25});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x25});
                         break;
                     case LEFTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0xDA});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0xDA});
                         break;
                     case RIGHTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x25});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x25});
                         break;
                 }
                 Message msg = new Message();
@@ -161,16 +161,16 @@ public class ButtonFragment extends Fragment {
             public void actionUp(int num) {
                 switch (num) {
                     case UPPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});//停下
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});//停下
                         break;
                     case DOWNPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});
                         break;
                     case LEFTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x80});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x80});
                         break;
                     case RIGHTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x80});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVy, (byte) 0x80});
                         break;
                 }
                 Message msg = new Message();
@@ -184,10 +184,10 @@ public class ButtonFragment extends Fragment {
             public void actionDown(int num) {
                 switch (num) {
                     case LEFTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0xDA});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0xDA});
                         break;
                     case RIGHTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x25});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x25});
                         break;
                 }
                 Message msg = new Message();
@@ -200,10 +200,10 @@ public class ButtonFragment extends Fragment {
             public void actionUp(int num) {
                 switch (num) {
                     case LEFTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
                         break;
                     case RIGHTPRESS:
-                        MainActivity.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
+                        DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
                         break;
                 }
                 Message msg = new Message();
@@ -227,7 +227,7 @@ public class ButtonFragment extends Fragment {
         public void run() {
             while (flagLoop) {
                 //查询电池电量并更新
-                MainActivity.addMessageRead(new byte[]{XGORAM_ADDR.battery, 0x01});
+                DataHelper.addMessageRead(new byte[]{XGORAM_ADDR.battery, 0x01});
 //                MainActivity.addMessageRead(new byte[]{XGORAM_ADDR.versions, 0x01});
                 Message message = new Message();
                 message.what = 0;

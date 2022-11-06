@@ -1,8 +1,10 @@
 package com.luwu.xgo_robot.mActivity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT;
+import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT_TITLE;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
+import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
@@ -12,7 +14,6 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -23,26 +24,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.luwu.xgo_robot.AppContext;
-import com.luwu.xgo_robot.BlueTooth.BleActivity;
-import com.luwu.xgo_robot.BlueTooth.BleConnectedActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import com.luwu.xgo_robot.R;
-import com.luwu.xgo_robot.mMothed.PublicMethod;
 import com.luwu.xgo_robot.mMothed.mToast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
 import yoop.bannerlayout.BannerViewLayout;
 import yoop.bannerlayout.PageIndicator;
-
-import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT;
-import static com.luwu.xgo_robot.mActivity.PrivacyActivity.HTML_TEXT_TITLE;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.hideBottomUIMenu;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.isBluetoothConnect;
-import static com.luwu.xgo_robot.mMothed.PublicMethod.localeLanguage;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -80,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mainBtnDebug.setVisibility(View.GONE);
         }
-        if(!mainLanguage.equals(localeLanguage)){
+        if (!mainLanguage.equals(localeLanguage)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -88,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();//不再返回该页面
                 }
-            },0);
+            }, 0);
         }
     }
 
@@ -124,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         List<Drawable> url = new ArrayList<>();
 
         //url.add(this.getResources().getDrawable(R.drawable.main_beta));
-        switch(localeLanguage){
+        switch (localeLanguage) {
             case "zh":
                 mainLanguage = "zh";
                 url.add(this.getResources().getDrawable(R.drawable.main_actor));
@@ -139,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 url.add(this.getResources().getDrawable(R.drawable.main_leg_en));
                 url.add(this.getResources().getDrawable(R.drawable.main_motor_en));
         }
-        int current = (url.size() - 1)/2;
+        int current = (url.size() - 1) / 2;
         mBanner.setBannerView(url).setStartView(current).start();
         mIndicator.setNumPages(url.size());
         mIndicator.setCurrentPage(current);
@@ -156,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.mainBtnConnect:
                     BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                     if (mBluetoothAdapter == null) {//设备不支持蓝牙
-                        switch(localeLanguage){
+                        switch (localeLanguage) {
                             case "zh":
                                 mToast.show(MainActivity.this, "该设备不支持蓝牙");
                                 break;
@@ -165,21 +159,21 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     }
-                    if (!AppContext.getmBleClient().isConnected()) {
-//                        if (DeviceUtil.isTabletDevice(MainActivity.this)) {
-//                            Intent intent3 = new Intent(MainActivity.this, BleSearchActivity.class);
-//                            startActivity(intent3);
-//                        } else {
-//                            Intent intent3 = new Intent(MainActivity.this, BleActivity.class);
-//                            startActivity(intent3);
-//                        }
-                        // 在ble_activity中进行权限申请，再根据需求进入ble_search
-                        Intent intent3 = new Intent(MainActivity.this, BleActivity.class);
-                        startActivity(intent3);
-                    } else {
-                        Intent intent4 = new Intent(MainActivity.this, BleConnectedActivity.class);
-                        startActivity(intent4);
-                    }
+//                    if (!AppContext.getmBleClient().isConnected()) {
+////                        if (DeviceUtil.isTabletDevice(MainActivity.this)) {
+////                            Intent intent3 = new Intent(MainActivity.this, BleSearchActivity.class);
+////                            startActivity(intent3);
+////                        } else {
+////                            Intent intent3 = new Intent(MainActivity.this, BleActivity.class);
+////                            startActivity(intent3);
+////                        }
+//                        // 在ble_activity中进行权限申请，再根据需求进入ble_search
+//                        Intent intent3 = new Intent(MainActivity.this, BleActivity.class);
+//                        startActivity(intent3);
+//                    } else {
+//                        Intent intent4 = new Intent(MainActivity.this, BleConnectedActivity.class);
+//                        startActivity(intent4);
+//                    }
                     break;
                 case R.id.mainBtnSetting:
                     intent = new Intent(MainActivity.this, SettingActivity.class);
@@ -199,45 +193,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    //TODO @yibin 数据收发统一整理整理到DataManager里
-
-    //供外界调用
-    public static void MsgThreadStop(){
-        AppContext.getmBleClient().MsgThreadStop();
-    }
-
-    public static void MsgThreadWork(){
-        AppContext.getmBleClient().MsgThreadWork();
-    }
-    public static int getMsgListState(){
-        return AppContext.getmBleClient().getMsgListLength();
-    }
-    public static void sendHugeMessage(byte[] msg){AppContext.getmBleClient().sendHugeMessage(msg);}
-    public static void addMessage(byte[] msg) {
-        AppContext.getmBleClient().addMessage(msg);
-    }
-
-    public static void addMessageRespond(byte[] msg) {
-        AppContext.getmBleClient().addMessageRespond(msg);
-    }
-
-    public static void addMessageRead(byte[] msg) {
-//        System.out.println(Arrays.toString(msg));
-        AppContext.getmBleClient().addMessageRead(msg);
-    }
-
-    //消息会被覆盖 不靠谱 仅在TestBtActivity中使用
-    public static byte[] getMessageRespond() {
-        return AppContext.getmBleClient().getMessageRespond();
-    }
-
-    //消息会被覆盖 不靠谱 仅在仅在TestBtActivity中使用
-    public static byte[] getMessageRead() {
-        return AppContext.getmBleClient().getMessageRead();
-    }
-
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent enent) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -248,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 if ((adapter != null) && (adapter.isEnabled())) {
                     if (isBluetoothConnect) {
                         if (setting_close.equals("yes")) {
-                            switch(localeLanguage){
+                            switch (localeLanguage) {
                                 case "zh":
                                     mToast.show(MainActivity.this, "再按一次退出app，将关闭蓝牙");
                                     break;
@@ -256,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                                     mToast.show(MainActivity.this, "Press again to exit the app and turn off Bluetooth");
                             }
                         } else {
-                            switch(localeLanguage){
+                            switch (localeLanguage) {
                                 case "zh":
                                     mToast.show(MainActivity.this, "再按一次退出app，将断开连接");
                                     break;
@@ -266,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     } else {
                         if (setting_close.equals("yes")) {
-                            switch(localeLanguage){
+                            switch (localeLanguage) {
                                 case "zh":
                                     mToast.show(MainActivity.this, "再按一次退出app，将关闭蓝牙");
                                     break;
@@ -274,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                                     mToast.show(MainActivity.this, "Press again to exit the app and turn off Bluetooth");
                             }
                         } else {
-                            switch(localeLanguage){
+                            switch (localeLanguage) {
                                 case "zh":
                                     mToast.show(MainActivity.this, "再按一次退出app");
                                     break;
@@ -284,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 } else {
-                    switch(localeLanguage){
+                    switch (localeLanguage) {
                         case "zh":
                             mToast.show(MainActivity.this, "再按一次退出app");
                             break;
@@ -294,14 +249,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mExitTime = System.currentTimeMillis();
             } else {
-                if (setting_close.equals("yes")) {
-                    BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-                    if (adapter != null) {
-                        if (adapter.isEnabled()) {
-                            adapter.disable();//关闭蓝牙
-                        }
-                    }
-                }
+//                if (setting_close.equals("yes")) {
+//                    BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+//                    if (adapter != null) {
+//                        if (adapter.isEnabled()) {
+//                            adapter.disable();//关闭蓝牙
+//                        }
+//                    }
+//                }
                 finish();
             }
             return true;
@@ -315,19 +270,19 @@ public class MainActivity extends AppCompatActivity {
         public void OnBannerClick(final int position) {
             updateLocale();
             Intent intent;
-            if (position == 0-1) {
+            if (position == 0 - 1) {
 //                intent = new Intent(MainActivity.this, ProgramActivity.class);
 //                startActivity(intent);
-            } else if (position == 1-1) {
+            } else if (position == 1 - 1) {
                 intent = new Intent(MainActivity.this, ActorActivity.class);
                 startActivity(intent);
-            } else if (position == 2-1) {
+            } else if (position == 2 - 1) {
                 intent = new Intent(MainActivity.this, ControlActivity.class);
                 startActivity(intent);
-            } else if (position == 3-1) {
+            } else if (position == 3 - 1) {
                 intent = new Intent(MainActivity.this, LegActivity.class);
                 startActivity(intent);
-            } else if (position == 4-1) {
+            } else if (position == 4 - 1) {
                 intent = new Intent(MainActivity.this, MotorActivity.class);
                 startActivity(intent);
             }
@@ -351,22 +306,23 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-    private void updateLocale(){
+
+    private void updateLocale() {
         SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
         String setting_language = languageInfo.getString("setting_language", "auto");
         if (setting_language.equals("zh")) {
             localeLanguage = "zh";
-        } else if(setting_language.equals("en")) {
+        } else if (setting_language.equals("en")) {
             localeLanguage = "en";
         } else {//auto
             localeLanguage = Locale.getDefault().getLanguage();
-            if (!localeLanguage.equals("zh")){
+            if (!localeLanguage.equals("zh")) {
                 localeLanguage = "en";
             }
         }
         Resources resources = getResources();
         Configuration configuration = resources.getConfiguration();
-        if (configuration.locale.getLanguage() != localeLanguage){
+        if (configuration.locale.getLanguage() != localeLanguage) {
             if (localeLanguage.equals("zh")) {
                 configuration.setLocale(Locale.CHINESE); // 设置为中文
             } else {
@@ -381,11 +337,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void privacyFirst(){
+    private void privacyFirst() {
         SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
-        String privacy_first = info.getString("privacy_first","yes");
-        if (privacy_first.equals("yes")){
+        String privacy_first = info.getString("privacy_first", "yes");
+        if (privacy_first.equals("yes")) {
             final SharedPreferences.Editor edit = info.edit();
             final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.show();
