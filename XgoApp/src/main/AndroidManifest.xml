@@ -69,7 +69,7 @@
 
         <!--新-->
         <activity
-            android:name=".mActivity.index.IndexActivity"
+            android:name=".mActivity.control.ControlActivity"
             android:screenOrientation="sensorLandscape"
             android:exported="true">
             <intent-filter>
@@ -89,15 +89,15 @@
 
         <activity android:name=".mActivity.aimode.AiModeActivity"
             android:screenOrientation="sensorLandscape"/>
-        <activity android:name=".mActivity.control.ControlActivity"
-            android:screenOrientation="sensorLandscape"/>
+       <!-- <activity android:name=".mActivity.control.ControlActivity"
+            android:screenOrientation="sensorLandscape"/>-->
 
         <meta-data
             android:name="design_width_in_dp"
-            android:value="1066" />
+            android:value="1792" />
         <meta-data
             android:name="design_height_in_dp"
-            android:value="600" />
+            android:value="828" />
     </application>
 
 

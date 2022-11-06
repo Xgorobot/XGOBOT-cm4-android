@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="37dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="13dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="13dp"
+                android:src="@mipmap/ic_launcher" />
+        </RelativeLayout>
+
+        <com.luwu.xgo_robot.mView.ButtonView
+            android:layout_width="409dp"
+            android:layout_height="409dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="27dp"
+            app:downPress="@drawable/icon_down_progress"
+            app:leftPress="@drawable/icon_left_progress"
+            app:noPress="@drawable/icon_default_progress"
+            app:rightPress="@drawable/icon_right_progress"
+            app:upPress="@drawable/icon_up_progress" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="53dp"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="140dp"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="720dp"
+            android:layout_height="372dp"
+            android:layout_gravity="center_horizontal">
+
+            <WebView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="41dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="41dp"
+                android:text="WALK"
+                android:textColor="@color/white"
+                android:background="@color/red"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="18dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="41dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="41dp"
+                android:text="TROT"
+                android:background="@color/yellow"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="34dp"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+        android:paddingTop="40dp"
+        android:background="@drawable/shape_blue_6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="夹爪"
+                    android:textColor="#8BA4C7"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="(30-50)"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:max="50"
+                android:maxHeight="7dp"
+                android:min="30"
+                android:minHeight="7dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
+                android:thumb="@drawable/seekbar_white_shape" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="X轴"
+                    android:textColor="#8BA4C7"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="(30-50)"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:max="50"
+                android:maxHeight="7dp"
+                android:min="30"
+                android:minHeight="7dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
+                android:thumb="@drawable/seekbar_white_shape" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Y轴"
+                    android:textColor="#8BA4C7"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="(30-50)"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="9dp"
+                android:max="50"
+                android:maxHeight="7dp"
+                android:min="30"
+                android:minHeight="7dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_progress_drawable_blue36"
+                android:thumb="@drawable/seekbar_white_shape" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="33dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
