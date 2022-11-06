@@ -55,7 +55,7 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.5.2'
     implementation project(path: ':autosize')
     //util工具包
-    implementation 'com.blankj:utilcode:1.5.1'
+    implementation 'com.blankj:utilcode:1.30.7'
     implementation 'com.google.code.gson:gson:2.8.8'
 
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="382dp"
+    android:layout_height="200dp"
     android:background="@drawable/shape_blue_6"
     android:paddingBottom="24dp"
+
     android:orientation="vertical">
 
     <RelativeLayout
@@ -46,6 +47,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/low_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="低速"
@@ -53,6 +55,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/normal_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="普通"
@@ -60,6 +63,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/height_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="高速"
@@ -100,7 +104,6 @@
                 style="@style/Widget.AppCompat.SeekBar"
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
-
                 android:progress="0" />
 
             <TextView

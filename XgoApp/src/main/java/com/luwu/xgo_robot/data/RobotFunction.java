@@ -8,19 +8,21 @@ import java.lang.ref.WeakReference;
 public class RobotFunction {
     private static final String TAG = "RobotFunction";
 
-
-    public static void forward(){
+    /*
+    * speed 左正右负 上正下负
+    * */
+    public static void forward(int speed){
         Log.d(TAG, "forward: ");
     }
 
-    public static void backward(){
+    public static void backward(int speed){
         Log.d(TAG, "backward: ");
     }
-    public static void left(){
+    public static void left(int speed){
         Log.d(TAG, "left: ");
     }
 
-    public static void right(){
+    public static void right(int speed){
         Log.d(TAG, "right: ");
     }
 
