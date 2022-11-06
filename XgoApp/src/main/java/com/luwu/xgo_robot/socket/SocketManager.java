@@ -27,7 +27,6 @@ public class SocketManager implements TCPListener {
     private static final int STATE_CONNECTING = 1;
     private static final int STATE_CONNECTED = 2;
 
-    
     public final static String ACTION_CONNECTED =
             "socket.ACTION_GATT_CONNECTED";
     public final static String ACTION_DISCONNECTED =
