@@ -18,6 +18,7 @@ import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.data.DataHelper;
 import com.luwu.xgo_robot.mMothed.mToast;
 import com.luwu.xgo_robot.mView.XRadioGroup;
+import com.luwu.xgo_robot.socket.SocketManager;
 
 import java.io.InputStream;
 import java.util.Locale;
@@ -76,19 +77,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void test(){
-//        TCPClient tcpClient = new TCPClient("192.168.31.82",9998);
-//        tcpClient.setListener(new TCPListener() {
-//            @Override
-//            public void onMessageResponse(Object msg) {
-//
-//            }
-//
-//            @Override
-//            public void onServiceStatusConnectChanged(int statusCode) {
-//
-//            }
-//        });
-//        tcpClient.connect();
+        SocketManager socketManager = SocketManager.getInstance();
     }
 
     @Override

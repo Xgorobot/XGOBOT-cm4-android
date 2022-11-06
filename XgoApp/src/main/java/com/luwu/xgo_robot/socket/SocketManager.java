@@ -2,6 +2,8 @@ package com.luwu.xgo_robot.socket;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import io.netty.channel.ChannelFuture;
@@ -11,12 +13,13 @@ import io.netty.channel.ChannelFutureListener;
  * Service for managing connection and data communication with a GATT server hosted on a
  * given Bluetooth LE device.
  */
-public class SocketManager{
+public class SocketManager implements TCPListener {
     private final static String TAG = SocketManager.class.getSimpleName();
 
     private TCPClient tcpSocket;
     private String mRobotAddress;
     Context context;
+    Handler handler = new Handler(Looper.getMainLooper());
 
     private int mConnectionState = STATE_DISCONNECTED;
 
@@ -24,8 +27,7 @@ public class SocketManager{
     private static final int STATE_CONNECTING = 1;
     private static final int STATE_CONNECTED = 2;
 
-    protected static final int MTU_SIZE = 23;   // 500 + 3，实际可用为500，为了传输固件文件 20210929
-
+    
     public final static String ACTION_CONNECTED =
             "socket.ACTION_GATT_CONNECTED";
     public final static String ACTION_DISCONNECTED =
@@ -33,8 +35,18 @@ public class SocketManager{
     public final static String SOCKET_TCP_DATA =
             "socket.SOCKET_TCP_DATA";
 
+    private static SocketManager instance;
 
-
+    public static SocketManager getInstance() {
+        if (instance == null) {
+            synchronized (SocketManager.class) {
+                if (instance == null) {
+                    instance = new SocketManager();
+                }
+            }
+        }
+        return instance;
+    }
 
     private void broadcastUpdate(final String action) {
         final Intent intent = new Intent(action);
@@ -50,8 +62,9 @@ public class SocketManager{
 
     public boolean connect(final String address,final int port) {
         if (tcpSocket == null || address == null) {
-            Log.w(TAG, "tcpSocket not initialized or unspecified address.");
-            return false;
+            tcpSocket = new TCPClient();
+            tcpSocket.setConfig(address,port);
+            tcpSocket.setListener(this);
         }
 
         // Previously connected device.  Try to reconnect.
@@ -94,6 +107,15 @@ public class SocketManager{
         });
     }
 
+    public void write(String datas) {
+        //将指令放置进特征中
+        tcpSocket.sendMsgToServer(datas, new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+
+            }
+        });
+    }
 
     /**
      * After using a given BLE device, the app must call this method to ensure resources are
@@ -107,5 +129,55 @@ public class SocketManager{
         tcpSocket = null;
     }
 
+    private void startHeartBeat(){
+        handler.post(heartRunnable);
+    }
+
+    private void stopHeartBeat(){
+        handler.removeCallbacks(heartRunnable);
+    }
+
+    Runnable heartRunnable = new Runnable() {
+        @Override
+        public void run() {
+            sendHeartBeat();
+            handler.postDelayed(heartRunnable,5000);
+        }
+    };
+
+    public void sendHeartBeat(){
+        if (tcpSocket==null)
+            return;
+        if (!tcpSocket.isConnected()){
+            return;
+        }
+        tcpSocket.sendMsgToServer("heartBeat",channelFutureListener);
+    }
+
+    ChannelFutureListener channelFutureListener = future -> {
+
+    };
+
+    @Override
+    public void onMessageResponse(Object msg) {
+        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息");
+    }
+
+    @Override
+    public void onServiceStatusConnectChanged(int statusCode) {
+        switch (statusCode){
+            case TCPListener.STATUS_CONNECT_SUCCESS:
+                sendHeartBeat();
+                break;
+            case TCPListener.STATUS_CONNECT_ERROR:
+                stopHeartBeat();
+                break;
+            case TCPListener.STATUS_CONNECT_CLOSED:
+                stopHeartBeat();
+                break;
+            default:
+                break;
+        }
+    }
 }
 
