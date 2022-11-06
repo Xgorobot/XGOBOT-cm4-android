@@ -22,8 +22,39 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
+            <!--            <TextView
+                            android:id="@+id/control_normal_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/blue1b"
+                            android:paddingLeft="40dp"
+                            android:paddingTop="17dp"
+                            android:paddingRight="40dp"
+                            android:paddingBottom="17dp"
+                            android:text="普通模式"
+                            android:textColor="@color/gray_8b"
+                            android:textSize="21sp" />
+
+
+                        <View
+                            android:layout_width="23dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:id="@+id/control_advance_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/blue1b"
+                            android:paddingLeft="40dp"
+                            android:paddingTop="17dp"
+                            android:paddingRight="40dp"
+                            android:paddingBottom="17dp"
+                            android:text="高级模式"
+                            android:textColor="@color/gray_8b"
+                            android:textSize="21sp" />-->
+
             <TextView
-                android:id="@+id/control_normal_tv"
+                android:id="@+id/control_motion_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/blue1b"
@@ -31,28 +62,9 @@
                 android:paddingTop="17dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="17dp"
-                android:text="普通模式"
+                android:text="运动模式"
                 android:textColor="@color/gray_8b"
                 android:textSize="21sp" />
-
-
-            <View
-                android:layout_width="23dp"
-                android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/control_advance_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/blue1b"
-                android:paddingLeft="40dp"
-                android:paddingTop="17dp"
-                android:paddingRight="40dp"
-                android:paddingBottom="17dp"
-                android:text="高级模式"
-                android:textColor="@color/gray_8b"
-                android:textSize="21sp" />
-
 
             <View
                 android:layout_width="23dp"
@@ -70,7 +82,6 @@
                 android:text="单腿模式"
                 android:textColor="@color/gray_8b"
                 android:textSize="21sp" />
-
 
             <View
                 android:layout_width="23dp"
@@ -96,5 +107,4 @@
         android:id="@+id/control_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>
