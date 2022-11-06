@@ -27,6 +27,6 @@ public class RobotFunction {
     public static String getWebUrl(String cameraUrl){
 //        webviewReference = new WeakReference<>(webView);
 //        return "192.168.31.1/webcam";
-        return "https://www.baidu.com";
+        return "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
     }
 }

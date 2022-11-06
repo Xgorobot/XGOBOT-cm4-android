@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 
@@ -159,14 +160,16 @@ public class SocketManager implements TCPListener {
 
     @Override
     public void onMessageResponse(Object msg) {
-        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息");
+//        UnpooledByteBufAllocator msgData = (UnpooledByteBufAllocator) msg;
+//        msgData.buffer();
+//        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息" + msgData.buffer());
     }
 
     @Override
     public void onServiceStatusConnectChanged(int statusCode) {
         switch (statusCode){
             case TCPListener.STATUS_CONNECT_SUCCESS:
-                sendHeartBeat();
+                startHeartBeat();
                 break;
             case TCPListener.STATUS_CONNECT_ERROR:
                 stopHeartBeat();
