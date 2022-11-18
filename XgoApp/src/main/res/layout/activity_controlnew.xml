@@ -12,8 +12,8 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/icon_back" />
 
         <LinearLayout
@@ -22,47 +22,16 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
-            <!--            <TextView
-                            android:id="@+id/control_normal_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/blue1b"
-                            android:paddingLeft="40dp"
-                            android:paddingTop="17dp"
-                            android:paddingRight="40dp"
-                            android:paddingBottom="17dp"
-                            android:text="普通模式"
-                            android:textColor="@color/gray_8b"
-                            android:textSize="21sp" />
-
-
-                        <View
-                            android:layout_width="23dp"
-                            android:layout_height="0dp" />
-
-                        <TextView
-                            android:id="@+id/control_advance_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/blue1b"
-                            android:paddingLeft="40dp"
-                            android:paddingTop="17dp"
-                            android:paddingRight="40dp"
-                            android:paddingBottom="17dp"
-                            android:text="高级模式"
-                            android:textColor="@color/gray_8b"
-                            android:textSize="21sp" />-->
-
             <TextView
                 android:id="@+id/control_motion_tv"
                 android:layout_width="280dp"
                 android:layout_height="92dp"
                 android:background="@color/blue1b"
+                android:gravity="center"
                 android:paddingLeft="40dp"
                 android:paddingTop="17dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="17dp"
-                android:gravity="center"
                 android:text="运动模式"
                 android:textColor="@color/gray_8b"
                 android:textSize="36sp" />
@@ -98,12 +67,21 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/controlnew_power"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="50dp"
+            android:layout_toStartOf="@id/controlnew_debug_img"
+            android:src="@android:drawable/picture_frame" />
+
+        <ImageView
             android:id="@+id/controlnew_debug_img"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginTop="23dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:src="@drawable/icon_set" />
     </RelativeLayout>
 
