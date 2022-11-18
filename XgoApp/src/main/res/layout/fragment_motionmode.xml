@@ -68,7 +68,7 @@
                 <WebView
                     android:id="@+id/motionmode_web"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:overScrollMode="never" />
             </FrameLayout>
 

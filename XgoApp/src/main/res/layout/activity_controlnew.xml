@@ -10,8 +10,8 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="43dp"
-            android:layout_height="43dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="12dp"
             android:src="@drawable/icon_back" />
@@ -55,16 +55,17 @@
 
             <TextView
                 android:id="@+id/control_motion_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="280dp"
+                android:layout_height="92dp"
                 android:background="@color/blue1b"
                 android:paddingLeft="40dp"
                 android:paddingTop="17dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="17dp"
+                android:gravity="center"
                 android:text="运动模式"
                 android:textColor="@color/gray_8b"
-                android:textSize="21sp" />
+                android:textSize="36sp" />
 
             <View
                 android:layout_width="23dp"
@@ -72,16 +73,13 @@
 
             <TextView
                 android:id="@+id/control_singleg_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="280dp"
+                android:layout_height="92dp"
                 android:background="@color/blue1b"
-                android:paddingLeft="40dp"
-                android:paddingTop="17dp"
-                android:paddingRight="40dp"
-                android:paddingBottom="17dp"
+                android:gravity="center"
                 android:text="单腿模式"
                 android:textColor="@color/gray_8b"
-                android:textSize="21sp" />
+                android:textSize="36sp" />
 
             <View
                 android:layout_width="23dp"
@@ -89,23 +87,20 @@
 
             <TextView
                 android:id="@+id/control_xyz_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="280dp"
+                android:layout_height="92dp"
                 android:background="@color/blue1b"
-                android:paddingLeft="40dp"
-                android:paddingTop="17dp"
-                android:paddingRight="40dp"
-                android:paddingBottom="17dp"
+                android:gravity="center"
                 android:text="XYZ轴"
                 android:textColor="@color/gray_8b"
-                android:textSize="21sp" />
+                android:textSize="36sp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/controlnew_debug_img"
-            android:layout_width="43dp"
-            android:layout_height="43dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginEnd="50dp"
             android:layout_marginTop="23dp"
             android:layout_alignParentRight="true"
