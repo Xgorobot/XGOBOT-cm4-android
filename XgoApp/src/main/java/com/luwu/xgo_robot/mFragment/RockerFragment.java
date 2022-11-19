@@ -106,7 +106,7 @@ public class RockerFragment extends Fragment {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
+//                DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
                 seekBar.updateProgress(progressInit);
                 textHeight.setText(String.valueOf(progressInit));
             }
@@ -120,14 +120,14 @@ public class RockerFragment extends Fragment {
             public void actionUp() {
 //                flagRockLoop=false;
                 if (ControlActivity.flagRockModeBtn == 0) {//全向移动
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVx, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.speedVyaw, (byte) 0x80});
                 } else if (ControlActivity.flagRockModeBtn == 1) {//xyz转动
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyPitch, (byte) 0x80});
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyPitch, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyRoll, (byte) 0x80});
                 } else if (ControlActivity.flagRockModeBtn == 2) {//xyz平动
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyX, (byte) 0x80});
-                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyY, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyX, (byte) 0x80});
+//                    DataHelper.addMessage(new byte[]{XGORAM_ADDR.bodyY, (byte) 0x80});
                 }
                 Message msg = new Message();
                 msg.what = 1;

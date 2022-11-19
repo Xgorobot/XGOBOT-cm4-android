@@ -41,7 +41,7 @@ public class SettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        updateLocale();
+//        updateLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         //RadioButton
@@ -78,7 +78,7 @@ public class SettingActivity extends AppCompatActivity {
 
     private void test(){
         SocketManager socketManager = SocketManager.getInstance();
-        socketManager.connect("192.168.31.82",9998);
+        socketManager.connect("192.168.31.180",9998);
 
     }
 
@@ -185,7 +185,7 @@ public class SettingActivity extends AppCompatActivity {
         settingBtnPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(localeLanguage){
+                switch (localeLanguage) {
                     case "zh":
                         mToast.show(SettingActivity.this, "功能暂未开放");
                         break;
@@ -200,7 +200,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(XRadioGroup group, int checkedId) {
                 SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
                 SharedPreferences.Editor edit = info.edit();
-                setUncheckedColor(0);
+//                setUncheckedColor(0);
                 switch (checkedId) {
                     case R.id.settingRadioMachine:
                         edit.putString("setting_mode", "机械");
@@ -247,7 +247,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
                 SharedPreferences.Editor edit = info.edit();
-                setUncheckedColor(2);
+//                setUncheckedColor(2);
                 switch (checkedId) {
                     case R.id.settingRadioDevelop:
                         edit.putString("setting_develop", "yes");
@@ -270,7 +270,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
                 SharedPreferences.Editor edit = info.edit();
-                setUncheckedColor(4);
+//                setUncheckedColor(4);
                 switch (checkedId) {
                     case R.id.settingRadioClose:
                         edit.putString("setting_close", "yes");
@@ -293,7 +293,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
                 SharedPreferences.Editor edit = info.edit();
-                setUncheckedColor(5);
+//                setUncheckedColor(5);
                 switch (checkedId) {
                     case R.id.settingLanWithSystem:
                         edit.putString("setting_language", "auto");
@@ -311,84 +311,9 @@ public class SettingActivity extends AppCompatActivity {
                         settingLanEnglish.setTextColor(getResources().getColor(R.color.white));
                         break;
                 }
-                updateLocale();
+//                updateLocale();
             }
         });
-
-//        hexBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (MainActivity.getMsgListState() == -1){
-//                    switch(localeLanguage){
-//                        case "zh":
-//                            mToast.show(SettingActivity.this, "蓝牙连接出错");
-//                            break;
-//                        default:
-//                            mToast.show(SettingActivity.this, "Bluetooth connect false");
-//                    }
-//                } else {
-//                    MessageThread messageThread = new MessageThread();
-//                    if ("zh".equals(localeLanguage)) {
-//                        progressDialog = ProgressDialog.show(SettingActivity.this,
-//                                "固件传输中...",
-//                                "请勿操作...",
-//                                true);//显示加载框
-//                        messageThread.start();
-//                    } else {
-//                        progressDialog = ProgressDialog.show(SettingActivity.this,
-//                                "Updating...",
-//                                "wait a minute...",
-//                                true);//显示加载框
-//                        messageThread.start();
-//                    }
-//                }
-//            }
-//
-//
-//        });
-    }
-
-    private class MessageThread extends Thread{
-        public MessageThread() {
-
-        }
-
-        @Override
-        public void run() {
-            updateHex();
-        }
-    }
-    private void updateHex(){
-        while(true){
-            if (DataHelper.getMsgListState() == 0){
-                DataHelper.addMessage(new byte[]{0x05, 0x01});
-                try {
-                    Thread.sleep(10);
-                    DataHelper.MsgThreadStop();
-                    Thread.sleep(5000);
-                    //System.out.println("no");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    InputStream inputStream = getResources().openRawResource(R.raw.xgomini);
-                    byte[] data = new byte[20];
-                    int n = -1;
-                    int i = -1;
-                    while ((n = inputStream.read(data,0,20)) != -1) {
-                        System.out.println(String.valueOf(i++));
-                        DataHelper.sendHugeMessage(data);
-                    }
-                    inputStream.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-                DataHelper.MsgThreadWork();
-                progressDialog.dismiss();
-                break;
-            }
-
-        }
     }
 
     private void setUncheckedColor(int i) {
@@ -416,6 +341,7 @@ public class SettingActivity extends AppCompatActivity {
                 break;
         }
     }
+
     //更新语言设置
     private void updateLocale(){
         SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
