@@ -4,7 +4,10 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.ThreadUtils;
+import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.socket.SocketManager;
+import com.luwu.xgo_robot.utils.ThreadUtil;
 
 import java.lang.ref.WeakReference;
 
@@ -18,14 +21,18 @@ public class RobotFunction {
     public static void setSpeed(int speed){
         byte[] datas = new byte[]{(byte) speed, 0x00};
         byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BFPL,datas);
+        String testStr = DataHelper.bytesToHex(sendData);
+
         SocketManager.getInstance().write(sendData);
     }
 
     //方向：0=停止，1=向前，2=向后，3=向左，4=向右，5=左旋，6=右旋
     public static void btnControl(int direction){
-        byte[] datas = new byte[]{(byte) direction, 0x00};
-        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_AJKZ,datas);
-        SocketManager.getInstance().write(sendData);
+        ThreadUtil.runIO(() -> {
+            byte[] datas = new byte[]{(byte) direction, 0x00};
+            byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_AJKZ,datas);
+            SocketManager.getInstance().write(sendData);
+        });
     }
 
     public static String getWebUrl(String cameraUrl){

@@ -1,8 +1,10 @@
 package com.luwu.xgo_robot.data;
 
+import android.annotation.SuppressLint;
+
 public class DataHelper {
-    static final byte START = 0x24;//$的ackii码
-    static final byte END = 0x23;//#的ackii码
+    private static final byte START = 0x24;//$的ackii码
+    private static final byte END = 0x23;//#的ackii码
 
     public static void addMessage(byte[] bytes){
         //没个卵用的脏代码
@@ -22,12 +24,12 @@ public class DataHelper {
         if (message.length < 7){
             return null;
         }
-        if (message[0] != START){
-            return null;
-        }
-        if (message[message.length-1] != END){
-            return null;
-        }
+//        if (message[0] != START){
+//            return null;
+//        }
+//        if (message[message.length-1] != END){
+//            return null;
+//        }
         byte[] datas = new byte[2];
         System.arraycopy(message,5,datas,0,2);
         int dataLength = datas[1];
@@ -39,7 +41,7 @@ public class DataHelper {
     }
 
     public static byte[] getPowerBytes(){
-        return getSendBytes((byte) 0x01,(byte)0x02, new byte[]{0x01, 0x00});
+        return getSendBytes(RobotConstants.TYPE_DEFAULT,(byte)0x02, new byte[]{0x01, 0x00});
     }
 
     /**
@@ -50,32 +52,38 @@ public class DataHelper {
      * @return 返回完整可直接发送的byte[]包
      */
     public static byte[] getSendBytes(byte id, byte func, byte[] data) {
-        byte[] lengthArr = hexStringToByteArray(Integer.toHexString(data.length + 2));
-        byte length = lengthArr[0];
+        //此弱智解析流程 大体是 byte 转 HEXString 再取byte 算 校验位 再加上包头和包尾
+        byte length = (byte) (data.length * 2 + 2);
 
-        byte[] versionbytes = {0x01, 0x02};
+        byte[] bytes = new byte[data.length + 3];//除校验位和包头包尾以外的 byte组
+        bytes[0] = id;
+        bytes[1] = func;
+        bytes[2] = length;
+        System.arraycopy(data,0,bytes,3,data.length);
 
-        byte add = (byte) (0xFF + length);
-        for (byte datum : data) {
+        String resultString = bytesToHex(bytes);
+        byte[] askiiBytes = resultString.getBytes();//转hexString后的askii数组
+
+        byte add = 0x00;
+        for (byte datum : askiiBytes) {
             add = (byte) (add + datum);
         }
 
-        byte parity = add;
+        byte[] resultByte = new byte[askiiBytes.length + 3];
+        resultByte[0] = START;
+        System.arraycopy(askiiBytes,0,resultByte,1,askiiBytes.length);
+        resultByte[resultByte.length-2] = add;
+        resultByte[resultByte.length-1] = END;
 
-        byte[] bytes = new byte[data.length + 10];
-        bytes[0] = START;
-        System.arraycopy(versionbytes,0,bytes,1,versionbytes.length);
-        bytes[3] = func;
-        bytes[4] = length;
-        System.arraycopy(data,0,bytes,5,data.length);
-        bytes[bytes.length-2] = parity;
-
-        bytes[bytes.length - 1] = END;
-        return bytes;
+        return resultByte;
     }
 
-
+    @SuppressLint("DefaultLocale")
     public static byte[] hexStringToByteArray(String s) {
+        if (s.length() % 2 == 1){
+            int len = s.length()+1;
+            s = addZeroForNum(s,len);
+        }
         int len = s.length();
         byte[] data = new byte[len / 2];
         for (int i = 0; i < len; i += 2) {
@@ -96,5 +104,17 @@ public class DataHelper {
         }
         return new String(hexChars);
     }
-
+    public static String addZeroForNum(String str, int strLength) {
+        int strLen = str.length();
+        if (strLen < strLength) {
+            while (strLen < strLength) {
+                StringBuffer sb = new StringBuffer();
+                sb.append("0").append(str);// 左补0
+                // sb.append(str).append("0");//右补0
+                str = sb.toString();
+                strLen = str.length();
+            }
+        }
+        return str;
+    }
 }
