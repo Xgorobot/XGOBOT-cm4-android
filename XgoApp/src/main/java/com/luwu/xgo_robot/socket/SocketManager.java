@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.luwu.xgo_robot.utils.ThreadUtil;
+
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -96,15 +98,17 @@ public class SocketManager implements TCPListener {
     }
 
     public void write(byte[] bytes) {
-        //将指令放置进特征中
-        if (tcpSocket != null && tcpSocket.isConnected()){
-            tcpSocket.sendMsgToServer(bytes, new ChannelFutureListener() {
-                @Override
-                public void operationComplete(ChannelFuture future) throws Exception {
+        ThreadUtil.runIO(() -> {
+            //将指令放置进特征中
+            if (tcpSocket != null && tcpSocket.isConnected()){
+                tcpSocket.sendMsgToServer(bytes, new ChannelFutureListener() {
+                    @Override
+                    public void operationComplete(ChannelFuture future) throws Exception {
 
-                }
-            });
-        }
+                    }
+                });
+            }
+        });
     }
 
     public void write(String datas) {
