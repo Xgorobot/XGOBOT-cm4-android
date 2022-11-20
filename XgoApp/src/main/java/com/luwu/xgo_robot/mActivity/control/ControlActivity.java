@@ -58,7 +58,7 @@ public class ControlActivity extends AppCompatActivity {
         });
 
 
-        FragmentUtils.showHide(singlegFragment);
+        FragmentUtils.showHide(motionFragment);
        /* mNormal_tv = findViewById(R.id.control_normal_tv);
         mNormal_tv.setOnClickListener(v -> {
             FragmentUtils.hideAllShowFragment(normalFramgent);

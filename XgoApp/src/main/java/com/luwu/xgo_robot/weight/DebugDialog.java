@@ -8,12 +8,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.flyco.tablayout.SegmentTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.luwu.xgo_robot.R;
 
 /**
@@ -23,9 +26,11 @@ import com.luwu.xgo_robot.R;
  */
 public class DebugDialog extends Dialog {
     private Context mContext;
-    private TextView mLow_tv,mNormal_tv,mHeight_tv;
+    private TextView mLow_tv, mNormal_tv, mHeight_tv;
+    private SegmentTabLayout mlayout;
+    private RelativeLayout mMain_layout;
     public DebugDialog(@NonNull Context context) {
-        super(context,R.style.ios_style_dialog);
+        super(context, R.style.ios_style_dialog);
         this.mContext = context;
     }
 
@@ -38,11 +43,7 @@ public class DebugDialog extends Dialog {
         DisplayMetrics d = mContext.getResources().getDisplayMetrics(); // 获取屏幕宽、高用
         lp.width = d.widthPixels;
         lp.height = d.heightPixels;
-        lp.gravity =  Gravity.TOP | Gravity.END;
-        lp.y = 50;
-        lp.x = 100;
         dialogWindow.setAttributes(lp);
-        
         initView();
         initListener();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -50,25 +51,40 @@ public class DebugDialog extends Dialog {
     }
 
     private void initListener() {
-        mLow_tv.setOnClickListener(v -> {
-            SPUtils.getInstance().put("speed",60);
-            ToastUtils.showShort("设置成功");
+        mMain_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
         });
+        mlayout.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int i) {
+                switch (i){
+                    case 0:
+                        SPUtils.getInstance().put("speed",60);
+                        break;
+                    case 1:
+                        SPUtils.getInstance().put("speed",80);
+                        break;
+                    case 2:
+                        SPUtils.getInstance().put("speed",100);
+                        break;
+                }
+            }
 
-        mNormal_tv.setOnClickListener(v -> {
-            SPUtils.getInstance().put("speed",80);
-            ToastUtils.showShort("设置成功");
-        });
+            @Override
+            public void onTabReselect(int i) {
 
-        mHeight_tv.setOnClickListener(v -> {
-            SPUtils.getInstance().put("speed",100);
-            ToastUtils.showShort("设置成功");
+            }
         });
     }
 
+    String[] titles = {"低速", "中速", "高速"};
+
     private void initView() {
-        mLow_tv = findViewById(R.id.low_tv);
-        mNormal_tv = findViewById(R.id.normal_tv);
-        mHeight_tv = findViewById(R.id.height_tv);
+        mlayout = findViewById(R.id.dialog_tablayout);
+        mMain_layout = findViewById(R.id.debug_main);
+        mlayout.setTabData(titles);
     }
 }

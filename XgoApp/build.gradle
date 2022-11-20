@@ -60,6 +60,7 @@ dependencies {
     implementation 'androidx.test.ext:junit:1.1.3'
     testImplementation 'junit:junit:4.12'
 
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 }
 
 //allprojects {
