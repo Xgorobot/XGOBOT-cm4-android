@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.RobotFunction;
 import com.luwu.xgo_robot.mActivity.MainActivity;
 import com.luwu.xgo_robot.mActivity.SettingActivity;
 import com.luwu.xgo_robot.mActivity.aimode.AiModeActivity;

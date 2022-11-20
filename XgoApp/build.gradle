@@ -57,6 +57,8 @@ dependencies {
     //util工具包
     implementation 'com.blankj:utilcode:1.30.7'
     implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'junit:junit:4.12'
 
 }
 
