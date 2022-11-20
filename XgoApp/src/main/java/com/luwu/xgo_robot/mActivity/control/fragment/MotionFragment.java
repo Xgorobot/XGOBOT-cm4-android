@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.luwu.xgo_robot.R;
+import com.luwu.xgo_robot.data.RobotConstants;
 import com.luwu.xgo_robot.data.RobotFunction;
 import com.luwu.xgo_robot.mView.ButtonView;
 
@@ -54,23 +55,23 @@ public class MotionFragment extends Fragment {
             public void actionDown(int num) {
                 switch (num) {
                     case UPPRESS:
-                        RobotFunction.forward(SPUtils.getInstance().getInt("speed"));
+                        RobotFunction.btnControl(1);
                         break;
                     case DOWNPRESS:
-                        RobotFunction.backward(-SPUtils.getInstance().getInt("speed"));
+                        RobotFunction.btnControl(2);
                         break;
                     case LEFTPRESS:
-                        RobotFunction.left(SPUtils.getInstance().getInt("speed"));
+                        RobotFunction.btnControl(3);
                         break;
                     case RIGHTPRESS:
-                        RobotFunction.right(-SPUtils.getInstance().getInt("speed"));
+                        RobotFunction.btnControl(4);
                         break;
                 }
             }
 
             @Override
             public void actionUp(int num) {
-
+                RobotFunction.btnControl(0);
             }
         });
     }

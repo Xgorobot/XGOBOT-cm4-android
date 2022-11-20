@@ -97,16 +97,19 @@ public class SocketManager implements TCPListener {
 
     public void write(byte[] bytes) {
         //将指令放置进特征中
-        tcpSocket.sendMsgToServer(bytes, new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture future) throws Exception {
+        if (tcpSocket != null && tcpSocket.isConnected()){
+            tcpSocket.sendMsgToServer(bytes, new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture future) throws Exception {
 
-            }
-        });
+                }
+            });
+        }
     }
 
     public void write(String datas) {
         //将指令放置进特征中
+        if (tcpSocket != null && tcpSocket.isConnected())
         tcpSocket.sendMsgToServer(datas, new ChannelFutureListener() {
             @Override
             public void operationComplete(ChannelFuture future) throws Exception {
