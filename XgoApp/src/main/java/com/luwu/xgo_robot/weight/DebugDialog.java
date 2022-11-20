@@ -51,12 +51,7 @@ public class DebugDialog extends Dialog {
     }
 
     private void initListener() {
-        mMain_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
+        mMain_layout.setOnClickListener(v -> dismiss());
         mlayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int i) {

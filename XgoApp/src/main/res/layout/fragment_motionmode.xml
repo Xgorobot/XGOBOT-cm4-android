@@ -19,7 +19,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="120dp"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -57,7 +57,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="120dp"
             android:orientation="vertical">
 
             <FrameLayout
@@ -68,7 +68,7 @@
                 <WebView
                     android:id="@+id/motionmode_web"
                     android:layout_width="wrap_content"
-                    android:layout_height="300dp"
+                    android:layout_height="match_parent"
                     android:overScrollMode="never" />
             </FrameLayout>
 
@@ -89,7 +89,12 @@
                     android:paddingBottom="12dp"
                     android:text="WALK"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:background="@drawable/motion_walk_bg"/>
+
+                <View
+                    android:layout_width="36dp"
+                    android:layout_height="0dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -102,9 +107,7 @@
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
-                <View
-                    android:layout_width="18dp"
-                    android:layout_height="0dp" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -115,7 +118,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="55dp"
             android:layout_marginRight="27dp"
             android:layout_weight="1"
             android:background="@drawable/shape_blue_6"
