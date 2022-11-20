@@ -1,126 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="382dp"
-    android:layout_height="200dp"
-    android:background="@drawable/shape_blue_6"
-    android:paddingBottom="24dp"
-
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/debug_main"
+    >
+    <LinearLayout
+        android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginRight="32dp">
+        android:background="@drawable/shape_blue_6"
+        android:paddingBottom="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="45dp"
+        android:orientation="vertical">
 
-
-        <Switch
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:checked="false"
-            android:switchMinWidth="54dp"
-            android:thumb="@drawable/switch_custom_thumb_selector"
-            android:track="@drawable/switch_custom_track_selector" />
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="32dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="陀螺仪"
-            android:textColor="@color/gray_8b"
-            android:textSize="17sp" />
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="25dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/low_tv"
+            <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="低速"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:layout_alignParentRight="true"
+                android:checked="false"
+                android:maxHeight="15dp"
+                android:showText="false"
+                android:switchMinWidth="54dp"
+                android:thumb="@drawable/switch_custom_thumb_selector"
+                android:track="@drawable/switch_custom_track_selector" />
 
-            <TextView
-                android:id="@+id/normal_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="普通"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/height_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="高速"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="整机速度"
-            android:textColor="@color/gray_8b"
-            android:textSize="17sp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="25dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="低"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:layout_centerVertical="true"
+                android:text="陀螺仪"
+                android:textColor="@color/gray_8b"
+                android:textSize="15sp" />
+        </RelativeLayout>
 
-            <SeekBar
-                style="@style/Widget.AppCompat.SeekBar"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp">
+
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/low_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="低速"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/normal_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="普通"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/height_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高速"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>-->
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/dialog_tablayout"
                 android:layout_width="211dp"
-                android:layout_height="wrap_content"
-                android:progress="0" />
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@color/blue1b"
+                app:tl_indicator_color="#3689F9"
+                app:tl_divider_color="@color/gray_46"
+                app:tl_textUnselectColor="@color/gray_8b" />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="高"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-        </LinearLayout>
+                android:layout_centerVertical="true"
+                android:text="整机速度"
+                android:textColor="@color/gray_8b"
+                android:textSize="15sp" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="整机高度"
-            android:textColor="@color/gray_8b"
-            android:textSize="17sp" />
-    </RelativeLayout>
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp">
 
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="低"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <SeekBar
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:minHeight="7dp"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
+                    android:thumb="@drawable/seekbar_white_shape"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="整机高度"
+                android:textColor="@color/gray_8b"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

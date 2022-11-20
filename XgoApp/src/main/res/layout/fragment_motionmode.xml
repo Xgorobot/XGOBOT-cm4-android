@@ -160,7 +160,7 @@
                     android:maxHeight="7dp"
                     android:min="30"
                     android:minHeight="7dp"
-                    android:progress="0"
+                    android:progress="35"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
@@ -207,7 +207,7 @@
                     android:maxHeight="7dp"
                     android:min="30"
                     android:minHeight="7dp"
-                    android:progress="0"
+                    android:progress="38"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
@@ -254,7 +254,7 @@
                     android:maxHeight="7dp"
                     android:min="30"
                     android:minHeight="7dp"
-                    android:progress="0"
+                    android:progress="40"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
