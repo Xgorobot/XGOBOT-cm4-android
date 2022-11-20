@@ -22,18 +22,18 @@
                 android:layout_marginTop="140dp"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_marginLeft="13dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:background="@drawable/motionmode_upleft_selector" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="13dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:background="@drawable/motionmode_upright_selector" />
             </RelativeLayout>
 
             <com.luwu.xgo_robot.mView.ButtonView
@@ -41,7 +41,7 @@
                 android:layout_width="409dp"
                 android:layout_height="409dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="15dp"
                 app:downPress="@drawable/icon_down_progress"
                 app:leftPress="@drawable/icon_left_progress"
                 app:noPress="@drawable/icon_default_progress"
@@ -51,7 +51,7 @@
         </LinearLayout>
 
         <View
-            android:layout_width="34dp"
+            android:layout_width="69dp"
             android:layout_height="0dp" />
 
         <LinearLayout
@@ -61,7 +61,7 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:layout_width="720dp"
+                android:layout_width="690dp"
                 android:layout_height="372dp"
                 android:layout_gravity="center_horizontal">
 
@@ -81,8 +81,8 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:paddingStart="41dp"
                     android:paddingTop="12dp"
                     android:paddingEnd="41dp"
@@ -109,7 +109,7 @@
         </LinearLayout>
 
         <View
-            android:layout_width="53dp"
+            android:layout_width="27dp"
             android:layout_height="0dp" />
 
         <LinearLayout
@@ -120,7 +120,7 @@
             android:layout_weight="1"
             android:background="@drawable/shape_blue_6"
             android:orientation="vertical"
-            android:paddingTop="40dp">
+            android:paddingTop="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +167,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,7 +214,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,7 +261,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="33dp" />
+                android:layout_height="30dp" />
 
         </LinearLayout>
 

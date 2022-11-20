@@ -33,20 +33,20 @@ public class XgoMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainnew);
 
-        mSetImg = findViewById(R.id.main_set_img);
+      /*  mSetImg = findViewById(R.id.main_set_img);
         mSetImg.setOnClickListener(v -> {
             //首页设置img
-        });
+        });*/
 
         mShow_layout = findViewById(R.id.main_show_layout);
         mShow_layout.setOnClickListener(v -> {
             //跳转表演页面
         });
-        mSettingBtn = findViewById(R.id.btn_setting);
+        /*mSettingBtn = findViewById(R.id.btn_setting);
         mSettingBtn.setOnClickListener(v -> {
             Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
             startActivity(intent);
-        });
+        });*/
         mContract_layout = findViewById(R.id.main_contract_layout);
         mContract_layout.setOnClickListener(v -> {
             //跳转控制页面
