@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 31
     defaultConfig {
-        applicationId "com.luwu.xgo_robot"
+        applicationId "com.luwu.xgobot"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 15

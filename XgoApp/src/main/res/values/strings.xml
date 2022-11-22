@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">XGO</string>
+    <string name="app_name" translatable="false">XGOBOT</string>
     <!--    出现在file中的四个文件 分别为动作组和动作的工作区的保存文件-->
     <string name="wholeWorkspace" translatable="false">whole_robot_workspace.xml</string>
     <string name="wholeWorkspaceTemp" translatable="false">whole_robot_workspace_temp.xml</string>
