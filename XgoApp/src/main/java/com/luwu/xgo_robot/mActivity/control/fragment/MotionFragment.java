@@ -1,5 +1,6 @@
 package com.luwu.xgo_robot.mActivity.control.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,6 +43,7 @@ public class MotionFragment extends Fragment {
 
     private ButtonView btnView;
     private WebView mWeb;
+    private TextView mWalk_tv, mTrot_tv;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -74,12 +77,27 @@ public class MotionFragment extends Fragment {
                 RobotFunction.btnControl(0);
             }
         });
+        mWalk_tv.setOnClickListener(v -> {
+            mWalk_tv.setTextColor(this.getResources().getColor(R.color.white));
+            mWalk_tv.setBackgroundResource(R.drawable.bg_text_blue);
+            mTrot_tv.setTextColor(Color.BLACK);
+            mTrot_tv.setBackgroundResource(R.drawable.bg_text_white);
+
+        });
+        mTrot_tv.setOnClickListener(v -> {
+            mWalk_tv.setTextColor(Color.BLACK);
+            mWalk_tv.setBackgroundResource(R.drawable.bg_text_white);
+            mTrot_tv.setTextColor(this.getResources().getColor(R.color.white));
+            mTrot_tv.setBackgroundResource(R.drawable.bg_text_blue);
+        });
     }
 
     private void initView(View view) {
         btnView = view.findViewById(R.id.motionmode_btn_view);
         mWeb = view.findViewById(R.id.motionmode_web);
         WebSettingsConfiguration(mWeb);
+        mWalk_tv = view.findViewById(R.id.motionmode_walk_tv);
+        mTrot_tv = view.findViewById(R.id.motionmode_trot_tv);
     }
 
     public void WebSettingsConfiguration(WebView webView) {

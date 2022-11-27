@@ -81,6 +81,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/motionmode_walk_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -94,11 +95,13 @@
                     android:layout_height="0dp" />
 
                 <TextView
+                    android:id="@+id/motionmode_trot_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="TROT"
                     android:textSize="16sp"
+                    android:textColor="@android:color/black"
                     android:background="@drawable/bg_text_white"/>
             </LinearLayout>
         </LinearLayout>
