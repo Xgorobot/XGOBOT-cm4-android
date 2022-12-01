@@ -6,6 +6,8 @@ import android.util.Log;
 
 //import com.luwu.xgo_robot.mMothed.TypeUtils;
 
+import com.luwu.xgo_robot.utils.ByteUtile;
+
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
@@ -202,6 +204,7 @@ public class TCPClient {
 
     //发送消息到服务端。 Bootstrap设置的时候我没有设置解码，这边才转的
     public boolean sendMsgToServer(String data, ChannelFutureListener listener) {
+        Log.d(TAG, "sendStringMsgToServer: " + data);
         boolean flag = channel != null && isConnect;
         if (flag) {
             ByteBuf byteBuf = Unpooled.copiedBuffer(data , //2
@@ -213,8 +216,10 @@ public class TCPClient {
 
     //发送消息到服务端。 Bootstrap设置的时候我没有设置解码，这边才转的
     public boolean sendMsgToServer(byte[] data, ChannelFutureListener listener) {
+        Log.d(TAG, "sendBytesMsgToServer: " + new String(data));
         boolean flag = channel != null && isConnect;
         if (flag) {
+            Log.d(TAG, "writeAndFlush: " + new String(data));
             channel.writeAndFlush(data).addListener(listener);
         }
         return flag;

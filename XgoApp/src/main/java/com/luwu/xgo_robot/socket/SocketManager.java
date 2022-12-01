@@ -6,8 +6,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.luwu.xgo_robot.data.DataHelper;
+import com.luwu.xgo_robot.data.RobotConstants;
+import com.luwu.xgo_robot.utils.ByteUtile;
 import com.luwu.xgo_robot.utils.ThreadUtil;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -17,7 +21,7 @@ import io.netty.channel.ChannelFutureListener;
  * given Bluetooth LE device.
  */
 public class SocketManager implements TCPListener {
-    private final static String TAG = SocketManager.class.getSimpleName();
+    private static final String TAG = "SocketManager";
 
     private TCPClient tcpSocket;
     private String mRobotAddress;
@@ -158,7 +162,10 @@ public class SocketManager implements TCPListener {
         if (!tcpSocket.isConnected()){
             return;
         }
-        tcpSocket.sendMsgToServer("heartBeat",channelFutureListener);
+        byte[] datas = new byte[]{0x01, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.GET_POWER,datas);
+
+        tcpSocket.sendMsgToServer(sendData,channelFutureListener);
     }
 
     ChannelFutureListener channelFutureListener = future -> {
@@ -167,9 +174,23 @@ public class SocketManager implements TCPListener {
 
     @Override
     public void onMessageResponse(Object msg) {
-//        UnpooledByteBufAllocator msgData = (UnpooledByteBufAllocator) msg;
-//        msgData.buffer();
-//        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息" + msgData.buffer());
+        ByteBuf buf = (ByteBuf) msg;
+        byte[] bytes = ((ByteBuf) msg).array();
+        byte[] clipBytes = new byte[0];
+        for (int i = 0;i<bytes.length-1;i++){
+            if (bytes[i] == 0x23 && bytes[i+1] == 0x00){
+                clipBytes = new byte[i+1];
+                System.arraycopy(bytes,0,clipBytes,0,i+1);
+                break;
+            }
+        }
+        String bytesReceived = new String(clipBytes);
+        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:bytes     :" + bytesReceived);
+        String asciiString = ByteUtile.byteArrayToHex(clipBytes);
+        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:ASKII     :" + asciiString);
+        byte[] hexBytes = asciiString.getBytes();
+        String hexString = ByteUtile.byteArrayToHex(hexBytes);
+        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:HEXSTING  :" + hexString);
     }
 
     @Override

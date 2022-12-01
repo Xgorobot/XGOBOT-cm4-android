@@ -73,14 +73,10 @@ public class SettingActivity extends AppCompatActivity {
 
         setSelected();//设置监听之前调用
         setListener();//监听事件
-        test();
-    }
-
-    private void test(){
-        SocketManager socketManager = SocketManager.getInstance();
-        socketManager.connect("192.168.31.180",9998);
 
     }
+
+
 
     @Override
     protected void onResume() {

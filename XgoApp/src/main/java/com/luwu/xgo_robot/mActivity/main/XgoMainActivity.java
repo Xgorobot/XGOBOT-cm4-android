@@ -2,6 +2,7 @@ package com.luwu.xgo_robot.mActivity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import com.luwu.xgo_robot.mActivity.MainActivity;
 import com.luwu.xgo_robot.mActivity.SettingActivity;
 import com.luwu.xgo_robot.mActivity.aimode.AiModeActivity;
 import com.luwu.xgo_robot.mActivity.control.ControlActivity;
+import com.luwu.xgo_robot.socket.SocketManager;
 
 /**
  * <p>文件描述：<p>
@@ -25,6 +27,8 @@ import com.luwu.xgo_robot.mActivity.control.ControlActivity;
  * <p>创建时间：2022/9/04<p>
  */
 public class XgoMainActivity extends AppCompatActivity {
+    private static final String TAG = "XgoMainActivity";
+
     private ImageView mSetImg;
     private LinearLayout mShow_layout, mContract_layout, mAimode_layout;
     private ImageButton mSettingBtn;
@@ -60,5 +64,13 @@ public class XgoMainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AiModeActivity.class);
             startActivity(intent);
         });
+        test();
     }
+
+    private void test(){
+        Log.d(TAG, "test: ");
+        SocketManager socketManager = SocketManager.getInstance();
+        socketManager.connect("192.168.31.163",6000);
+    }
+
 }

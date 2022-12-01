@@ -8,7 +8,7 @@ public class RobotConstants {
     public static final byte TYPE_DEFAULT = 0x01;//默认类型
 
 
-    public static final byte GET_POWER = 0x02;
+    public static final byte GET_POWER = 0x02;//获取电量
 
     //遥控界面
     public static final byte RECEIVE_YKJML = 0x10;//遥控界面 仅回执？

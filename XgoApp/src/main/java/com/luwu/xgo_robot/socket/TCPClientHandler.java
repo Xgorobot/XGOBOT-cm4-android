@@ -2,6 +2,8 @@ package com.luwu.xgo_robot.socket;
 
 import android.util.Log;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
@@ -50,7 +52,7 @@ public class TCPClientHandler extends ChannelInboundHandlerAdapter {
     //接收消息的地方， 接口调用返回到activity了
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("客户端开始读取服务端过来的信息");
+        Log.d(TAG, "客户端开始读取服务端过来的信息: ");
         listener.onMessageResponse(msg);
     }
 

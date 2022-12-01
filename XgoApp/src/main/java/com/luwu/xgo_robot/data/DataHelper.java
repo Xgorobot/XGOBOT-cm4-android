@@ -1,8 +1,10 @@
 package com.luwu.xgo_robot.data;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 public class DataHelper {
+    private static final String TAG = "DataHelper";
     private static final byte START = 0x24;//$的ackii码
     private static final byte END = 0x23;//#的ackii码
 
@@ -55,24 +57,24 @@ public class DataHelper {
         //此弱智解析流程 大体是 byte 转 HEXString 再取byte 算 校验位 再加上包头和包尾
         byte length = (byte) (data.length * 2 + 2);
 
-        byte[] bytes = new byte[data.length + 3];//除校验位和包头包尾以外的 byte组
+        byte[] bytes = new byte[data.length + 4];//除校验位和包头包尾以外的 byte组
         bytes[0] = id;
         bytes[1] = func;
         bytes[2] = length;
         System.arraycopy(data,0,bytes,3,data.length);
 
+        byte add = 0x00;
+        for (byte datum : bytes) {
+            add = (byte) (add + datum);
+        }
+        bytes[bytes.length-1] = add;
+
         String resultString = bytesToHex(bytes);
         byte[] askiiBytes = resultString.getBytes();//转hexString后的askii数组
 
-        byte add = 0x00;
-        for (byte datum : askiiBytes) {
-            add = (byte) (add + datum);
-        }
-
-        byte[] resultByte = new byte[askiiBytes.length + 3];
+        byte[] resultByte = new byte[askiiBytes.length + 2];
         resultByte[0] = START;
         System.arraycopy(askiiBytes,0,resultByte,1,askiiBytes.length);
-        resultByte[resultByte.length-2] = add;
         resultByte[resultByte.length-1] = END;
 
         return resultByte;
@@ -93,7 +95,7 @@ public class DataHelper {
         return data;
     }
 
-    private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
+    private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
@@ -117,4 +119,5 @@ public class DataHelper {
         }
         return str;
     }
+
 }
