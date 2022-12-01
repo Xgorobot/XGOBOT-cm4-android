@@ -11,8 +11,9 @@ import com.luwu.xgo_robot.data.RobotConstants;
 import com.luwu.xgo_robot.utils.ByteUtile;
 import com.luwu.xgo_robot.utils.ThreadUtil;
 
+import java.lang.ref.WeakReference;
+
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 
@@ -42,6 +43,13 @@ public class SocketManager implements TCPListener {
             "socket.SOCKET_TCP_DATA";
 
     private static SocketManager instance;
+
+    WeakReference<SocketStateListener> listener;
+
+    public void setListener(SocketStateListener listener) {
+        this.listener = new WeakReference<>(listener);
+    }
+
 
     public static SocketManager getInstance() {
         if (instance == null) {
@@ -209,5 +217,13 @@ public class SocketManager implements TCPListener {
                 break;
         }
     }
+
+    @Override
+    public void onServiceStateMsgChanged(String msg) {
+        if (listener.get()!=null){
+            listener.get().onStateChange(msg);
+        }
+    }
+
 }
 

@@ -4,6 +4,7 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ThreadUtils;
 import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.socket.SocketManager;
@@ -33,8 +34,9 @@ public class RobotFunction {
 
     public static String getWebUrl(String cameraUrl){
 //        webviewReference = new WeakReference<>(webView);
-//        return "192.168.31.1/webcam";
-        return "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+        String hostIp = SPUtils.getInstance().getString("host");
+        int cameraPort = SPUtils.getInstance().getInt("cameraPort");
+        return hostIp + ":" + cameraPort;
     }
 
 }

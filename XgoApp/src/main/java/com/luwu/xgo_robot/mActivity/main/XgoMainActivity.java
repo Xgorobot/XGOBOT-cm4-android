@@ -16,6 +16,7 @@ import com.blankj.utilcode.util.ActivityUtils;
 import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.data.RobotFunction;
 import com.luwu.xgo_robot.mActivity.MainActivity;
+import com.luwu.xgo_robot.mActivity.NetSettingActivity;
 import com.luwu.xgo_robot.mActivity.SettingActivity;
 import com.luwu.xgo_robot.mActivity.aimode.AiModeActivity;
 import com.luwu.xgo_robot.mActivity.control.ControlActivity;
@@ -31,7 +32,7 @@ public class XgoMainActivity extends AppCompatActivity {
 
     private ImageView mSetImg;
     private LinearLayout mShow_layout, mContract_layout, mAimode_layout;
-    private ImageButton mSettingBtn;
+    private ImageView mSettingBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +53,11 @@ public class XgoMainActivity extends AppCompatActivity {
             Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
             startActivity(intent);
         });*/
+        mSettingBtn = findViewById(R.id.btn_setting);
+        mSettingBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(XgoMainActivity.this, NetSettingActivity.class);
+            startActivity(intent);
+        });
         mContract_layout = findViewById(R.id.main_contract_layout);
         mContract_layout.setOnClickListener(v -> {
             //跳转控制页面
@@ -64,13 +70,8 @@ public class XgoMainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AiModeActivity.class);
             startActivity(intent);
         });
-        test();
+//        test();
     }
 
-    private void test(){
-        Log.d(TAG, "test: ");
-        SocketManager socketManager = SocketManager.getInstance();
-        socketManager.connect("192.168.31.163",6000);
-    }
 
 }

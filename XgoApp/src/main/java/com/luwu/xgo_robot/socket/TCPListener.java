@@ -22,4 +22,6 @@ public interface TCPListener {
      * 当连接状态发生变化时调用
      */
     public void onServiceStatusConnectChanged(int statusCode);
+
+    public void onServiceStateMsgChanged(String msg);
 }
