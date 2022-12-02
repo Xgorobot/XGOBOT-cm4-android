@@ -77,9 +77,9 @@ public class SocketManager implements TCPListener {
     public boolean connect(final String address,final int port) {
         if (tcpSocket == null) {
             tcpSocket = new TCPClient();
-            tcpSocket.setConfig(address,port);
-            tcpSocket.setListener(this);
         }
+        tcpSocket.setConfig(address,port);
+        tcpSocket.setListener(this);
 
         // Previously connected device.  Try to reconnect.
         if (mRobotAddress != null
@@ -116,7 +116,7 @@ public class SocketManager implements TCPListener {
                 tcpSocket.sendMsgToServer(bytes, new ChannelFutureListener() {
                     @Override
                     public void operationComplete(ChannelFuture future) throws Exception {
-
+                        Log.d(TAG, "operationComplete: " + future);
                     }
                 });
             }
@@ -182,8 +182,12 @@ public class SocketManager implements TCPListener {
 
     @Override
     public void onMessageResponse(Object msg) {
-        ByteBuf buf = (ByteBuf) msg;
-        byte[] bytes = ((ByteBuf) msg).array();
+        if (! (msg instanceof String)){
+            Log.e(TAG, "onMessageResponse: 收到来自服务器的消息   格式错误");
+            return;
+        }
+
+        byte[] bytes = ((String) msg).getBytes();
         byte[] clipBytes = new byte[0];
         for (int i = 0;i<bytes.length-1;i++){
             if (bytes[i] == 0x23 && bytes[i+1] == 0x00){
@@ -193,12 +197,12 @@ public class SocketManager implements TCPListener {
             }
         }
         String bytesReceived = new String(clipBytes);
-        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:bytes     :" + bytesReceived);
+
         String asciiString = ByteUtile.byteArrayToHex(clipBytes);
-        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:ASKII     :" + asciiString);
+
         byte[] hexBytes = asciiString.getBytes();
         String hexString = ByteUtile.byteArrayToHex(hexBytes);
-        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:HEXSTING  :" + hexString);
+        Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:" + msg);
     }
 
     @Override

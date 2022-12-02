@@ -63,6 +63,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
     private void connect(String hostIp,int port){
         Log.d(TAG, "connect host: " + hostIp + "   port:" + port);
         SocketManager socketManager = SocketManager.getInstance();
+        socketManager.disconnect();
         socketManager.connect(hostIp,port);
     }
 

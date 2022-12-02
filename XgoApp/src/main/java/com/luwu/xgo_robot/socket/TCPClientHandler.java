@@ -25,12 +25,12 @@ public class TCPClientHandler extends ChannelInboundHandlerAdapter {
     //每次给服务器发送的东西， 让服务器知道我们在连接中哎
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-        if (evt instanceof IdleStateEvent) {
-            IdleStateEvent event = (IdleStateEvent) evt;
-            if (event.state() == IdleState.WRITER_IDLE) {
-                ctx.channel().writeAndFlush("Heartbeat" + System.getProperty("line.separator"));
-            }
-        }
+//        if (evt instanceof IdleStateEvent) {
+//            IdleStateEvent event = (IdleStateEvent) evt;
+//            if (event.state() == IdleState.WRITER_IDLE) {
+////                ctx.channel().writeAndFlush("Heartbeat" + System.getProperty("line.separator"));
+//            }
+//        }
     }
 
     /**

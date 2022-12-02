@@ -9,6 +9,7 @@ import android.util.Log;
 import com.luwu.xgo_robot.utils.ByteUtile;
 
 import java.io.FileInputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import io.netty.bootstrap.Bootstrap;
@@ -23,6 +24,10 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.codec.Delimiters;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
 /**
@@ -89,9 +94,10 @@ public class TCPClient {
                         .handler(new ChannelInitializer<SocketChannel>() { // 5
                             @Override
                             public void initChannel(SocketChannel ch) throws Exception {
-//                                ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));//服务端最后以"\n"作为结束标识
-//                                ch.pipeline().addLast(new StringEncoder(CharsetUtil.UTF_8));//解码
-//                                ch.pipeline().addLast(new StringDecoder(CharsetUtil.UTF_8));//解码
+//                                ch.pipeline().addLast("framer",
+//                                        new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));//服务端最后以"\n"作为结束标识
+                                ch.pipeline().addLast(new StringEncoder(CharsetUtil.US_ASCII));//解码
+                                ch.pipeline().addLast(new StringDecoder(CharsetUtil.US_ASCII));//解码
                                 ch.pipeline().addLast(new TCPClientHandler(listener));//需要的handlerAdapter
                             }
                         });
@@ -229,7 +235,7 @@ public class TCPClient {
             this.listener.onServiceStateMsgChanged("writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data));
 //            byte[] dataToSend = new byte[1024];
 //            System.arraycopy(data,0,dataToSend,0,data.length);
-            channel.writeAndFlush(data).addListener(listener);
+            channel.writeAndFlush(new String(data)).addListener(listener);
         }
         return flag;
     }

@@ -18,8 +18,8 @@
         android:ems="10"
         android:textSize="40sp"
         android:inputType="textPersonName"
-        android:hint="192.168.31.168"
-        android:text="192.168.31.168" />
+        android:hint="192.168.31.163"
+        android:text="192.168.31.163" />
 
     <TextView
         android:id="@+id/textView2"
