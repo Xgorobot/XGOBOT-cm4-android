@@ -56,7 +56,8 @@ public class DataHelper {
      * @return 返回完整可直接发送的byte[]包
      */
     public static byte[] getSendBytes(byte id, byte func, byte[] data) {
-        //此弱智解析流程 大体是 byte 转 HEXString 再取byte 算 校验位 再加上包头和包尾
+        //此解析流程 大体是 byte 转 HEXString 再取byte 算 校验位 再加上包头和包尾
+        //不是我定的，微笑脸
         byte length = (byte) (data.length * 2 + 2);
 
         byte[] bytes = new byte[data.length + 4];//除校验位和包头包尾以外的 byte组
@@ -122,4 +123,23 @@ public class DataHelper {
         return str;
     }
 
+
+    public static void resloveRobotCallback(String request,RobotApi robot){
+        if (robot == null)
+            return;
+        if (!request.startsWith("$") || !request.endsWith("#"))
+            return;
+        if (request.length()<13)
+            return;
+        char[] requestDatas = request.toCharArray();
+        int length = Integer.parseInt(String.valueOf(requestDatas[5]) + requestDatas[6]);
+        String func = String.valueOf(requestDatas[3]) + requestDatas[4];
+        byte funcByte = hexStringToByteArray(func)[0];
+        switch (funcByte){
+            case RobotConstants.GET_POWER:
+                robot.onPowerCallback(100);
+                break;
+            case RobotConstants.SET_AJKZ:
+        }
+    }
 }

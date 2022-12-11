@@ -4,6 +4,7 @@ import androidx.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 
+//保存机器人标签集
 public class RobotConstants {
     public static final byte TYPE_DEFAULT = 0x01;//默认类型
 
