@@ -1,16 +1,7 @@
 package com.luwu.xgo_robot.data;
 
-import android.util.Log;
-import android.webkit.WebView;
-import android.widget.Toast;
-
 import com.blankj.utilcode.util.SPUtils;
-import com.blankj.utilcode.util.ThreadUtils;
-import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.socket.SocketManager;
-import com.luwu.xgo_robot.utils.ThreadUtil;
-
-import java.lang.ref.WeakReference;
 
 /**
  * 机器人指令定义
@@ -32,11 +23,61 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
-    public static String getWebUrl(String cameraUrl){
+    public static String getWebUrl(){
 //        webviewReference = new WeakReference<>(webView);
         String hostIp = SPUtils.getInstance().getString("host");
         int cameraPort = SPUtils.getInstance().getInt("cameraPort");
         return hostIp + ":" + cameraPort;
     }
 
+
+    //陀螺仪开关
+    public static void autoBalance(boolean enable){
+        byte[] datas = new byte[]{(byte) (enable?1:0), 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_ZWDMS,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+    //舵机设置
+    //腿ID：=1左前腿，=2右前腿，=3右后腿，4=左后腿。
+    //舵机限制：上[-31, 31]，中[-66, 93], 下[-73, 57]
+    public static void servoControl(int legID,int up,int middle,int down){
+        byte[] datas = new byte[]{(byte) legID,(byte) up,(byte) middle,(byte) down, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDJ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+    //单腿控制
+    //腿ID：=1左前腿，=2右前腿，=3右后腿，4=左后腿。
+    //腿限制：X[-35, 35]，Y[-18, 18], Z[75, 115]
+    public static void legControl(int legID,int x,int y,int z){
+        byte[] datas = new byte[]{(byte) legID,(byte) x,(byte) y,(byte) z, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDT,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+    //设置高度
+    //高低范围：75-115。
+    public static void heightControl(int height){
+        byte[] datas = new byte[]{(byte) height, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZGDZT,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+
+
+
+//    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
+//    public static void stepLength(int speed){
+//        byte[] datas = new byte[]{(byte) speed, 0x00};
+//        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BFKD,datas);
+//        SocketManager.getInstance().write(sendData);
+//    }
+//
+//    //速度：默认为中速2。1为低速，3为高速。。 调整步伐频率
+//    public static void stepFrequency(int speed){
+//        byte[] datas = new byte[]{(byte) speed, 0x00};
+//        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BFPL,datas);
+//        SocketManager.getInstance().write(sendData);
+//    }
 }

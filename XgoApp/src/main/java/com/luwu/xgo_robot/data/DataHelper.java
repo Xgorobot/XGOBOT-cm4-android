@@ -8,10 +8,12 @@ public class DataHelper {
     private static final byte START = 0x24;//$的ackii码
     private static final byte END = 0x23;//#的ackii码
 
+    @Deprecated
     public static void addMessage(byte[] bytes){
         //没个卵用的脏代码
     }
 
+    @Deprecated
     public static void addMessageRead(byte[] bytes){
         //没个卵用的脏代码
     }
@@ -48,7 +50,7 @@ public class DataHelper {
 
     /**
      *
-     * @param id 类型ID 好像目前都是12
+     * @param id 类型ID 好像只有 TYPE_DEFAULT
      * @param func 方法名，对应 电量 前后左右 等不同指令
      * @param data 按格式填内容
      * @return 返回完整可直接发送的byte[]包

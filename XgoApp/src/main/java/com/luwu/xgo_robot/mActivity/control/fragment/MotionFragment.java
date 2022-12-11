@@ -2,7 +2,6 @@ package com.luwu.xgo_robot.mActivity.control.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.SPUtils;
 import com.luwu.xgo_robot.R;
-import com.luwu.xgo_robot.data.RobotConstants;
 import com.luwu.xgo_robot.data.RobotFunction;
 import com.luwu.xgo_robot.mView.ButtonView;
 
@@ -37,7 +33,7 @@ public class MotionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_motionmode, null);
         initView(view);
-        mWeb.loadUrl(RobotFunction.getWebUrl(""));
+        mWeb.loadUrl(RobotFunction.getWebUrl());
         return view;
     }
 

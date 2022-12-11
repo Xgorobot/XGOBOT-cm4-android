@@ -14,7 +14,7 @@ public class RobotConstants {
     public static final byte RECEIVE_YKJML = 0x10;//遥控界面 仅回执？
     public static final byte SET_YGKZ = 0x11;//摇杆控制
     public static final byte SET_AJKZ = 0x12;//按键控制
-    public static final byte SET_BFKZ = 0x13;//步伐宽度
+    public static final byte SET_BFKD = 0x13;//步伐宽度
     public static final byte SET_BFPL = 0x14;//步伐频率
     public static final byte SET_ZWDMS = 0x15;//自稳定模式
 
@@ -37,5 +37,5 @@ public class RobotConstants {
 
 
     //单腿控制
-    public static final byte SET_DTKZ = 0x51;//控制单腿
+    public static final byte SET_KZDT = 0x51;//控制单腿
 }
