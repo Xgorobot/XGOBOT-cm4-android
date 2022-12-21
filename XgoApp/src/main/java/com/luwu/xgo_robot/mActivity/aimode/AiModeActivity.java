@@ -1,6 +1,8 @@
 package com.luwu.xgo_robot.mActivity.aimode;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +24,7 @@ import java.util.List;
 public class AiModeActivity extends AppCompatActivity {
     private List<AiModeBean> mList = new ArrayList<>();
     private RecyclerView mRv;
-
+    private ImageView mBack_img;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,9 @@ public class AiModeActivity extends AppCompatActivity {
         mRv.setLayoutManager(layoutManager);
         mRv.setAdapter(adapter);
 
+        mBack_img = findViewById(R.id.aimodule_back_img);
+        mBack_img.setOnClickListener(v -> finish());
+
 
     }
 
@@ -46,7 +51,8 @@ public class AiModeActivity extends AppCompatActivity {
         aiModeBean = new AiModeBean();
         aiModeBean.setImage(R.drawable.icon_ballfollew);
         aiModeBean.setName("小球跟随");
-        mList.add(aiModeBean);
+
+
         aiModeBean = new AiModeBean();
         aiModeBean.setImage(R.drawable.icon_followface);
         aiModeBean.setName("人脸跟踪");

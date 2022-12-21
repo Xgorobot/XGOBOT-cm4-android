@@ -1,5 +1,6 @@
 package com.luwu.xgo_robot.mActivity.control;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.blankj.utilcode.util.FragmentUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.luwu.xgo_robot.R;
 import com.luwu.xgo_robot.mActivity.control.fragment.AdvanceedFragment;
 import com.luwu.xgo_robot.mActivity.control.fragment.MotionFragment;
@@ -59,6 +61,8 @@ public class ControlActivity extends AppCompatActivity {
 
 
         FragmentUtils.showHide(motionFragment);
+        mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
+        mMotion_tv.setTextColor(Color.WHITE);
        /* mNormal_tv = findViewById(R.id.control_normal_tv);
         mNormal_tv.setOnClickListener(v -> {
             FragmentUtils.hideAllShowFragment(normalFramgent);
@@ -67,12 +71,29 @@ public class ControlActivity extends AppCompatActivity {
         mAdvance_tv.setOnClickListener(v -> {
             FragmentUtils.hideAllShowFragment(advancedFragment);
         });*/
+
         mSingleg_tv = findViewById(R.id.control_singleg_tv);
-        mSingleg_tv.setOnClickListener(v -> FragmentUtils.showHide(singlegFragment,mList));
+        mSingleg_tv.setOnClickListener(v -> {
+            LogUtils.e("执行");
+            initTvColor();
+            FragmentUtils.showHide(singlegFragment, mList);
+            mSingleg_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
+            mSingleg_tv.setTextColor(Color.WHITE);
+        });
         mXYZ_tv = findViewById(R.id.control_xyz_tv);
-        mXYZ_tv.setOnClickListener(v -> FragmentUtils.showHide(xyzFragment,mList));
+        mXYZ_tv.setOnClickListener(v -> {
+            initTvColor();
+            FragmentUtils.showHide(xyzFragment, mList);
+            mXYZ_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
+            mXYZ_tv.setTextColor(Color.WHITE);
+        });
         mMotion_tv = findViewById(R.id.control_motion_tv);
-        mMotion_tv.setOnClickListener(v -> FragmentUtils.showHide(motionFragment,mList));
+        mMotion_tv.setOnClickListener(v -> {
+            initTvColor();
+            FragmentUtils.showHide(motionFragment, mList);
+            mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
+            mMotion_tv.setTextColor(Color.WHITE);
+        });
     }
 
     private List<Fragment> mList = new ArrayList<>();
@@ -90,5 +111,18 @@ public class ControlActivity extends AppCompatActivity {
         FragmentUtils.hide(motionFragment);
         FragmentUtils.hide(singlegFragment);
         FragmentUtils.hide(xyzFragment);
+    }
+
+
+    public void initTvColor() {
+        mMotion_tv.setBackgroundResource(R.drawable.shape_bottom_blue1b);
+        mMotion_tv.setTextColor(this.getResources().getColor(R.color.gray_8b));
+
+        mSingleg_tv.setBackgroundResource(R.drawable.shape_bottom_blue1b);
+        mSingleg_tv.setTextColor(this.getResources().getColor(R.color.gray_8b));
+
+        mXYZ_tv.setBackgroundResource(R.drawable.shape_bottom_blue1b);
+        mXYZ_tv.setTextColor(this.getResources().getColor(R.color.gray_8b));
+
     }
 }

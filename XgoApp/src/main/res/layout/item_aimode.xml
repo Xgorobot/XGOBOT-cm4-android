@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/item_aimode_img"
-        android:layout_width="119dp"
-        android:layout_height="119dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
@@ -20,6 +20,6 @@
         android:layout_marginTop="15dp"
         android:text="小球跟随"
         android:textColor="@color/gray_8b"
-        android:textSize="17sp" />
+        android:textSize="28sp" />
 
 </LinearLayout>

@@ -5,16 +5,24 @@
     android:orientation="horizontal">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="74dp"
-        android:layout_marginLeft="24dp"
+        android:layout_width="588dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginLeft="41dp"
         android:layout_marginBottom="30dp"
         android:layout_weight="1"
-        android:background="@drawable/shape_blue_6" />
-    
+        android:gravity="center"
+        android:background="@drawable/shape_blue_6">
+
+        <ImageView
+            android:layout_width="399dp"
+            android:layout_height="365dp"
+            android:src="@drawable/icon_doge"/>
+
+    </RelativeLayout>
+
     <View
-        android:layout_width="14dp"
+        android:layout_width="24dp"
         android:layout_height="0dp"/>
 
     <LinearLayout
@@ -27,45 +35,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="74dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginTop="126dp"
+            android:layout_marginRight="51dp"
             android:background="@drawable/shape_blue_6">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="41dp"
+                android:layout_marginTop="67dp"
                 android:orientation="horizontal">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="左前腿"
-                    android:textSize="15sp"/>
+                    android:checked="true"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"/>
                 <View
-                    android:layout_width="50dp"
+                    android:layout_width="79dp"
                     android:layout_height="0dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="左前腿"
-                    android:textSize="15sp"/>
+                    android:text="左后腿"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
                 <View
-                    android:layout_width="50dp"
+                    android:layout_width="79dp"
                     android:layout_height="0dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="左前腿"
-                    android:textSize="15sp"/>
+                    android:text="右前腿"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
                 <View
-                    android:layout_width="50dp"
+                    android:layout_width="79dp"
                     android:layout_height="0dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="左前腿"
-                    android:textSize="15sp"/>
+                    android:text="右前腿"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
 
             </LinearLayout>
 
@@ -74,39 +87,40 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginTop="66dp"
+                android:layout_marginTop="106dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center"
-                    android:text="X"
-                    android:textColor="#ffffff"
-                    android:textSize="25sp" />
+                    android:text="X轴"
+                    android:layout_marginLeft="112dp"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
 
                 <SeekBar
-                    style="@style/Widget.AppCompat.SeekBar"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="4"
-                    android:max="35"
-                    android:min="-35"
-                    android:progress="0"
-                    android:scrollbarStyle="outsideOverlay"
-                    />
-
-                <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:max="50"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:minHeight="7dp"
+                    android:progress="38"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
+                    android:thumb="@drawable/seekbar_white_shape" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginRight="96dp"
                     android:textColor="#ffffff"
-                    android:textSize="25sp" />
+                    android:textSize="28sp" />
 
 
             </LinearLayout>
@@ -115,37 +129,36 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="86dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Y轴"
+                    android:layout_marginLeft="112dp"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
+                <SeekBar
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Y"
-                    android:textColor="#ffffff"
-                    android:textSize="25sp" />
-
-                <SeekBar
-                    style="@style/Widget.AppCompat.SeekBar"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="4"
-                    android:max="35"
-                    android:min="-35"
-                    android:progress="0"
-                    android:scrollbarStyle="outsideOverlay"
-                    />
+                    android:max="50"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:minHeight="7dp"
+                    android:progress="35"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
+                    android:thumb="@drawable/seekbar_white_shape" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginRight="96dp"
                     android:textColor="#ffffff"
                     android:textSize="25sp" />
 
@@ -155,38 +168,38 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginTop="53dp"
-                android:layout_marginBottom="61dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginBottom="99dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center"
-                    android:text="X"
-                    android:textColor="#ffffff"
-                    android:textSize="25sp" />
+                    android:text="Z轴"
+                    android:layout_marginLeft="112dp"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
 
                 <SeekBar
-                    style="@style/Widget.AppCompat.SeekBar"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="4"
-                    android:max="35"
-                    android:min="-35"
-                    android:progress="0"
-                    android:scrollbarStyle="outsideOverlay"
-                    />
+                    android:layout_weight="1"
+                    android:max="50"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:minHeight="7dp"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue36"
+                    android:thumb="@drawable/seekbar_white_shape" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginRight="96dp"
                     android:textColor="#ffffff"
                     android:textSize="25sp" />
 
@@ -196,13 +209,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reset"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            android:paddingLeft="102dp"
-            android:paddingRight="102dp"
+            android:text="RESET"
+            android:paddingTop="22dp"
+            android:paddingBottom="22dp"
+            android:paddingLeft="166dp"
+            android:paddingRight="166dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="29dp"
-            />
+            android:textSize="34sp"
+            android:textColor="@color/white"
+            android:background="@drawable/shape_gradient_blue" />
     </LinearLayout>
 </LinearLayout>
