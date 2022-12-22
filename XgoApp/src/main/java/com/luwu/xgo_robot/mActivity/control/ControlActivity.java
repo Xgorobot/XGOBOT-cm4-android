@@ -1,5 +1,6 @@
 package com.luwu.xgo_robot.mActivity.control;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,11 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.blankj.utilcode.util.FragmentUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.luwu.xgo_robot.R;
-import com.luwu.xgo_robot.mActivity.control.fragment.AdvanceedFragment;
 import com.luwu.xgo_robot.mActivity.control.fragment.MotionFragment;
 import com.luwu.xgo_robot.mActivity.control.fragment.NormalFragment;
 import com.luwu.xgo_robot.mActivity.control.fragment.SingleLegFragment;
@@ -24,6 +23,8 @@ import com.luwu.xgo_robot.weight.DebugDialog;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import me.jessyan.autosize.AutoSizeCompat;
 
 /**
  * <p>文件描述：<p>
@@ -39,7 +40,6 @@ public class ControlActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_controlnew);
-
         initFragment();
 
         initView();
@@ -58,11 +58,6 @@ public class ControlActivity extends AppCompatActivity {
             }
             mDebugDialog.show();
         });
-
-
-        FragmentUtils.showHide(motionFragment);
-        mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
-        mMotion_tv.setTextColor(Color.WHITE);
        /* mNormal_tv = findViewById(R.id.control_normal_tv);
         mNormal_tv.setOnClickListener(v -> {
             FragmentUtils.hideAllShowFragment(normalFramgent);
@@ -74,26 +69,29 @@ public class ControlActivity extends AppCompatActivity {
 
         mSingleg_tv = findViewById(R.id.control_singleg_tv);
         mSingleg_tv.setOnClickListener(v -> {
-            LogUtils.e("执行");
             initTvColor();
-            FragmentUtils.showHide(singlegFragment, mList);
+            switchFragment(singlegFragment);
             mSingleg_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
             mSingleg_tv.setTextColor(Color.WHITE);
         });
         mXYZ_tv = findViewById(R.id.control_xyz_tv);
         mXYZ_tv.setOnClickListener(v -> {
             initTvColor();
-            FragmentUtils.showHide(xyzFragment, mList);
+            switchFragment(xyzFragment);
             mXYZ_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
             mXYZ_tv.setTextColor(Color.WHITE);
         });
         mMotion_tv = findViewById(R.id.control_motion_tv);
         mMotion_tv.setOnClickListener(v -> {
             initTvColor();
-            FragmentUtils.showHide(motionFragment, mList);
+            switchFragment(motionFragment);
             mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
             mMotion_tv.setTextColor(Color.WHITE);
         });
+
+
+        mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
+        mMotion_tv.setTextColor(Color.WHITE);
     }
 
     private List<Fragment> mList = new ArrayList<>();
@@ -102,7 +100,7 @@ public class ControlActivity extends AppCompatActivity {
         singlegFragment = new SingleLegFragment();
         xyzFragment = new XYZFragment();
         motionFragment = new MotionFragment();
-        mList.add(singlegFragment);
+       /* mList.add(singlegFragment);
         mList.add(xyzFragment);
         mList.add(motionFragment);
         FragmentUtils.add(getSupportFragmentManager(), motionFragment, R.id.control_fragment, false);
@@ -110,7 +108,8 @@ public class ControlActivity extends AppCompatActivity {
         FragmentUtils.add(getSupportFragmentManager(), xyzFragment, R.id.control_fragment, false);
         FragmentUtils.hide(motionFragment);
         FragmentUtils.hide(singlegFragment);
-        FragmentUtils.hide(xyzFragment);
+        FragmentUtils.hide(xyzFragment);*/
+        switchFragment(motionFragment);
     }
 
 
@@ -124,5 +123,29 @@ public class ControlActivity extends AppCompatActivity {
         mXYZ_tv.setBackgroundResource(R.drawable.shape_bottom_blue1b);
         mXYZ_tv.setTextColor(this.getResources().getColor(R.color.gray_8b));
 
+    }
+
+    private Fragment currentFragment=new MotionFragment();
+    private void switchFragment(Fragment targetFragment) {
+        FragmentTransaction transaction = getSupportFragmentManager()
+                .beginTransaction();
+        if (!targetFragment.isAdded()) {
+            transaction
+                    .hide(currentFragment)
+                    .add(R.id.control_fragment, targetFragment)
+                    .commit();
+        } else {
+            transaction
+                    .hide(currentFragment)
+                    .show(targetFragment)
+                    .commit();
+        }
+        currentFragment = targetFragment;
+    }
+
+    @Override
+    public Resources getResources() {
+        AutoSizeCompat.autoConvertDensityOfGlobal(super.getResources());
+        return super.getResources();
     }
 }

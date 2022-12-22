@@ -7,21 +7,21 @@
     android:id="@+id/debug_main"
     >
     <LinearLayout
-        android:layout_width="382dp"
+        android:layout_width="682dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_blue_6"
-        android:paddingBottom="24dp"
+        android:paddingBottom="32dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="32dp">
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="43dp">
 
 
             <Switch
@@ -29,9 +29,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:checked="false"
-                android:maxHeight="15dp"
+                android:maxHeight="33dp"
                 android:showText="false"
-                android:switchMinWidth="54dp"
+                android:switchMinWidth="40dp"
                 android:thumb="@drawable/switch_custom_thumb_selector"
                 android:track="@drawable/switch_custom_track_selector" />
 
@@ -41,15 +41,15 @@
                 android:layout_centerVertical="true"
                 android:text="陀螺仪"
                 android:textColor="@color/gray_8b"
-                android:textSize="15sp" />
+                android:textSize="28sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp">
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
 
             <!--<LinearLayout
                 android:layout_width="wrap_content"
@@ -84,14 +84,14 @@
 
             <com.flyco.tablayout.SegmentTabLayout
                 android:id="@+id/dialog_tablayout"
-                android:layout_width="211dp"
-                android:layout_height="32dp"
+                android:layout_width="440dp"
+                android:layout_height="46dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
                 android:background="@color/blue1b"
                 app:tl_indicator_color="#3689F9"
                 app:tl_divider_color="@color/gray_46"
-                app:tl_textUnselectColor="@color/gray_8b" />
+                app:tl_textUnselectColor="@color/gray_8b"
+                app:tl_textsize="24sp"/>
 
 
             <TextView
@@ -100,15 +100,15 @@
                 android:layout_centerVertical="true"
                 android:text="整机速度"
                 android:textColor="@color/gray_8b"
-                android:textSize="15sp" />
+                android:textSize="28sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp">
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -121,10 +121,10 @@
                     android:layout_height="wrap_content"
                     android:text="低"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="24sp" />
 
                 <SeekBar
-                    android:layout_width="211dp"
+                    android:layout_width="296dp"
                     android:layout_height="wrap_content"
                     android:max="100"
                     android:maxHeight="7dp"
@@ -139,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:text="高"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <TextView
@@ -148,7 +148,7 @@
                 android:layout_centerVertical="true"
                 android:text="整机高度"
                 android:textColor="@color/gray_8b"
-                android:textSize="15sp" />
+                android:textSize="28sp" />
         </RelativeLayout>
 
     </LinearLayout>

@@ -87,11 +87,15 @@
                     android:gravity="center"
                     android:text="WALK"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="32sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="@drawable/bg_text_blue"/>
 
                 <View
-                    android:layout_width="36dp"
+                    android:layout_width="72dp"
                     android:layout_height="0dp" />
 
                 <TextView
@@ -100,25 +104,29 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="TROT"
-                    android:textSize="16sp"
+                    android:textSize="32sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:textColor="@android:color/black"
                     android:background="@drawable/bg_text_white"/>
             </LinearLayout>
         </LinearLayout>
 
         <View
-            android:layout_width="27dp"
+            android:layout_width="53dp"
             android:layout_height="0dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
-            android:layout_marginRight="27dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="53dp"
             android:layout_weight="1"
             android:background="@drawable/shape_blue_6"
             android:orientation="vertical"
-            android:paddingTop="30dp">
+            android:paddingTop="59dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,8 +136,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -137,7 +145,7 @@
                         android:gravity="center"
                         android:text="夹爪"
                         android:textColor="#8BA4C7"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -146,26 +154,28 @@
                         android:gravity="center"
                         android:text="(30-50)"
                         android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
                 </RelativeLayout>
 
 
                 <SeekBar
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="18dp"
                     android:max="50"
-                    android:maxHeight="7dp"
+                    android:maxHeight="14dp"
                     android:min="30"
-                    android:minHeight="7dp"
+                    android:minHeight="14dp"
                     android:progress="35"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="30dp" />
+                android:layout_height="100dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -175,8 +185,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -184,7 +194,7 @@
                         android:gravity="center"
                         android:text="X轴"
                         android:textColor="#8BA4C7"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -193,26 +203,28 @@
                         android:gravity="center"
                         android:text="(30-50)"
                         android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
                 </RelativeLayout>
 
 
                 <SeekBar
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="18dp"
                     android:max="50"
-                    android:maxHeight="7dp"
+                    android:maxHeight="14dp"
                     android:min="30"
-                    android:minHeight="7dp"
+                    android:minHeight="14dp"
                     android:progress="38"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="30dp" />
+                android:layout_height="100dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -222,8 +234,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -231,7 +243,7 @@
                         android:gravity="center"
                         android:text="Y轴"
                         android:textColor="#8BA4C7"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,26 +252,28 @@
                         android:gravity="center"
                         android:text="(30-50)"
                         android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                        android:textSize="24sp" />
                 </RelativeLayout>
 
 
                 <SeekBar
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="18dp"
                     android:max="50"
-                    android:maxHeight="7dp"
+                    android:maxHeight="14dp"
                     android:min="30"
-                    android:minHeight="7dp"
+                    android:minHeight="14dp"
                     android:progress="40"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36"
                     android:thumb="@drawable/seekbar_white_shape" />
             </LinearLayout>
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="30dp" />
+                android:layout_height="60dp" />
 
         </LinearLayout>
 

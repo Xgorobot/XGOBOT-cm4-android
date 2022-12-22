@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.blankj.utilcode.util.LogUtils;
 import com.luwu.xgo_robot.R;
 
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
+
 /**
  * <p>文件描述：<p>
  * <p>作者：zhangyibin<p>
@@ -37,4 +40,5 @@ public class SingleLegFragment extends Fragment {
         super.onResume();
 
     }
+
 }
