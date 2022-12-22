@@ -38,6 +38,7 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+                    android:id="@+id/xyz_translate_x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,6 +95,7 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+                    android:id="@+id/xyz_translate_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -145,12 +147,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="X轴平移"
+                    android:text="Z轴平移"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
 
                 <SeekBar
+                    android:id="@+id/xyz_translate_z"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -220,6 +223,7 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+                    android:id="@+id/xyz_scroll_x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -276,6 +280,7 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+                    android:id="@+id/xyz_scroll_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -327,12 +332,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="X轴滚动"
+                    android:text="Z轴滚动"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
 
                 <SeekBar
+                    android:id="@+id/xyz_scroll_z"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -378,6 +384,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/xyz_reset_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
