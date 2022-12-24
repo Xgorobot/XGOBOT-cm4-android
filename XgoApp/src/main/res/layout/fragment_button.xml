@@ -87,7 +87,7 @@
         app:layout_constraintStart_toStartOf="@id/buttonTxtSpeed"
         app:layout_constraintEnd_toEndOf="@id/buttonTxtSpeed" />
 
-    <com.luwu.xgo_robot.mView.ButtonView
+    <com.luwu.xgobot.mView.ButtonView
         android:id="@+id/buttonButtonLeft"
         android:layout_width="230dp"
         android:layout_height="230dp"
@@ -99,7 +99,7 @@
         app:rightPress="@drawable/button1_right_press"
         app:upPress="@drawable/button1_forward_press" />
 
-    <com.luwu.xgo_robot.mView.ButtonView
+    <com.luwu.xgobot.mView.ButtonView
         android:id="@+id/buttonButtonRight"
         android:layout_width="230dp"
         android:layout_height="230dp"
@@ -109,7 +109,7 @@
         app:noPress="@drawable/button2_nopress"
         app:rightPress="@drawable/button2_right_press" />
 
-    <com.luwu.xgo_robot.mView.VerticalSeekBar
+    <com.luwu.xgobot.mView.VerticalSeekBar
         android:id="@+id/heightSeekBar"
         android:layout_width="260dp"
         android:layout_height="40dp"

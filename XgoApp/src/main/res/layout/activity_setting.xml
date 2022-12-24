@@ -98,7 +98,7 @@
                         android:textSize="25sp" />
                 </LinearLayout>
 
-                <com.luwu.xgo_robot.mView.XRadioGroup
+                <com.luwu.xgobot.mView.XRadioGroup
                     android:id="@+id/settingGroupMode"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -201,7 +201,7 @@
                                 android:textSize="25sp" />
                         </LinearLayout>
                     </LinearLayout>
-                </com.luwu.xgo_robot.mView.XRadioGroup>
+                </com.luwu.xgobot.mView.XRadioGroup>
 
 
             </LinearLayout>

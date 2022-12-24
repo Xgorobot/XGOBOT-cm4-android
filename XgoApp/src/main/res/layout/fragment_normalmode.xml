@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <com.luwu.xgo_robot.mView.ButtonView
+    <com.luwu.xgobot.mView.ButtonView
         android:id="@+id/buttonButtonLeft"
         android:layout_width="230dp"
         android:layout_height="230dp"
@@ -83,7 +83,7 @@
         android:layout_width="40dp"
         android:layout_height="0dp" />
 
-    <com.luwu.xgo_robot.mView.ButtonView
+    <com.luwu.xgobot.mView.ButtonView
         android:layout_width="230dp"
         android:layout_height="230dp"
         android:layout_marginRight="43dp"

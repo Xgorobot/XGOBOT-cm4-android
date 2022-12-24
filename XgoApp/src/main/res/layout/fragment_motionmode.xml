@@ -36,7 +36,7 @@
                     android:background="@drawable/motionmode_upright_selector" />
             </RelativeLayout>
 
-            <com.luwu.xgo_robot.mView.ButtonView
+            <com.luwu.xgobot.mView.ButtonView
                 android:id="@+id/motionmode_btn_view"
                 android:layout_width="409dp"
                 android:layout_height="409dp"

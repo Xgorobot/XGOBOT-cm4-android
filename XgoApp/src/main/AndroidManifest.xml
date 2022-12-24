@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.luwu.xgo_robot">
+    package="com.luwu.xgobot">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 如果您希望应用适用于不支持 BLE 的设备，设置 required="false" 运行时使用 PackageManager.hasSystemFeature() 确定 BLE 的可用性： -->
