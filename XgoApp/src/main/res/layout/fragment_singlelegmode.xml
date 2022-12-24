@@ -38,7 +38,8 @@
             android:layout_marginTop="126dp"
             android:layout_marginRight="51dp"
             android:background="@drawable/shape_blue_6">
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/group_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -46,6 +47,7 @@
                 android:layout_marginTop="67dp"
                 android:orientation="horizontal">
                 <RadioButton
+                    android:id="@+id/radio_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="左前腿"
@@ -56,31 +58,34 @@
                     android:layout_width="79dp"
                     android:layout_height="0dp"/>
                 <RadioButton
+                    android:id="@+id/radio_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="右前腿"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
+                <View
+                    android:layout_width="79dp"
+                    android:layout_height="0dp"/>
+                <RadioButton
+                    android:id="@+id/radio_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="右后腿"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp"/>
+                <View
+                    android:layout_width="79dp"
+                    android:layout_height="0dp"/>
+                <RadioButton
+                    android:id="@+id/radio_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="左后腿"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp"/>
-                <View
-                    android:layout_width="79dp"
-                    android:layout_height="0dp"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="右前腿"
-                    android:textColor="@color/gray_8b"
-                    android:textSize="28sp"/>
-                <View
-                    android:layout_width="79dp"
-                    android:layout_height="0dp"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="右前腿"
-                    android:textColor="@color/gray_8b"
-                    android:textSize="28sp"/>
 
-            </LinearLayout>
+            </RadioGroup>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,14 +105,15 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+                    android:id="@+id/seek_x"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:max="50"
+                    android:max="35"
                     android:maxHeight="7dp"
-                    android:min="0"
+                    android:min="-35"
                     android:minHeight="7dp"
-                    android:progress="38"
+                    android:progress="0"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
                     android:thumb="@drawable/seekbar_white_shape" />
 
@@ -141,14 +147,15 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp"/>
                 <SeekBar
+                    android:id="@+id/seek_y"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:max="50"
+                    android:max="18"
                     android:maxHeight="7dp"
-                    android:min="0"
+                    android:min="-18"
                     android:minHeight="7dp"
-                    android:progress="35"
+                    android:progress="0"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
                     android:thumb="@drawable/seekbar_white_shape" />
 
@@ -182,14 +189,16 @@
                     android:textSize="28sp" />
 
                 <SeekBar
+
+                    android:id="@+id/seek_z"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:max="50"
+                    android:max="115"
                     android:maxHeight="7dp"
-                    android:min="0"
+                    android:min="75"
                     android:minHeight="7dp"
-                    android:progress="40"
+                    android:progress="95"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36"
                     android:thumb="@drawable/seekbar_white_shape" />
 

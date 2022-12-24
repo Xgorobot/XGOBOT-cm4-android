@@ -51,6 +51,12 @@ public class RobotFunction {
     //腿ID：=1左前腿，=2右前腿，=3右后腿，4=左后腿。
     //腿限制：X[-35, 35]，Y[-18, 18], Z[75, 115]
     public static void legControl(int legID,int x,int y,int z){
+        x = Math.min(35,x);
+        x = Math.max(-35,x);
+        y = Math.min(18,y);
+        y = Math.max(-18,y);
+        z = Math.min(115,z);
+        z = Math.max(75,z);
         byte[] datas = new byte[]{(byte) legID,(byte) x,(byte) y,(byte) z, 0x00};
         byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDT,datas);
         SocketManager.getInstance().write(sendData);
