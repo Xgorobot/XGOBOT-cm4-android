@@ -120,7 +120,9 @@
             android:layout_marginEnd="30dp"
             android:background="@color/transparent"
             android:src="@drawable/icon_main_set" />
+
         <ImageView
+            android:id="@+id/main_back_img"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="41dp"

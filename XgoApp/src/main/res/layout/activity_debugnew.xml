@@ -11,23 +11,23 @@
         android:layout_marginTop="12dp">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="24dp"
             android:src="@drawable/icon_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/calibration"
+            android:layout_centerInParent="true"
+            android:text="标定模式"
             android:textColor="@color/white"
-            android:textSize="21sp" />
+            android:textSize="36sp" />
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="287dp"
-        android:layout_height="228dp"
+        android:layout_width="483dp"
+        android:layout_height="344dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="68dp"
         android:src="@drawable/default_debug" />
@@ -42,28 +42,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calibrationMode"
+            android:text="开始标定"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:background="@drawable/debug_text_border"
+            android:textSize="34sp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="84dp"
+            android:paddingRight="84dp"
+            android:background="@drawable/bg_text_blue"
             />
         <View
-            android:layout_width="76dp"
+            android:layout_width="110dp"
             android:layout_height="0dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calibrated"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:paddingLeft="49dp"
-            android:paddingRight="49dp"
+            android:textSize="34sp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="84dp"
+            android:paddingRight="84dp"
             android:background="@drawable/debug_text_border"
             />
     </LinearLayout>

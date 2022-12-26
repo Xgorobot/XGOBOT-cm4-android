@@ -3,6 +3,7 @@ package com.luwu.xgobot.mActivity.control;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ import me.jessyan.autosize.AutoSizeCompat;
 public class ControlActivity extends AppCompatActivity {
     private Fragment /*advancedFragment,normalFramgent,*/singlegFragment, xyzFragment, motionFragment;
     private TextView mNormal_tv, mAdvance_tv, mSingleg_tv, mXYZ_tv, mMotion_tv;
-    private ImageView mDebug_img;
+    private ImageView mDebug_img,mBack_img;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,9 +86,13 @@ public class ControlActivity extends AppCompatActivity {
             mMotion_tv.setTextColor(Color.WHITE);
         });
 
-
         mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
         mMotion_tv.setTextColor(Color.WHITE);
+
+        mBack_img= findViewById(R.id.control_back_img);
+        mBack_img.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     private List<Fragment> mList = new ArrayList<>();

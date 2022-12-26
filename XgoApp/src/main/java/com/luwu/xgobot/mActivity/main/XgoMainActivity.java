@@ -2,6 +2,7 @@ package com.luwu.xgobot.mActivity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,7 +24,7 @@ public class XgoMainActivity extends AppCompatActivity {
 
     private ImageView mSetImg;
     private LinearLayout mShow_layout, mContract_layout, mAimode_layout;
-    private ImageView mSettingBtn;
+    private ImageView mSettingBtn,mBack_img;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,6 +62,8 @@ public class XgoMainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AiModeActivity.class);
             startActivity(intent);
         });
+        mBack_img = findViewById(R.id.main_back_img);
+        mBack_img.setOnClickListener(v -> finish());
 //        test();
     }
 

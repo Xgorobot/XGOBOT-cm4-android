@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,11 +18,11 @@ import com.luwu.xgobot.R;
  * <p>文件描述：<p>
  * <p>作者：zhangyibin<p>
  * <p>创建时间：2022/9/12<p>
- * XYZ轴
+ * 位姿模式
  */
 public class XYZFragment extends Fragment {
     private TextView mReset_tv;
-    private ProgressBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y,mScroll_z;
+    private SeekBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y,mScroll_z;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,7 +39,10 @@ public class XYZFragment extends Fragment {
     }
     /*
     * 初始化监听
+    * 数值初始化
     * */
+    private int mTranslatex_value=0,mTranslatey_value=0,mTranslatez_value=0,mScrollx_value=0,mScrolly_value=0,mScrollz_value=0;
+
     private void initClick() {
         //初始化进度
         mReset_tv.setOnClickListener(v -> {
@@ -52,38 +56,117 @@ public class XYZFragment extends Fragment {
         /*
         * X轴平移
         * */
-        mTranslate_x.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+        //todo XYZ平移 滚动已分类
+        mTranslate_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
         /*
          * Y轴平移
          * */
-        mTranslate_y.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+        mTranslate_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
         /*
          * Z轴平移
          * */
-        mTranslate_z.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+        mTranslate_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
         /*
          * X轴滚动
          * */
-        mScroll_x.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
-            updateXYZ();
+        mScroll_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
         /*
          * Y轴滚动
          * */
-        mScroll_y.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
-            updateXYZ();
+        mScroll_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
         /*
          * Z轴滚动
          * */
-        mScroll_z.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
-            updateXYZ();
+        mScroll_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
         });
     }
 
