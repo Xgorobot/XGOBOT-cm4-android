@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.data.RobotFunction;
 
 /**
  * <p>文件描述：<p>
@@ -60,7 +61,7 @@ public class XYZFragment extends Fragment {
         mTranslate_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                mTranslatex_value = progress;
             }
 
             @Override
@@ -70,7 +71,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZTranslate();
             }
         });
         /*
@@ -79,7 +80,7 @@ public class XYZFragment extends Fragment {
         mTranslate_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                mTranslatey_value = progress;
             }
 
             @Override
@@ -89,7 +90,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZTranslate();
             }
         });
         /*
@@ -98,7 +99,7 @@ public class XYZFragment extends Fragment {
         mTranslate_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                mTranslatez_value = progress;
             }
 
             @Override
@@ -108,9 +109,10 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZTranslate();
             }
         });
+
         /*
          * X轴滚动
          * */
@@ -118,6 +120,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
+                mScrollx_value = progress;
             }
 
             @Override
@@ -127,7 +130,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZScroll();
             }
         });
         /*
@@ -136,7 +139,7 @@ public class XYZFragment extends Fragment {
         mScroll_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                mScrolly_value = progress;
             }
 
             @Override
@@ -146,7 +149,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZScroll();
             }
         });
         /*
@@ -155,7 +158,7 @@ public class XYZFragment extends Fragment {
         mScroll_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                mScrollz_value = progress;
             }
 
             @Override
@@ -165,12 +168,16 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                updateXYZScroll();
             }
         });
     }
 
-    private void updateXYZ(){
+    private void updateXYZTranslate(){
+//        RobotFunction.servoControl();
+    }
+    private void updateXYZScroll(){
+//        RobotFunction.servoControl();
     }
     /*
     * 初始化view
