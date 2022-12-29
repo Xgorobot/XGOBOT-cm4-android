@@ -76,12 +76,10 @@ public class MotionFragment extends Fragment {
         mWalk_tv.setOnClickListener(v -> {
             mWalk_tv.setTextColor(this.getResources().getColor(R.color.white));
             mWalk_tv.setBackgroundResource(R.drawable.bg_text_blue);
-            mTrot_tv.setTextColor(Color.BLACK);
             mTrot_tv.setBackgroundResource(R.drawable.bg_text_white);
 
         });
         mTrot_tv.setOnClickListener(v -> {
-            mWalk_tv.setTextColor(Color.BLACK);
             mWalk_tv.setBackgroundResource(R.drawable.bg_text_white);
             mTrot_tv.setTextColor(this.getResources().getColor(R.color.white));
             mTrot_tv.setBackgroundResource(R.drawable.bg_text_blue);

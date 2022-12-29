@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="blue_main_bg">#0E213C</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -12,6 +13,7 @@
     <color name="programInactive">#92a1b6</color>
     <color name="transparent">#00000000</color>
     <color name="blue21">#021336</color>
+
     <color name="blue1b">#1B3153</color>
     <color name="blue36">#3689F9</color>
     <color name="blue3e">#3E67F7</color>

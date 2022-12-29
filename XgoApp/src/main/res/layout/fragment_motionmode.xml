@@ -109,7 +109,7 @@
                     android:paddingBottom="24dp"
                     android:paddingLeft="100dp"
                     android:paddingRight="100dp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:background="@drawable/bg_text_white"/>
             </LinearLayout>
         </LinearLayout>
