@@ -25,6 +25,7 @@
 
 
             <Switch
+                android:id="@+id/tuoluoyi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -88,10 +89,10 @@
                 android:layout_height="46dp"
                 android:layout_alignParentRight="true"
                 android:background="@color/blue1b"
-                app:tl_indicator_color="#3689F9"
                 app:tl_divider_color="@color/gray_46"
+                app:tl_indicator_color="#3689F9"
                 app:tl_textUnselectColor="@color/gray_8b"
-                app:tl_textsize="24sp"/>
+                app:tl_textsize="24sp" />
 
 
             <TextView
@@ -124,6 +125,7 @@
                     android:textSize="24sp" />
 
                 <SeekBar
+                    android:id="@+id/robot_height"
                     android:layout_width="296dp"
                     android:layout_height="wrap_content"
                     android:max="100"

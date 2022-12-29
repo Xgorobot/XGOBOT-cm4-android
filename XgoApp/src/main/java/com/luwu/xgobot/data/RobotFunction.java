@@ -1,5 +1,7 @@
 package com.luwu.xgobot.data;
 
+import android.util.Log;
+
 import com.blankj.utilcode.util.SPUtils;
 import com.luwu.xgobot.socket.SocketManager;
 
@@ -65,6 +67,8 @@ public class RobotFunction {
     //设置高度
     //高低范围：75-115。
     public static void heightControl(int height){
+        height = Math.max(75,height);
+        height = Math.min(115,height);
         byte[] datas = new byte[]{(byte) height, 0x00};
         byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZGDZT,datas);
         SocketManager.getInstance().write(sendData);
