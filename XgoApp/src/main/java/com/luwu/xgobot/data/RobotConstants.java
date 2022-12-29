@@ -15,6 +15,8 @@ public class RobotConstants {
     public static final byte SET_BFPL = 0x14;//步伐频率
     public static final byte SET_ZWDMS = 0x15;//自稳定模式
 
+    public static final byte SET_BTTZ = 0x16;//步幅设置
+    public static final byte SET_DJXZ = 0x17;//标定模式
 
     //身体姿态
     public static final byte RECEIVE_STZT = 0x20;//身体姿态

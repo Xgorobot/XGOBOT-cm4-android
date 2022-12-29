@@ -74,7 +74,16 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
+    //步态调整
+    //0 trot 1 walk
+    public static void setStepState(int state){
+        if (state != 1 && state!=0)
+            return;
 
+        byte[] datas = new byte[]{(byte) state, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BTTZ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
 
 
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
