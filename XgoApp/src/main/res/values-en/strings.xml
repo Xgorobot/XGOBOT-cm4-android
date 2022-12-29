@@ -105,4 +105,5 @@
     <string name="performance">表演</string>
     <string name="control">控制</string>
     <string name="aimodule">AI模组</string>
+    <string name="ip_input">Please enter IP address of the robot</string>
 </resources>

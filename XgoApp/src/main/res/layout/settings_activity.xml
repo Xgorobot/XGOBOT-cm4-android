@@ -2,30 +2,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@drawable/background"
+    android:gravity="center">
 
-    <TextView
-        android:id="@+id/url_ip"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="IP地址：" />
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/url_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:layout_margin="8dp"
+            android:textColor="@color/white"
+            android:text="@string/ip_input" />
 
-    <EditText
-        android:id="@+id/edit_host"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="40sp"
-        android:inputType="textPersonName"
-        android:hint="192.168.31.163"
-        android:text="192.168.31.163" />
+        <EditText
+            android:id="@+id/edit_host"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:textSize="40sp"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView2"
         android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="通信端口 无特殊设置使用默认值" />
 
     <EditText
@@ -35,12 +48,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
+        android:visibility="gone"
         android:text="6000" />
 
     <TextView
         android:layout_width="match_parent"
         android:textSize="40sp"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="Camera 端口 无特殊设置使用默认值" />
 
     <EditText
@@ -49,6 +64,7 @@
         android:textSize="40sp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:visibility="gone"
         android:inputType="number"
         android:text="6500" />
 
@@ -63,6 +79,7 @@
             android:layout_height="wrap_content"
             android:textSize="40dp"
             android:padding="20dp"
+            android:visibility="gone"
             android:text="连接" />
     </LinearLayout>
     <TextView
@@ -72,6 +89,7 @@
         android:scrollbars="vertical"
         android:fadeScrollbars="true"
         android:textSize="20sp"
+        android:visibility="gone"
         android:gravity="left"
         android:layout_marginTop="20dp"
         android:background="@color/toast_color"/>
