@@ -7,8 +7,8 @@ android {
         applicationId "com.luwu.xgobot"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 15
-        versionName "2.3.3"
+        versionCode 1
+        versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -21,9 +21,9 @@ android {
                 variant.outputs.all {
                     //在这里修改apk文件名，引号内的字符串都可以随便定义
                     if (variant.buildType.isDebuggable()) {
-                        outputFileName = "XGO_v${variant.versionName}_debug.apk"  //debug 名字
+                        outputFileName = "NBLiu_v${variant.versionName}_debug.apk"  //debug 名字
                     } else {
-                        outputFileName = "XGO_v${variant.versionName}.apk" //release 名字
+                        outputFileName = "NBLiu_v${variant.versionName}.apk" //release 名字
                     }
                 }
         }
