@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 
 import com.luwu.xgobot.R;
@@ -19,7 +20,7 @@ import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIMenu;
 public class ActorActivity extends AppCompatActivity {
 
     private Button  actorResetBtn;
-    private ImageButton actorBtnExit;
+    private ImageView actorBtnExit;
     private Switch actorWhileSwitch;
     private ButtonClickListener mButtonClickListener;
     private Button actorBtn1, actorBtn2, actorBtn3, actorBtn4, actorBtn5, actorBtn6, actorBtn7, actorBtn8, actorBtn9, actorBtn10, actorBtn11, actorBtn12, actorBtn13, actorBtn14, actorBtn15, actorBtn16, actorBtn17, actorBtn18, actorBtn19, actorBtn20;

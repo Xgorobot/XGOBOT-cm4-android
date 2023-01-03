@@ -16,18 +16,17 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="left">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/actorBtnExit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="17dp"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                android:src="@drawable/back" />
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/icon_back" />
         </LinearLayout>
 
         <LinearLayout
@@ -397,7 +396,7 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_margin="20dp"
-            android:background="@drawable/actor_layout">
+            android:background="#1B2D56">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
