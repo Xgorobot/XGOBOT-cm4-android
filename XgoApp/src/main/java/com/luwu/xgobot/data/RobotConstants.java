@@ -26,9 +26,9 @@ public class RobotConstants {
 
     //动作
     public static final byte RECEIVE_DZ = 0x30;//身体姿态
-    public static final byte SET_KZDZ = 0x31;//控制身体姿态
-    public static final byte SET_DZLB = 0x32;//控制高低姿态
-    public static final byte SET_CSWZ = 0x33;//控制肩膀
+    public static final byte SET_KZDZ = 0x31;//控制动作 0表示停止
+    public static final byte SET_DZLB = 0x32;//动作轮播
+    public static final byte SET_CSWZ = 0x33;//初始位置
 
     //舵机控制
     public static final byte RECEIVE_DJKZ = 0x40;//身体姿态

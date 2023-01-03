@@ -10,7 +10,8 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 
 import com.luwu.xgobot.R;
-import com.luwu.xgobot.data.DataHelper;
+
+import com.luwu.xgobot.data.RobotFunction;
 import com.luwu.xgobot.mMothed.PublicMethod;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIMenu;
@@ -32,11 +33,7 @@ public class ActorActivity extends AppCompatActivity {
         actorWhileSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {//动作轮播
-                    DataHelper.addMessage(new byte[]{0x03, 0x01});
-                } else {
-                    DataHelper.addMessage(new byte[]{0x03, 0x00});
-                }
+                RobotFunction.showRepeat(isChecked);
             }
         });
         mButtonClickListener = new ButtonClickListener();
@@ -102,7 +99,7 @@ public class ActorActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.actorResetBtn:
-                    DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte)0xff});
+                    RobotFunction.showMode(0);
                     break;
                 case R.id.actorBtn1:
                     sendAction(action[0]);
@@ -167,7 +164,7 @@ public class ActorActivity extends AppCompatActivity {
             }
         }
         private void sendAction(byte action){
-            DataHelper.addMessage(new byte[]{PublicMethod.XGORAM_ADDR.action, (byte) action});
+            RobotFunction.showMode(action);
         }
     }
 }

@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.mActivity.ActorActivity;
+import com.luwu.xgobot.mActivity.MainActivity;
 import com.luwu.xgobot.mActivity.NetSettingActivity;
 import com.luwu.xgobot.mActivity.aimode.AiModeActivity;
 import com.luwu.xgobot.mActivity.control.ControlActivity;
@@ -39,6 +41,8 @@ public class XgoMainActivity extends AppCompatActivity {
         mShow_layout = findViewById(R.id.main_show_layout);
         mShow_layout.setOnClickListener(v -> {
             //跳转表演页面
+            Intent intent = new Intent(XgoMainActivity.this, ActorActivity.class);
+            startActivity(intent);
         });
         /*mSettingBtn = findViewById(R.id.btn_setting);
         mSettingBtn.setOnClickListener(v -> {

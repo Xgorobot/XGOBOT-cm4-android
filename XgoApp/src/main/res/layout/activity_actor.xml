@@ -90,7 +90,7 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3">
+            android:layout_weight="4">
 
 
             <LinearLayout
@@ -104,14 +104,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
+                    android:layout_marginVertical="14dp">
 
                     <Button
                         android:id="@+id/actorBtn1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/liedown"
                         android:textSize="25sp"
@@ -122,8 +122,8 @@
                         android:id="@+id/actorBtn2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/standup"
                         android:textSize="25sp"
@@ -134,8 +134,8 @@
                         android:id="@+id/actorBtn3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/crawl"
                         android:textSize="25sp"
@@ -143,6 +143,17 @@
                         android:background="@drawable/button_press_blue" />
 
 
+                    <Button
+                        android:id="@+id/actorBtn4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/turnAround"
+                        android:textSize="25sp"
+                        android:textColor="@drawable/button_text_press_blue"
+                        android:background="@drawable/button_press_blue" />
 
                 </LinearLayout>
 
@@ -152,25 +163,14 @@
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
-                    <Button
-                        android:id="@+id/actorBtn4"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/turnAround"
-                        android:textSize="25sp"
-                        android:textColor="@drawable/button_text_press_blue"
-                        android:background="@drawable/button_press_blue" />
+                    android:layout_marginVertical="14dp">
 
                     <Button
                         android:id="@+id/actorBtn5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/marktime"
                         android:textSize="25sp"
@@ -181,31 +181,19 @@
                         android:id="@+id/actorBtn6"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/squat"
                         android:textSize="25sp"
                         android:textColor="@drawable/button_text_press_blue"
                         android:background="@drawable/button_press_blue" />
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
                     <Button
                         android:id="@+id/actorBtn7"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/turnroll"
                         android:textSize="25sp"
@@ -216,19 +204,31 @@
                         android:id="@+id/actorBtn8"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/turnpitch"
                         android:textSize="25sp"
                         android:textColor="@drawable/button_text_press_blue"
                         android:background="@drawable/button_press_blue" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="14dp">
+
                     <Button
                         android:id="@+id/actorBtn9"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/turnyaw"
                         android:textSize="25sp"
@@ -237,22 +237,12 @@
 
 
 
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
-
                     <Button
                         android:id="@+id/actorBtn10"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/threeAxis"
                         android:textSize="25sp"
@@ -262,8 +252,8 @@
                         android:id="@+id/actorBtn11"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/pee"
                         android:textSize="25sp"
@@ -274,8 +264,8 @@
                         android:id="@+id/actorBtn12"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/sitdown"
                         android:textSize="25sp"
@@ -291,13 +281,13 @@
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
+                    android:layout_marginVertical="14dp">
                     <Button
                         android:id="@+id/actorBtn13"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/wavehand"
                         android:textSize="25sp"
@@ -308,8 +298,8 @@
                         android:id="@+id/actorBtn14"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/stretch"
                         android:textSize="25sp"
@@ -320,14 +310,25 @@
                         android:id="@+id/actorBtn15"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/wavebody"
                         android:textSize="25sp"
                         android:textColor="@drawable/button_text_press_blue"
                         android:background="@drawable/button_press_blue" />
 
+                    <Button
+                        android:id="@+id/actorBtn16"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/swing"
+                        android:textSize="25sp"
+                        android:textColor="@drawable/button_text_press_blue"
+                        android:background="@drawable/button_press_blue" />
 
 
                 </LinearLayout>
@@ -338,24 +339,13 @@
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp">
-                    <Button
-                        android:id="@+id/actorBtn16"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/swing"
-                        android:textSize="25sp"
-                        android:textColor="@drawable/button_text_press_blue"
-                        android:background="@drawable/button_press_blue" />
+                    android:layout_marginVertical="14dp">
                     <Button
                         android:id="@+id/actorBtn17"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/pray"
                         android:textSize="25sp"
@@ -366,58 +356,38 @@
                         android:id="@+id/actorBtn18"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
                         android:layout_weight="1"
                         android:text="@string/seek"
                         android:textSize="25sp"
                         android:textColor="@drawable/button_text_press_blue"
                         android:background="@drawable/button_press_blue" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="5dp">
-                <Button
-                    android:id="@+id/actorBtn19"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/handshake"
-                    android:textSize="25sp"
-                    android:textColor="@drawable/button_text_press_blue"
-                    android:background="@drawable/button_press_blue" />
+                    <Button
+                        android:id="@+id/actorBtn19"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/handshake"
+                        android:textSize="25sp"
+                        android:textColor="@drawable/button_text_press_blue"
+                        android:background="@drawable/button_press_blue" />
 
-                <Button
-                    android:id="@+id/actorBtn20"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textSize="25sp"
-                    android:textColor="@drawable/button_text_press_blue"
-                    android:background="@drawable/button_press_blue"
-                    android:visibility="invisible" />
-                <Button
-                    android:id="@+id/actorBtn21"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textSize="25sp"
-                    android:textColor="@drawable/button_text_press_blue"
-                    android:background="@drawable/button_press_blue"
-                    android:visibility="invisible" />
+                    <Button
+                        android:id="@+id/actorBtn20"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="13dp"
+                        android:layout_marginVertical="14dp"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textSize="25sp"
+                        android:textColor="@drawable/button_text_press_blue"
+                        android:background="@drawable/button_press_blue"
+                        android:visibility="invisible" />
             </LinearLayout>
           </LinearLayout>
         </ScrollView>

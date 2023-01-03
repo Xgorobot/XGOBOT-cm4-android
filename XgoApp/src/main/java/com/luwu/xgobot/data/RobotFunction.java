@@ -86,6 +86,21 @@ public class RobotFunction {
     }
 
 
+    //0结束 1-255 各种动作，目前应该只有20个动作设计
+    public static void showMode(int state){
+        byte[] datas = new byte[]{(byte) state, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDZ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+
+    //动作轮播，0和1哪个是开文档也没说，按照前面的协议随便写一个了
+    public static void showRepeat(boolean enable){
+        byte[] datas = new byte[]{(byte) (enable?1:0), 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_DZLB,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
 //    public static void stepLength(int speed){
 //        byte[] datas = new byte[]{(byte) speed, 0x00};
