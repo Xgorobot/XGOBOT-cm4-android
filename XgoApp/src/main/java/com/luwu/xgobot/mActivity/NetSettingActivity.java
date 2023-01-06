@@ -1,5 +1,6 @@
 package com.luwu.xgobot.mActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.luwu.xgobot.BuildConfig;
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.mActivity.main.XgoMainActivity;
 import com.luwu.xgobot.socket.SocketManager;
 import com.luwu.xgobot.socket.SocketStateListener;
 
@@ -77,9 +80,14 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
 
     String testString = "start";
     @Override
-    public void onStateChange(String newState) {
+    public void onStateChange(String newState, boolean connected) {
         testString = testString + "     ---->    " + newState;
         runOnUiThread(() -> stateText.setText(testString));
 
+        if (connected || BuildConfig.DEBUG){
+            Intent intent = new Intent(NetSettingActivity.this, SettingActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
     }
 }

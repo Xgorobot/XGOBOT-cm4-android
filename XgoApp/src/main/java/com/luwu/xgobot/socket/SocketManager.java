@@ -222,9 +222,9 @@ public class SocketManager implements TCPListener {
     }
 
     @Override
-    public void onServiceStateMsgChanged(String msg) {
+    public void onServiceStateMsgChanged(String msg, boolean connected) {
         if (listener.get()!=null){
-            listener.get().onStateChange(msg);
+            listener.get().onStateChange(msg, connected);
         }
     }
 

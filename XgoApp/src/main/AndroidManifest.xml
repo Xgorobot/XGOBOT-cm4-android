@@ -31,7 +31,14 @@
         <activity
             android:name=".mActivity.NetSettingActivity"
             android:screenOrientation="sensorLandscape"
-            android:label="@string/title_activity_net_setting" />
+            android:label="@string/title_activity_net_setting"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".mActivity.MotorActivity"
             android:screenOrientation="sensorLandscape" />
@@ -76,11 +83,6 @@
             android:name=".mActivity.main.XgoMainActivity"
             android:exported="true"
             android:screenOrientation="sensorLandscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".mActivity.aimode.AiModeActivity"

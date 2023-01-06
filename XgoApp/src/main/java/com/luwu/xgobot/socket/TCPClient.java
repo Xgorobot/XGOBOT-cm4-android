@@ -106,12 +106,12 @@ public class TCPClient {
                         public void operationComplete(ChannelFuture channelFuture) throws Exception {
                             if (channelFuture.isSuccess()) {
                                 Log.e(TAG, "连接成功");
-                                listener.onServiceStateMsgChanged("连接成功");
+                                listener.onServiceStateMsgChanged("连接成功", true);
                                 isConnect = true;
                                 channel = channelFuture.channel();
                             } else {
                                 Log.e(TAG, "连接失败");
-                                listener.onServiceStateMsgChanged("连接失败");
+                                listener.onServiceStateMsgChanged("连接失败", false);
                                 isConnect = false;
                             }
                             isConnecting = false;
@@ -121,7 +121,7 @@ public class TCPClient {
                     // 等待连接关闭
                     channelFuture.channel().closeFuture().sync();
                     Log.e(TAG, " 断开连接");
-                    listener.onServiceStateMsgChanged("断开连接");
+                    listener.onServiceStateMsgChanged("断开连接", false);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -154,7 +154,7 @@ public class TCPClient {
             SystemClock.sleep(reconnectIntervalTime);
             if (isNeedReconnect && reconnectNum > 0 && !isConnect) {
                 Log.e(TAG, "重新连接");
-                listener.onServiceStateMsgChanged("重新连接");
+                listener.onServiceStateMsgChanged("重新连接", true);
                 connectServer();
             }
         }
@@ -212,7 +212,7 @@ public class TCPClient {
     //发送消息到服务端。 Bootstrap设置的时候我没有设置解码，这边才转的
     public boolean sendMsgToServer(String data, ChannelFutureListener listener) {
         Log.d(TAG, "sendStringMsgToServer: " + data);
-        this.listener.onServiceStateMsgChanged("sendStringMsgToServer: " + data);
+//        this.listener.onServiceStateMsgChanged("sendStringMsgToServer: " + data, isConnect);
         boolean flag = channel != null && isConnect;
         if (flag) {
             ByteBuf byteBuf = Unpooled.copiedBuffer(data , //2
@@ -228,8 +228,8 @@ public class TCPClient {
         if (flag) {
             Log.d(TAG, "writeAndFlush: String:" + new String(data));
             Log.d(TAG, "writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data));
-            this.listener.onServiceStateMsgChanged("writeAndFlush: String:" + new String(data));
-            this.listener.onServiceStateMsgChanged("writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data));
+//            this.listener.onServiceStateMsgChanged("writeAndFlush: String:" + new String(data), isConnect);
+//            this.listener.onServiceStateMsgChanged("writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data), isConnect);
 //            byte[] dataToSend = new byte[1024];
 //            System.arraycopy(data,0,dataToSend,0,data.length);
             channel.writeAndFlush(new String(data)).addListener(listener);

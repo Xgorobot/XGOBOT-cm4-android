@@ -13,6 +13,7 @@ import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.ActorActivity;
 import com.luwu.xgobot.mActivity.MainActivity;
 import com.luwu.xgobot.mActivity.NetSettingActivity;
+import com.luwu.xgobot.mActivity.SettingActivity;
 import com.luwu.xgobot.mActivity.aimode.AiModeActivity;
 import com.luwu.xgobot.mActivity.control.ControlActivity;
 
@@ -51,7 +52,7 @@ public class XgoMainActivity extends AppCompatActivity {
         });*/
         mSettingBtn = findViewById(R.id.btn_setting);
         mSettingBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(XgoMainActivity.this, NetSettingActivity.class);
+            Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
             startActivity(intent);
         });
         mContract_layout = findViewById(R.id.main_contract_layout);

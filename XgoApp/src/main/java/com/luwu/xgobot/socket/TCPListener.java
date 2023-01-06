@@ -23,5 +23,5 @@ public interface TCPListener {
      */
     public void onServiceStatusConnectChanged(int statusCode);
 
-    public void onServiceStateMsgChanged(String msg);
+    public void onServiceStateMsgChanged(String msg,boolean connected);
 }
