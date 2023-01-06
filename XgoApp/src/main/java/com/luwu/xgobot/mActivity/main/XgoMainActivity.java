@@ -1,6 +1,7 @@
 package com.luwu.xgobot.mActivity.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.ActorActivity;
+import com.luwu.xgobot.mActivity.DebugActivity;
 import com.luwu.xgobot.mActivity.MainActivity;
 import com.luwu.xgobot.mActivity.NetSettingActivity;
 import com.luwu.xgobot.mActivity.SettingActivity;
@@ -27,7 +29,7 @@ public class XgoMainActivity extends AppCompatActivity {
 
     private ImageView mSetImg;
     private LinearLayout mShow_layout, mContract_layout, mAimode_layout;
-    private ImageView mSettingBtn,mBack_img;
+    private ImageView mDebugBtn,mSettingBtn,mBack_img;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +52,18 @@ public class XgoMainActivity extends AppCompatActivity {
             Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
             startActivity(intent);
         });*/
+        mDebugBtn = findViewById(R.id.btn_debug);
+        SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        String setting_develop = info.getString("setting_develop", "no");
+        if (setting_develop.equals("yes")) {
+            mDebugBtn.setVisibility(View.VISIBLE);
+        } else {
+            mDebugBtn.setVisibility(View.GONE);
+        }
+        mDebugBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(XgoMainActivity.this, DebugActivity.class);
+            startActivity(intent);
+        });
         mSettingBtn = findViewById(R.id.btn_setting);
         mSettingBtn.setOnClickListener(v -> {
             Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
