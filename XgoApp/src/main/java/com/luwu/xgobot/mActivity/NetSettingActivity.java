@@ -27,6 +27,8 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
     private TextView stateText;
     private Button connectBtn;
 
+    private static final boolean TEST = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,12 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             e.printStackTrace();
         }
 
-        if (isCorrectIp(hostIp) && tcpPort>0 && cameraPort > 0){
+        if (TEST && BuildConfig.DEBUG){
+            Intent intent = new Intent(NetSettingActivity.this, XgoMainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }else if (isCorrectIp(hostIp) && tcpPort>0 && cameraPort > 0){
             SPUtils.getInstance().put("host",hostIp);
             SPUtils.getInstance().put("tcpPort",tcpPort);
             SPUtils.getInstance().put("cameraPort",cameraPort);
@@ -84,9 +91,9 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         testString = testString + "     ---->    " + newState;
         runOnUiThread(() -> stateText.setText(testString));
 
-        if (connected || BuildConfig.DEBUG){
-            Intent intent = new Intent(NetSettingActivity.this, SettingActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (connected){
+            Intent intent = new Intent(NetSettingActivity.this, XgoMainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
     }
