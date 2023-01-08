@@ -58,18 +58,38 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="120dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <FrameLayout
                 android:layout_width="690dp"
                 android:layout_height="372dp"
                 android:layout_gravity="center_horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <WebView
+                        android:id="@+id/motionmode_web"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never" />
+                </RelativeLayout>
 
-                <WebView
-                    android:id="@+id/motionmode_web"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:id="@+id/web_error_layout"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:overScrollMode="never" />
+                    android:orientation="vertical"
+                    android:background="@color/blue_142"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_weberror"
+                        android:scaleType="centerCrop"/>
+                </LinearLayout>
+
             </FrameLayout>
 
             <LinearLayout
@@ -114,10 +134,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="53dp"
-            android:layout_height="0dp" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,7 +142,9 @@
             android:layout_weight="1"
             android:background="@drawable/shape_blue_6"
             android:orientation="vertical"
-            android:paddingTop="59dp">
+            android:paddingTop="59dp"
+            android:visibility="gone"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -276,6 +294,50 @@
                 android:layout_height="60dp" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="60dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Grab"
+                android:textSize="30sp"
+                android:background="@drawable/wdian"
+                android:gravity="center"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:paddingLeft="33dp"
+                android:paddingRight="33dp"
+                android:textColor="@color/gray_8b" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="37dp"/>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/ic_launcher"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="37dp"/>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="37dp"/>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/ic_launcher"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

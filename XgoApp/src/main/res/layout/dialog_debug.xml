@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="陀螺仪"
+                android:text="@string/autostable"
                 android:textColor="@color/gray_8b"
                 android:textSize="28sp" />
         </RelativeLayout>
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="整机速度"
+                android:text="@string/frequency"
                 android:textColor="@color/gray_8b"
                 android:textSize="28sp" />
         </RelativeLayout>
@@ -116,11 +116,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="低"
+                    android:text="0"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
 
@@ -131,6 +132,7 @@
                     android:max="100"
                     android:maxHeight="7dp"
                     android:min="0"
+                    android:layout_gravity="center_vertical"
                     android:minHeight="7dp"
                     android:progress="40"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
@@ -139,16 +141,78 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="高"
-                    android:textColor="@color/white"
+                    android:text="60"
+                    android:textColor="@color/blue3e"
                     android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="24dp"
+                    android:src="@mipmap/ic_launcher"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="整机高度"
+                android:text="@string/height"
+                android:textColor="@color/gray_8b"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <SeekBar
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="7dp"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
+                    android:thumb="@drawable/seekbar_white_shape"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60"
+                    android:textColor="@color/blue3e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="24dp"
+                    android:src="@mipmap/ic_launcher"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/xgostep"
                 android:textColor="@color/gray_8b"
                 android:textSize="28sp" />
         </RelativeLayout>

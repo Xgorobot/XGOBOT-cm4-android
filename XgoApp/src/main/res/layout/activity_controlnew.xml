@@ -33,7 +33,7 @@
                 android:paddingTop="17dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="17dp"
-                android:text="运动模式"
+                android:text="@string/motion_mode"
                 android:textColor="@color/gray_8b"
                 android:textSize="36sp" />
 
@@ -64,7 +64,7 @@
                 android:layout_height="92dp"
                 android:background="@drawable/shape_bottom_blue1b"
                 android:gravity="center"
-                android:text="位姿模式"
+                android:text="@string/pose_mode"
                 android:textColor="@color/gray_8b"
                 android:textSize="36sp" />
 

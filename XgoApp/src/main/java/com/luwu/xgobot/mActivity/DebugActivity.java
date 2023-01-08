@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,14 +21,14 @@ import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 
 public class DebugActivity extends AppCompatActivity {
 
-    private Button debugBtnConfirm, debugBtnFinish;
-    private ImageButton debugBtnBack,debugImgMsg;
+    private ImageView debugBtnBack,debugImgMsg;
     private long mlastClickTime;
+    private TextView debugBtnConfirm, debugBtnFinish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_debug);
+        setContentView(R.layout.activity_debugnew);
 
         InitView();
         ShowDialog();

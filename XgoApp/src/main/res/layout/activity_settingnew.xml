@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_main_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:text="@string/baseset" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="92dp"
+            android:layout_marginLeft="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/xgolanguage"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/setting_flowsys_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/flowsys"
+                android:layout_marginLeft="69dp"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/setting_chinese_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/chinese"
+                android:layout_marginLeft="69dp"
+                android:textColor="@color/gray_8b"
+                android:textSize="30sp" />
+            <RadioButton
+                android:id="@+id/setting_english_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/english"
+                android:layout_marginLeft="69dp"
+                android:textColor="@color/gray_8b"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="74dp"
+            android:layout_marginLeft="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/devoptions"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_8b"
+                android:textSize="30sp"
+                android:text="@string/devdesc"
+                android:layout_marginLeft="69dp"/>
+
+
+            <RadioButton
+                android:id="@+id/setting_yes_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/btyes"
+                android:layout_marginLeft="69dp"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/setting_no_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/btno"
+                android:layout_marginLeft="69dp"
+                android:textColor="@color/gray_8b"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="72dp"
+            android:layout_marginLeft="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/deviceinfo"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/setting_deviceinfo_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_8b"
+                android:textSize="30sp"
+                tools:text="设备信息这里"
+                android:layout_marginLeft="69dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp">
+
+        <ImageView
+            android:id="@+id/main_back_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="41dp"
+            android:src="@drawable/icon_back" />
+    </RelativeLayout>
+
+</RelativeLayout>

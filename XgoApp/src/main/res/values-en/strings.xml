@@ -106,4 +106,27 @@
     <string name="control">控制</string>
     <string name="aimodule">AI模组</string>
     <string name="ip_input">Please enter IP address of the robot</string>
+    <string name="Grab">Grab</string>
+    <string name="connect">Confirm</string>
+    <string name="motion_mode">Motion Mode</string>
+    <string name="pose_mode">Motion Mode</string>
+    <string name="X_axistranslation">X-axis translation</string>
+    <string name="Y_axistranslation">Y-axis translation</string>
+    <string name="Z_axistranslation">Z-axis translation</string>
+    <string name="roll">Roll</string>
+    <string name="pitch">Pitch</string>
+    <string name="yaw">Yaw</string>
+
+    <string name="autostable">Auto stable</string>
+    <string name="frequency">Frequency</string>
+    <string name="height">Height</string>
+    <string name="xgostep">Step</string>
+    <string name="baseset">Setting</string>
+    <string name="xgolanguage">Language</string>
+    <string name="flowsys">Auto</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="devdesc">Run this project as developer</string>
+    <string name="devoptions">Development options</string>
+    <string name="deviceinfo">Device Information</string>
 </resources>

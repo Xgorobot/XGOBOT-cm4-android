@@ -15,11 +15,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.RobotFunction;
+
+import java.util.Locale;
 
 /**
  * <p>文件描述：<p>
@@ -107,11 +110,18 @@ public class DebugDialog extends Dialog {
     int height = 50;
 
     String[] titles = {"低速", "中速", "高速"};
+    String[] titlesEnglish = {"Low", "Normal", "High"};
 
     private void initView() {
         mlayout = findViewById(R.id.dialog_tablayout);
         mMain_layout = findViewById(R.id.debug_main);
-        mlayout.setTabData(titles);
+        Locale local = mContext.getResources().getConfiguration().locale;
+        if("CN".equals(local.getCountry())){
+            mlayout.setTabData(titles);
+        }
+        if("UK".equals(local.getCountry())||"TW".equals(local.getCountry())){
+            mlayout.setTabData(titlesEnglish);
+        }
         tuoluoyi = findViewById(R.id.tuoluoyi);
         robotHeight = findViewById(R.id.robot_height);
     }

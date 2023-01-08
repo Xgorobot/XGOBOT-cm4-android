@@ -61,7 +61,7 @@
     <string name="normal">普通</string>
     <string name="superior">高级</string>
     <string name="executing">正在执行</string>
-    <string name="calibration">标定初始位置</string>
+    <string name="calibration">开始标定</string>
     <string name="calibrationMode">进入标定模式</string>
     <string name="calibrated">完成标定</string>
     <string name="leg">单腿控制</string>
@@ -163,4 +163,27 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="ip_input">请输入机器人IP地址</string>
+
+    <string name="Grab">抓取</string>
+    <string name="connect">连接</string>
+    <string name="motion_mode">运动模式</string>
+    <string name="pose_mode">位姿模式</string>
+    <string name="X_axistranslation">X轴平移</string>
+    <string name="Y_axistranslation">Y轴平移</string>
+    <string name="Z_axistranslation">Z轴平移</string>
+    <string name="roll">X轴滚动</string>
+    <string name="pitch">Y轴滚动</string>
+    <string name="yaw">Z轴滚动</string>
+    <string name="autostable">自稳模式</string>
+    <string name="frequency">整机速度</string>
+    <string name="height">整机高度</string>
+    <string name="xgostep">步   幅</string>
+    <string name="baseset">基础设置</string>
+    <string name="xgolanguage">语言选择</string>
+    <string name="flowsys">跟随系统</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="devdesc">以开发者身份运行此项目</string>
+    <string name="devoptions">开发选项</string>
+    <string name="deviceinfo">设备信息</string>
 </resources>

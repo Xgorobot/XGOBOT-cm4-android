@@ -18,6 +18,7 @@ import com.luwu.xgobot.mActivity.NetSettingActivity;
 import com.luwu.xgobot.mActivity.SettingActivity;
 import com.luwu.xgobot.mActivity.aimode.AiModeActivity;
 import com.luwu.xgobot.mActivity.control.ControlActivity;
+import com.luwu.xgobot.set.SettingNewActivity;
 
 /**
  * <p>文件描述：<p>
@@ -66,7 +67,7 @@ public class XgoMainActivity extends AppCompatActivity {
         });
         mSettingBtn = findViewById(R.id.btn_setting);
         mSettingBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(XgoMainActivity.this, SettingActivity.class);
+            Intent intent = new Intent(XgoMainActivity.this, SettingNewActivity.class);
             startActivity(intent);
         });
         mContract_layout = findViewById(R.id.main_contract_layout);
