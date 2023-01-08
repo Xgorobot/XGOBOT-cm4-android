@@ -4,36 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/blue_main_bg"
     android:orientation="vertical"
     tools:context=".mActivity.SettingActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tab2"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/settingBtnBack"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/icon_back" />
 
         <LinearLayout
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
-            android:gravity="left">
-
-            <ImageButton
-                android:id="@+id/settingBtnBack"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="17dp"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                android:src="@drawable/back" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginRight="82dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
             android:gravity="center">
 
             <TextView
@@ -44,7 +36,7 @@
                 android:textColor="#ffffff"
                 android:textSize="30sp" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -68,7 +60,7 @@
                     android:layout_gravity="center_vertical"
                     android:text="基础设置"
                     android:textColor="#ffffff"
-                    android:textSize="25sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -85,7 +77,7 @@
                         android:layout_marginRight="20dp"
                         android:text="设置背景为图片"
                         android:textColor="#92a1b6"
-                        android:textSize="25sp" />
+                        android:textSize="30sp" />
 
                     <Button
                         android:id="@+id/settingBtnPhoto"
@@ -95,7 +87,7 @@
                         android:paddingHorizontal="20dp"
                         android:text="从图库选择"
                         android:textColor="#ffffff"
-                        android:textSize="25sp" />
+                        android:textSize="30sp" />
                 </LinearLayout>
 
                 <com.luwu.xgobot.mView.XRadioGroup
@@ -117,7 +109,7 @@
                             android:layout_marginRight="20dp"
                             android:text="设置界面主色调"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -140,7 +132,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="机械"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
 
                             <RadioButton
                                 android:id="@+id/settingRadioCute"
@@ -150,7 +142,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="可爱"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
 
                             <RadioButton
                                 android:id="@+id/settingRadioOld"
@@ -160,7 +152,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="复古"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
 
                             <RadioButton
                                 android:id="@+id/settingRadioSimple"
@@ -170,7 +162,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="简约"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
 
                         </LinearLayout>
 
@@ -188,7 +180,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="暖色调"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
 
                             <RadioButton
                                 android:id="@+id/settingRadioCold"
@@ -198,7 +190,7 @@
                                 android:button="@drawable/radiobutton_selector"
                                 android:text="冷色调"
                                 android:textColor="#92a1b6"
-                                android:textSize="25sp" />
+                                android:textSize="30sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.luwu.xgobot.mView.XRadioGroup>
@@ -218,55 +210,13 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="@string/preferences"
                         android:textColor="#ffffff"
-                        android:textSize="25sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="100dp"
-                        android:text="@string/turnoffBluetooth"
-                        android:textColor="#92a1b6"
-                        android:textSize="25sp" />
-
-                    <RadioGroup
-                        android:id="@+id/settingGroupClose"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/settingRadioClose"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:button="@drawable/radiobutton_selector"
-                            android:text="@string/btyes"
-                            android:textColor="#92a1b6"
-                            android:textSize="25sp" />
-
-                        <RadioButton
-                            android:id="@+id/settingRadioNoClose"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:button="@drawable/radiobutton_selector"
-                            android:text="@string/btno"
-                            android:textColor="#92a1b6"
-                            android:textSize="25sp" />
-                    </RadioGroup>
-                </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -280,7 +230,7 @@
                         android:paddingLeft="100dp"
                         android:text="@string/language"
                         android:textColor="#92a1b6"
-                        android:textSize="25sp" />
+                        android:textSize="30sp" />
 
                     <RadioGroup
                         android:id="@+id/settingGroupLanguage"
@@ -296,7 +246,7 @@
                             android:button="@drawable/radiobutton_selector"
                             android:text="@string/lanAuto"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <RadioButton
                             android:id="@+id/settingLanChinese"
@@ -305,7 +255,7 @@
                             android:button="@drawable/radiobutton_selector"
                             android:text="@string/lan_zh"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <RadioButton
                             android:id="@+id/settingLanEnglish"
@@ -314,9 +264,51 @@
                             android:button="@drawable/radiobutton_selector"
                             android:text="@string/lan_en"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
                     </RadioGroup>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="@string/turnoffBluetooth"
+                        android:textColor="#92a1b6"
+                        android:textSize="30sp" />
+
+                    <RadioGroup
+                        android:id="@+id/settingGroupClose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/settingRadioClose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radiobutton_selector"
+                            android:text="@string/btyes"
+                            android:textColor="#92a1b6"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/settingRadioNoClose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radiobutton_selector"
+                            android:text="@string/btno"
+                            android:textColor="#92a1b6"
+                            android:textSize="30sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -336,7 +328,7 @@
                         android:layout_gravity="center_vertical"
                         android:text="@string/developmentOptions"
                         android:textColor="#ffffff"
-                        android:textSize="25sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -352,7 +344,7 @@
                         android:paddingLeft="100dp"
                         android:text="@string/developer"
                         android:textColor="#92a1b6"
-                        android:textSize="25sp" />
+                        android:textSize="30sp" />
 
                     <RadioGroup
                         android:id="@+id/settingGroupDevel"
@@ -368,7 +360,7 @@
                             android:button="@drawable/radiobutton_selector"
                             android:text="@string/developyes"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <RadioButton
                             android:id="@+id/settingRadioAntiDevelop"
@@ -377,7 +369,7 @@
                             android:button="@drawable/radiobutton_selector"
                             android:text="@string/developno"
                             android:textColor="#92a1b6"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
@@ -397,7 +389,7 @@
 <!--                        android:layout_gravity="center_vertical"-->
 <!--                        android:text="@string/updatehex"-->
 <!--                        android:textColor="#ffffff"-->
-<!--                        android:textSize="25sp"-->
+<!--                        android:textSize="30sp"-->
 <!--                        android:textStyle="bold" />-->
 <!--                </LinearLayout>-->
 <!--                <LinearLayout-->
@@ -411,7 +403,7 @@
 <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
 <!--&lt;!&ndash;                        android:layout_marginVertical="5dp"&ndash;&gt;-->
 <!--&lt;!&ndash;                        android:text="@string/hexversion"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textSize="25sp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="30sp"&ndash;&gt;-->
 <!--&lt;!&ndash;                        android:textColor="#92a1b6"/>&ndash;&gt;-->
 <!--                    <Button-->
 <!--                        android:id="@+id/hexBtn"-->
@@ -420,7 +412,7 @@
 <!--                        android:layout_marginHorizontal="10dp"-->
 <!--                        android:layout_marginVertical="5dp"-->
 <!--                        android:text="@string/updatehexbtn"-->
-<!--                        android:textSize="25sp"-->
+<!--                        android:textSize="30sp"-->
 <!--                        android:textColor="#92a1b6"-->
 <!--                        android:background="@drawable/button_press"/>-->
 <!--                </LinearLayout>-->

@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -26,7 +27,7 @@ import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 public class SettingActivity extends AppCompatActivity {
 
     private Button settingBtnPhoto;
-    private ImageButton settingBtnBack;
+    private ImageView settingBtnBack;
     private RadioGroup  settingGroupDevel, settingGroupClose, settingGroupLanguage;
     private XRadioGroup settingGroupMode;
     private RadioButton settingRadioMachine, settingRadioCute, settingRadioSimple, settingRadioOld, settingRadioCold, settingRadioWarm;
