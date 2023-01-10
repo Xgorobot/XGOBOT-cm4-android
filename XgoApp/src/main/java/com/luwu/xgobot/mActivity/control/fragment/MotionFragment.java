@@ -1,12 +1,19 @@
 package com.luwu.xgobot.mActivity.control.fragment;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,6 +47,7 @@ public class MotionFragment extends Fragment {
     private ButtonView btnView;
     private WebView mWeb;
     private TextView mWalk_tv, mTrot_tv;
+    private LinearLayout mWeb_errorLayout;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -90,6 +98,7 @@ public class MotionFragment extends Fragment {
     private void initView(View view) {
         btnView = view.findViewById(R.id.motionmode_btn_view);
         mWeb = view.findViewById(R.id.motionmode_web);
+        mWeb_errorLayout = view.findViewById(R.id.web_error_layout);
         WebSettingsConfiguration(mWeb);
         mWalk_tv = view.findViewById(R.id.motionmode_walk_tv);
         mTrot_tv = view.findViewById(R.id.motionmode_trot_tv);
@@ -114,5 +123,23 @@ public class MotionFragment extends Fragment {
         webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
         webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
         webSettings.setAllowContentAccess(true);
+        //设置错误监听
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                //开始加载
+                mWeb_errorLayout.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                super.onReceivedError(view, request, error);
+                //加载失败
+                if (request.isForMainFrame()) {
+                    mWeb_errorLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 }

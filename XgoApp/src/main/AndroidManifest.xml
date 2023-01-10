@@ -87,6 +87,9 @@
         <activity
             android:name=".mActivity.aimode.AiModeActivity"
             android:screenOrientation="sensorLandscape" />
+
+        <activity android:name=".set.SettingNewActivity"
+            android:screenOrientation="sensorLandscape"/>
         <!--
  <activity android:name=".mActivity.control.ControlActivity"
             android:screenOrientation="sensorLandscape"/>

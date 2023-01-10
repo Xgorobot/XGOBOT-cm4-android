@@ -20,9 +20,8 @@
             android:background="@drawable/shape_blue_6"
             android:orientation="vertical"
             android:paddingLeft="55dp"
-            android:paddingTop="38dp"
-            android:paddingRight="55dp"
-            android:paddingBottom="30dp">
+            android:paddingTop="48dp"
+            android:paddingRight="55dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="X轴平移"
+                    android:text="@string/X_axistranslation"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -55,6 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
                     >
 
                     <TextView
@@ -79,7 +79,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="29dp" />
+                android:layout_height="84dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Y轴平移"
+                    android:text="@string/Y_axistranslation"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -98,7 +98,6 @@
                     android:id="@+id/xyz_translate_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:max="50"
                     android:maxHeight="7dp"
                     android:min="-50"
@@ -112,6 +111,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
                     >
 
                     <TextView
@@ -136,7 +137,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="29dp" />
+                android:layout_height="84dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Z轴平移"
+                    android:text="@string/Z_axistranslation"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -156,7 +157,6 @@
                     android:id="@+id/xyz_translate_z"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:max="50"
                     android:maxHeight="7dp"
                     android:min="-50"
@@ -170,6 +170,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
                     >
 
                     <TextView
@@ -190,8 +192,12 @@
                         android:textSize="20sp" />
                 </RelativeLayout>
 
-            </LinearLayout>
 
+
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="65dp"/>
         </LinearLayout>
 
         <View
@@ -205,9 +211,8 @@
             android:background="@drawable/shape_blue_6"
             android:orientation="vertical"
             android:paddingLeft="55dp"
-            android:paddingTop="38dp"
-            android:paddingRight="55dp"
-            android:paddingBottom="30dp">
+            android:paddingTop="48dp"
+            android:paddingRight="55dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="X轴滚动"
+                    android:text="@string/roll"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -240,6 +245,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
                     >
 
                     <TextView
@@ -264,7 +271,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="29dp" />
+                android:layout_height="84dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -275,7 +282,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Y轴滚动"
+                    android:text="@string/pitch"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -297,6 +304,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
                     >
 
                     <TextView
@@ -321,7 +330,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="29dp" />
+                android:layout_height="84dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -332,7 +341,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Z轴滚动"
+                    android:text="@string/yaw"
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
@@ -355,6 +364,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
                     >
 
                     <TextView
@@ -376,6 +387,9 @@
                 </RelativeLayout>
 
             </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="65dp"/>
 
         </LinearLayout>
 
