@@ -38,7 +38,7 @@
                 android:textSize="36sp" />
 
             <View
-                android:layout_width="23dp"
+                android:layout_width="46dp"
                 android:layout_height="0dp"
                 android:visibility="gone"/>
 
@@ -55,7 +55,7 @@
                 />
 
             <View
-                android:layout_width="23dp"
+                android:layout_width="95dp"
                 android:layout_height="0dp" />
 
             <TextView

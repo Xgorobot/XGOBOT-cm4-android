@@ -164,7 +164,7 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="ip_input">请输入机器人IP地址</string>
 
-    <string name="Grab">抓取</string>
+    <string name="zhuaqu">抓取</string>
     <string name="connect">连接</string>
     <string name="motion_mode">运动模式</string>
     <string name="pose_mode">位姿模式</string>
