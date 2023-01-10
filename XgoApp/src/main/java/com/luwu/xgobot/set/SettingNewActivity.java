@@ -1,5 +1,6 @@
 package com.luwu.xgobot.set;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -11,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.mActivity.SettingActivity;
+import com.luwu.xgobot.mMothed.mToast;
 
 /**
  * <p>文件描述：<p>
@@ -32,6 +35,9 @@ public class SettingNewActivity extends AppCompatActivity {
     private RadioButton mFolwSys_btn,mChinese_btn,mEnglish_btn,mConfirm_btn,mNo_btn;
     private TextView mDeviceinfo_tv;
     private void initView() {
+        SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        SharedPreferences.Editor edit = info.edit();
+
         mBack_img = findViewById(R.id.main_back_img);
         mBack_img.setOnClickListener(v -> {
             finish();
@@ -47,6 +53,8 @@ public class SettingNewActivity extends AppCompatActivity {
             if(isChecked){
                 mChinese_btn.setChecked(false);
                 mEnglish_btn.setChecked(false);
+                edit.putString("setting_language", "auto");
+                edit.apply();
             }
         });
         //中文
@@ -55,6 +63,8 @@ public class SettingNewActivity extends AppCompatActivity {
             if(isChecked){
                 mFolwSys_btn.setChecked(false);
                 mEnglish_btn.setChecked(false);
+                edit.putString("setting_language", "zh");
+                edit.apply();
             }
         });
         //英文
@@ -63,6 +73,8 @@ public class SettingNewActivity extends AppCompatActivity {
             if(isChecked){
                 mFolwSys_btn.setChecked(false);
                 mChinese_btn.setChecked(false);
+                edit.putString("setting_language", "en");
+                edit.apply();
             }
         });
 
@@ -73,6 +85,8 @@ public class SettingNewActivity extends AppCompatActivity {
             mConfirm_btn.setTextColor(isChecked?this.getResources().getColor(R.color.white):this.getResources().getColor(R.color.gray_8b));
             if(isChecked){
                 mNo_btn.setChecked(false);
+                edit.putString("setting_develop", "yes");
+                edit.apply();
             }
         });
         //否
@@ -80,6 +94,9 @@ public class SettingNewActivity extends AppCompatActivity {
             mNo_btn.setTextColor(isChecked?this.getResources().getColor(R.color.white):this.getResources().getColor(R.color.gray_8b));
             if(isChecked){
                 mConfirm_btn.setChecked(false);
+
+                edit.putString("setting_develop", "no");
+                edit.apply();
             }
         });
         //设备信息

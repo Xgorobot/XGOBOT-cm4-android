@@ -245,15 +245,15 @@ public class SettingActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.settingRadioDevelop:
                         edit.putString("setting_develop", "yes");
-                        edit.commit();
+                        edit.apply();
                         settingRadioDevelop.setTextColor(getResources().getColor(R.color.white));
-//                        mToast.show(SettingActivity.this, "开发者模式");
+                        mToast.show(SettingActivity.this, "开发者模式");
                         break;
                     case R.id.settingRadioAntiDevelop:
                         edit.putString("setting_develop", "no");
-                        edit.commit();
+                        edit.apply();
                         settingRadioAntiDevelop.setTextColor(getResources().getColor(R.color.white));
-//                        mToast.show(SettingActivity.this, "取消开发者模式");
+                        mToast.show(SettingActivity.this, "取消开发者模式");
                         break;
                 }
             }
