@@ -80,6 +80,21 @@ public class SettingNewActivity extends AppCompatActivity {
 
         mConfirm_btn = findViewById(R.id.setting_yes_btn);
         mNo_btn = findViewById(R.id.setting_no_btn);
+
+        String setting_develop = info.getString("setting_develop", "no");
+
+
+        switch (setting_develop) {
+            case "yes":
+                mConfirm_btn.setChecked(true);
+                mNo_btn.setChecked(false);
+                break;
+            case "no":
+                mConfirm_btn.setChecked(false);
+                mNo_btn.setChecked(true);
+                break;
+        }
+
         //是
         mConfirm_btn.setOnCheckedChangeListener((buttonView, isChecked) -> {
             mConfirm_btn.setTextColor(isChecked?this.getResources().getColor(R.color.white):this.getResources().getColor(R.color.gray_8b));

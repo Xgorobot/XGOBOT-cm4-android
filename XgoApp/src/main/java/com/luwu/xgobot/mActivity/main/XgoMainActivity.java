@@ -61,13 +61,6 @@ public class XgoMainActivity extends AppCompatActivity {
             startActivity(intent);
         });*/
         mDebugBtn = findViewById(R.id.btn_debug);
-        SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
-        String setting_develop = info.getString("setting_develop", "no");
-        if (setting_develop.equals("yes")) {
-            mDebugBtn.setVisibility(View.VISIBLE);
-        } else {
-            mDebugBtn.setVisibility(View.GONE);
-        }
         mDebugBtn.setOnClickListener(v -> {
             Intent intent = new Intent(XgoMainActivity.this, DebugActivity.class);
             startActivity(intent);
@@ -98,6 +91,13 @@ public class XgoMainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateLocale();
+        SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        String setting_develop = info.getString("setting_develop", "no");
+        if (setting_develop.equals("yes")) {
+            mDebugBtn.setVisibility(View.VISIBLE);
+        } else {
+            mDebugBtn.setVisibility(View.GONE);
+        }
     }
 
     private void updateLocale() {
