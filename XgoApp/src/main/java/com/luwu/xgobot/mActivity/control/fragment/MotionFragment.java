@@ -12,6 +12,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -47,6 +48,7 @@ public class MotionFragment extends Fragment {
     private ButtonView btnView;
     private WebView mWeb;
     private TextView mWalk_tv, mTrot_tv;
+    private ImageButton upBtn,middleBtn,downBtn;
     private LinearLayout mWeb_errorLayout;
 
     @Override
@@ -93,6 +95,21 @@ public class MotionFragment extends Fragment {
             mTrot_tv.setBackgroundResource(R.drawable.bg_text_blue);
             RobotFunction.setStepState(0);
         });
+        upBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        middleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        downBtn.setOnClickListener(v -> {
+            RobotFunction.grap();
+        });
     }
 
     private void initView(View view) {
@@ -102,6 +119,9 @@ public class MotionFragment extends Fragment {
         WebSettingsConfiguration(mWeb);
         mWalk_tv = view.findViewById(R.id.motionmode_walk_tv);
         mTrot_tv = view.findViewById(R.id.motionmode_trot_tv);
+        upBtn = view.findViewById(R.id.btn_grap_up);
+        middleBtn = view.findViewById(R.id.btn_grap_middle);
+        downBtn = view.findViewById(R.id.btn_grap_down);
     }
 
     public void WebSettingsConfiguration(WebView webView) {

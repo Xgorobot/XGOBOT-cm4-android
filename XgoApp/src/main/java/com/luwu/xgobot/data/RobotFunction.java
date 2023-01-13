@@ -108,6 +108,9 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
+    public static void grap() {
+    }
+
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
 //    public static void stepLength(int speed){
 //        byte[] datas = new byte[]{(byte) speed, 0x00};
