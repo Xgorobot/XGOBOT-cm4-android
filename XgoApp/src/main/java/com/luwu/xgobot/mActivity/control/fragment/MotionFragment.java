@@ -95,20 +95,11 @@ public class MotionFragment extends Fragment {
             mTrot_tv.setBackgroundResource(R.drawable.bg_text_blue);
             RobotFunction.setStepState(0);
         });
-        upBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-        middleBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        upBtn.setOnClickListener(v -> RobotFunction.grap(128));
+        middleBtn.setOnClickListener(v -> RobotFunction.grap(129));
         downBtn.setOnClickListener(v -> {
-            RobotFunction.grap();
+            RobotFunction.grap(130);
         });
     }
 

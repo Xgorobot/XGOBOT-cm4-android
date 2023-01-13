@@ -108,7 +108,11 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
-    public static void grap() {
+    //上中下抓取对应 128 129 130 其实就是表演模式的动作事件
+    public static void grap(int state) {
+        byte[] datas = new byte[]{(byte) state, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDZ,datas);
+        SocketManager.getInstance().write(sendData);
     }
 
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
