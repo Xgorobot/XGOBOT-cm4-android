@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.luwu.xgobot.BuildConfig;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.main.XgoMainActivity;
@@ -65,6 +67,10 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             SPUtils.getInstance().put("tcpPort",tcpPort);
             SPUtils.getInstance().put("cameraPort",cameraPort);
             connect(hostIp,tcpPort);
+        }else {
+            if (!isCorrectIp(hostIp)){
+                ToastUtils.showLong("IP address is illegal");
+            }
         }
     }
 
@@ -95,6 +101,8 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             Intent intent = new Intent(NetSettingActivity.this, XgoMainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+        }else {
+            ToastUtils.showShort("Connect Fail，please check your network。");
         }
     }
 }

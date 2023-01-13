@@ -26,48 +26,56 @@
             android:textSize="36sp" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/debugImgMsg"
-        android:layout_width="483dp"
-        android:layout_height="344dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="68dp"
-        android:src="@drawable/default_debug" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="49dp"
-        >
-        <TextView
-            android:id="@+id/debugBtnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/debugImgMsg"
+            android:layout_width="483dp"
+            android:layout_height="344dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="68dp"
+            android:src="@drawable/default_debug" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calibration"
-            android:textColor="@color/white"
-            android:textSize="34sp"
-            android:paddingTop="18dp"
-            android:paddingBottom="18dp"
-            android:paddingLeft="84dp"
-            android:paddingRight="84dp"
-            android:background="@drawable/bg_text_blue" />
-        <View
-            android:layout_width="110dp"
-            android:layout_height="0dp"/>
-        <TextView
-            android:id="@+id/debugBtnFinish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/calibrated"
-            android:textColor="@color/white"
-            android:textSize="34sp"
-            android:paddingTop="18dp"
-            android:paddingBottom="18dp"
-            android:paddingLeft="84dp"
-            android:paddingRight="84dp"
-            android:background="@drawable/debug_text_border"
-            />
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="49dp"
+            >
+            <TextView
+                android:id="@+id/debugBtnConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calibration"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:paddingLeft="84dp"
+                android:paddingRight="84dp"
+                android:background="@drawable/bg_text_blue" />
+            <View
+                android:layout_width="110dp"
+                android:layout_height="0dp"/>
+            <TextView
+                android:id="@+id/debugBtnFinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calibrated"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:paddingLeft="84dp"
+                android:paddingRight="84dp"
+                android:background="@drawable/debug_text_border"
+                />
+        </LinearLayout>
     </LinearLayout>
+
+
 </LinearLayout>

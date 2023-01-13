@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.DataHelper;
+import com.luwu.xgobot.data.RobotFunction;
 import com.luwu.xgobot.mMothed.mToast;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIDialog;
@@ -107,7 +108,7 @@ public class DebugActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.debugBtnConfirm:
-                    DataHelper.addMessage(new byte[]{0x04, (byte) 0x01}); //舵机卸载
+                    RobotFunction.setDebugMode(true);
                     switch(localeLanguage){
                         case "zh":
                             mToast.show(DebugActivity.this,"已进入标定模式");
@@ -118,7 +119,7 @@ public class DebugActivity extends AppCompatActivity {
                     break;
                 case R.id.debugBtnFinish:
                     if(!isFastDoubleClick()){
-                        DataHelper.addMessage(new byte[]{0x04, (byte) 0x00});//记录位置
+                        RobotFunction.setDebugMode(false);
                         switch(localeLanguage){
                             case "zh":
                                 mToast.show(DebugActivity.this,"完成标定");

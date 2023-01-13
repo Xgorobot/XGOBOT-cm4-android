@@ -101,6 +101,13 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
+    //设置标定模式
+    public static void setDebugMode(boolean enable){
+        byte[] datas = new byte[]{(byte) (enable?1:0), 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_DJXZ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
 //    public static void stepLength(int speed){
 //        byte[] datas = new byte[]{(byte) speed, 0x00};
