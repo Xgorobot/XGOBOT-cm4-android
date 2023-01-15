@@ -149,7 +149,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="24dp"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@drawable/icon_motionset_refresh"/>
             </LinearLayout>
 
             <TextView
@@ -205,7 +205,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="24dp"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@drawable/icon_motionset_refresh"/>
             </LinearLayout>
 
             <TextView

@@ -321,7 +321,8 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@color/transparent"
-                android:src="@drawable/zs"/>
+                android:src="@drawable/button_press_zs"
+                android:scaleType="centerCrop"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="37dp"/>
@@ -330,7 +331,8 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@color/transparent"
-                android:src="@drawable/zz"/>
+                android:src="@drawable/button_press_zz"
+                android:scaleType="centerCrop"/>
 
             <View
                 android:layout_width="0dp"
@@ -340,7 +342,8 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@color/transparent"
-                android:src="@drawable/zs"/>
+                android:src="@drawable/button_press_zx"
+                android:scaleType="centerCrop"/>
 
         </LinearLayout>
 
