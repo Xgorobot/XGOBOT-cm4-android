@@ -29,7 +29,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
     private TextView stateText;
     private Button connectBtn;
 
-    private static final boolean TEST = false;
+    private static final boolean TEST = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +101,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             Intent intent = new Intent(NetSettingActivity.this, XgoMainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }else {
             ToastUtils.showShort("Connect Fail，please check your network。");
         }

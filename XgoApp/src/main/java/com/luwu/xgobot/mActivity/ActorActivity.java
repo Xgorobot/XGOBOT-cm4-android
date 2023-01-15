@@ -23,8 +23,8 @@ public class ActorActivity extends AppCompatActivity {
     private ImageView actorBtnExit;
     private Switch actorWhileSwitch;
     private ButtonClickListener mButtonClickListener;
-    private Button actorBtn1, actorBtn2, actorBtn3, actorBtn4, actorBtn5, actorBtn6, actorBtn7, actorBtn8, actorBtn9, actorBtn10, actorBtn11, actorBtn12, actorBtn13, actorBtn14, actorBtn15, actorBtn16, actorBtn17, actorBtn18, actorBtn19, actorBtn20;
-    private byte[] action = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    private Button actorBtn1, actorBtn2, actorBtn3, actorBtn4, actorBtn5, actorBtn6, actorBtn7, actorBtn8, actorBtn9, actorBtn10, actorBtn11, actorBtn12, actorBtn13, actorBtn14, actorBtn15, actorBtn16, actorBtn17, actorBtn18, actorBtn19, actorBtn20, actorBtn21, actorBtn22, actorBtn23;
+    private byte[] action = {1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21 ,20 , 24, 23, 22};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +82,12 @@ public class ActorActivity extends AppCompatActivity {
         actorBtn19.setOnClickListener(mButtonClickListener);
         actorBtn20 = findViewById(R.id.actorBtn20);
         actorBtn20.setOnClickListener(mButtonClickListener);
+        actorBtn21 = findViewById(R.id.actorBtn21);
+        actorBtn21.setOnClickListener(mButtonClickListener);
+        actorBtn22 = findViewById(R.id.actorBtn22);
+        actorBtn22.setOnClickListener(mButtonClickListener);
+        actorBtn23 = findViewById(R.id.actorBtn23);
+        actorBtn23.setOnClickListener(mButtonClickListener);
     }
 
     @Override
@@ -161,6 +167,15 @@ public class ActorActivity extends AppCompatActivity {
                     break;
                 case R.id.actorBtn20:
                     sendAction(action[19]);
+                    break;
+                case R.id.actorBtn21:
+                    sendAction(action[20]);
+                    break;
+                case R.id.actorBtn22:
+                    sendAction(action[21]);
+                    break;
+                case R.id.actorBtn23:
+                    sendAction(action[22]);
                     break;
             }
         }

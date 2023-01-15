@@ -112,8 +112,13 @@
     <string name="wavebody">波浪</string>
     <string name="swing">摇摆</string>
     <string name="pray">求食</string>
-    <string name="seek">找食物</string>
+    <string name="lookingfood">找食物</string>
     <string name="handshake">握手</string>
+    <string name="pushup">俯卧撑</string>
+    <string name="chickenhead">鸡头</string>
+    <string name="naughty">调皮</string>
+    <string name="dance">跳舞</string>
+    <string name="seek">张望</string>
     <string name="actor">表演</string>
     <string name="xyz">XYZ-轴</string>
     <string name="pry">Roll/Pitch/Yaw</string>

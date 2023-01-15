@@ -73,8 +73,13 @@
     <string name="wavebody">wave (body)</string>
     <string name="swing">wave (side)</string>
     <string name="pray">pray</string>
-    <string name="seek">happy</string>
+    <string name="lookingfood">Looking for food</string>
     <string name="handshake">handshake</string>
+    <string name="pushup">Push_up</string>
+    <string name="chickenhead">Chicken head</string>
+    <string name="naughty">Naughty</string>
+    <string name="dance">Dance</string>
+    <string name="seek">Seek</string>
     <string name="actor">Performance Mode</string>
     <string name="xyz">XYZ-axis</string>
     <string name="pry">Roll/Pitch/Yaw</string>

@@ -51,7 +51,7 @@ public class MotionFragment extends Fragment {
     private ButtonView btnView;
     private WebView mWeb;
     private TextView mWalk_tv, mTrot_tv;
-    private ImageButton upBtn,middleBtn,downBtn;
+    private ImageButton upBtn,middleBtn,downBtn,turnLeftBtn,turnRightBtn;
     private LinearLayout mWeb_errorLayout;
 
     @Override
@@ -85,6 +85,12 @@ public class MotionFragment extends Fragment {
             public void actionUp(int num) {
                 RobotFunction.btnControl(0);
             }
+        });
+        turnLeftBtn.setOnClickListener(v -> {
+            RobotFunction.btnControl(5);
+        });
+        turnRightBtn.setOnClickListener(v -> {
+            RobotFunction.btnControl(6);
         });
         mWalk_tv.setOnClickListener(v -> {
             mWalk_tv.setTextColor(this.getResources().getColor(R.color.white));
