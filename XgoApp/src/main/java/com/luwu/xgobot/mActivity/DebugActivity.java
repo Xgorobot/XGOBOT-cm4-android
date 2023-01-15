@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.DataHelper;
 import com.luwu.xgobot.mMothed.mToast;
+import com.luwu.xgobot.weight.DebugDialog;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIDialog;
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIMenu;
@@ -29,7 +30,6 @@ public class DebugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_debugnew);
-
         InitView();
         ShowDialog();
     }
@@ -65,9 +65,15 @@ public class DebugActivity extends AppCompatActivity {
             }
         });
     }
-
+    private DebugDialog mDebug_dialog;
     private void ShowDialog() {
-        final AlertDialog dialog = new AlertDialog.Builder(DebugActivity.this).create();
+        if(mDebug_dialog == null){
+            mDebug_dialog = new DebugDialog(this);
+        }
+        hideBottomUIDialog(mDebug_dialog);
+        mDebug_dialog.show();
+      /*  final AlertDialog dialog = new AlertDialog.Builder(DebugActivity.this).create();
+        dialog.setContentView(R.layout.dialog_debug);
         //为了解决onResume不调用的问题
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
@@ -76,7 +82,11 @@ public class DebugActivity extends AppCompatActivity {
             }
         });
         hideBottomUIDialog(dialog);
-        switch(localeLanguage){
+        TextView confirmtv = dialog.findViewById(R.id.debug_confirm_tv);
+        confirmtv.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
+        *//*switch(localeLanguage){
             case "zh":
                 dialog.setMessage("点击【进入标定模式】卸载舵机，此时您可以转动关节到指定位置\n点击【完成标定】将记录当前位置为初始位置，并恢复站姿");
                 dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "我知道了", new DialogInterface.OnClickListener() {
@@ -96,9 +106,9 @@ public class DebugActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-        }
+        }*//*
         dialog.setCancelable(true);
-        dialog.show();
+        dialog.show();*/
     }
 
     private class BtnListener implements View.OnClickListener {

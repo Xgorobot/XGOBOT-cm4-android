@@ -62,8 +62,8 @@
             >
 
             <FrameLayout
-                android:layout_width="690dp"
-                android:layout_height="372dp"
+                android:layout_width="750dp"
+                android:layout_height="400dp"
                 android:layout_gravity="center_horizontal">
                 <RelativeLayout
                     android:layout_width="match_parent"

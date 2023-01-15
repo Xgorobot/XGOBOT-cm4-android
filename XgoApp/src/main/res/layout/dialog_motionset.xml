@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/debug_main"
+    >
+    <LinearLayout
+        android:layout_width="682dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_blue_6"
+        android:paddingBottom="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="54dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="43dp">
+
+
+            <Switch
+                android:id="@+id/tuoluoyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:checked="false"
+                android:maxHeight="33dp"
+                android:showText="false"
+                android:switchMinWidth="40dp"
+                android:thumb="@drawable/switch_custom_thumb_selector"
+                android:track="@drawable/switch_custom_track_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/autostable"
+                android:textColor="@color/gray_8b"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
+
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/low_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="低速"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/normal_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="普通"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/height_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高速"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>-->
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/dialog_tablayout"
+                android:layout_width="440dp"
+                android:layout_height="46dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/blue1b"
+                app:tl_divider_color="@color/gray_46"
+                app:tl_indicator_color="#3689F9"
+                app:tl_textUnselectColor="@color/gray_8b"
+                app:tl_textsize="24sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/frequency"
+                android:textColor="@color/gray_8b"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <SeekBar
+                    android:id="@+id/robot_height"
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="7dp"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
+                    android:thumb="@drawable/seekbar_white_shape"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60"
+                    android:textColor="@color/blue3e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="24dp"
+                    android:src="@mipmap/ic_launcher"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/height"
+                android:textColor="@color/gray_8b"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="43dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <SeekBar
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:maxHeight="7dp"
+                    android:min="0"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="7dp"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
+                    android:thumb="@drawable/seekbar_white_shape"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60"
+                    android:textColor="@color/blue3e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="24dp"
+                    android:src="@mipmap/ic_launcher"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/xgostep"
+                android:textColor="@color/gray_8b"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

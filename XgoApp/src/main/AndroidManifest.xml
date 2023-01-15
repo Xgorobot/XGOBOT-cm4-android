@@ -28,16 +28,22 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".mActivity.NetSettingActivity"
+        <activity android:name=".mActivity.splash.SplashActivity"
             android:screenOrientation="sensorLandscape"
-            android:label="@string/title_activity_net_setting"
+            android:label="splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".mActivity.NetSettingActivity"
+            android:screenOrientation="sensorLandscape"
+            android:label="@string/title_activity_net_setting"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".mActivity.MotorActivity"

@@ -3,7 +3,6 @@ package com.luwu.xgobot.mActivity.control;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +15,7 @@ import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.control.fragment.MotionFragment;
 import com.luwu.xgobot.mActivity.control.fragment.SingleLegFragment;
 import com.luwu.xgobot.mActivity.control.fragment.XYZFragment;
-import com.luwu.xgobot.weight.DebugDialog;
+import com.luwu.xgobot.weight.MotionSetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,18 +41,18 @@ public class ControlActivity extends AppCompatActivity {
         initView();
     }
 
-    private DebugDialog mDebugDialog;
+    private MotionSetDialog mMotionSetDialog;
 
     private void initView() {
         mDebug_img = findViewById(R.id.controlnew_debug_img);
         mDebug_img.setOnClickListener(v -> {
-            if (mDebugDialog == null) {
-                mDebugDialog = new DebugDialog(this);
+            if (mMotionSetDialog == null) {
+                mMotionSetDialog = new MotionSetDialog(this);
             }
-            if (mDebugDialog.isShowing()) {
-                mDebugDialog.dismiss();
+            if (mMotionSetDialog.isShowing()) {
+                mMotionSetDialog.dismiss();
             }
-            mDebugDialog.show();
+            mMotionSetDialog.show();
         });
        /* mNormal_tv = findViewById(R.id.control_normal_tv);
         mNormal_tv.setOnClickListener(v -> {
