@@ -103,11 +103,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/motionmode_walk_tv"
+                    android:id="@+id/motionmode_trot_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="WALK"
+                    android:text="TROT"
                     android:textColor="@color/white"
                     android:textSize="32sp"
                     android:paddingTop="24dp"
@@ -121,12 +121,12 @@
                     android:layout_height="0dp" />
 
                 <TextView
-                    android:id="@+id/motionmode_trot_tv"
+                    android:id="@+id/motionmode_walk_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TROT"
                     android:textSize="32sp"
+                    android:text="WALK"
                     android:paddingTop="24dp"
                     android:paddingBottom="24dp"
                     android:paddingLeft="100dp"
