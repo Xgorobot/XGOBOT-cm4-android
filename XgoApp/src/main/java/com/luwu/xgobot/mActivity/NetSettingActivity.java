@@ -29,7 +29,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
     private TextView stateText;
     private Button connectBtn;
 
-    private static final boolean TEST = true;
+    private static final boolean TEST = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
