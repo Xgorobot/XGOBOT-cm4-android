@@ -186,4 +186,7 @@
     <string name="devdesc">以开发者身份运行此项目</string>
     <string name="devoptions">开发选项</string>
     <string name="deviceinfo">设备信息</string>
+    <string name="debugdesc_1">点击【开始标定】按照说明书讲机器狗摆放为标定姿势</string>
+    <string name="debugdesc_2">点击【完成标定】记录当前标定姿势为初始位置，10秒后回复默认站姿</string>
+    <string name="Confirm">知道了</string>
 </resources>

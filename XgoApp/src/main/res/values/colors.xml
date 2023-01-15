@@ -36,4 +36,7 @@
     <color name="toast_color">#60666666</color>
     <color name="selected_color">#E8E8E8</color>
     <color name="blue_142">#142F55</color>
+    <color name="blue28">#2828E4</color>
+    <color name="green12">#12AB4F</color>
+    <color name="redca">#CA2F3A</color>
 </resources>

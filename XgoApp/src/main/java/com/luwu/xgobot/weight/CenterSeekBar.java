@@ -9,11 +9,16 @@ package com.luwu.xgobot.weight;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.luwu.xgobot.R;
 
 /**
@@ -63,7 +68,7 @@ public class CenterSeekBar extends View {
                 attrs, R.styleable.CenterSeekBar, defStyleAttr, defStyleAttr);
         mThumb = a.getDrawable(R.styleable.CenterSeekBar_thumb);
         if (mThumb == null) {
-            mThumb = getResources().getDrawable(R.drawable.seekbar_thumb);
+            mThumb = getResources().getDrawable(R.drawable.seekbar_white_shape);
         }
         mProgressDrawable = a.getDrawable(R.styleable.CenterSeekBar_progressDrawable);
         if (mProgressDrawable == null) {
@@ -71,7 +76,7 @@ public class CenterSeekBar extends View {
         }
         mBackgroundDrawable = a.getDrawable(R.styleable.CenterSeekBar_backgroundDrawable);
         if (mBackgroundDrawable == null) {
-            mBackgroundDrawable = getResources().getDrawable(R.drawable.seekbar_background);
+            mBackgroundDrawable = getResources().getDrawable(R.drawable.seekbar_progress_drawable);
         }
         progress = a.getInt(R.styleable.CenterSeekBar_progress, 0);
         minProgress = a.getInt(R.styleable.CenterSeekBar_min, 0);
@@ -80,9 +85,13 @@ public class CenterSeekBar extends View {
         mSeekBarWidth = mBackgroundDrawable.getIntrinsicWidth();
         mThumbHeight = mThumb.getIntrinsicHeight();
         mThumbWidth = mThumb.getIntrinsicWidth();
+        mBackground_rect = new RectF();
+        paint = new Paint();
+        paint.setAntiAlias(true);
         a.recycle();
     }
-
+    private RectF mBackground_rect;
+    private Paint paint;
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         final Drawable d = mProgressDrawable;
@@ -108,14 +117,32 @@ public class CenterSeekBar extends View {
         super.onDraw(canvas);
         mBackgroundDrawable.setBounds(mThumbWidth / 2, mSeekBarHeight / 2 - mMinHeight / 2, mSeekBarWidth - mThumbWidth / 2, mSeekBarHeight / 2 + mMinHeight / 2);
         mBackgroundDrawable.draw(canvas);
-        if (mThumbCenterPosition > mSeekBarWidth / 2) {
+
+        /*if (mThumbCenterPosition > mSeekBarWidth / 2) {
             mProgressDrawable.setBounds(mSeekBarWidth / 2, mSeekBarHeight / 2 - mMinHeight / 2, mThumbCenterPosition, mSeekBarHeight / 2 + mMinHeight / 2);
         } else if (mThumbCenterPosition < mSeekBarWidth / 2) {
             mProgressDrawable.setBounds(mThumbCenterPosition, mSeekBarHeight / 2 - mMinHeight / 2, mSeekBarWidth / 2, mSeekBarHeight / 2 + mMinHeight / 2);
         } else {
             mProgressDrawable.setBounds(mThumbCenterPosition + mThumbWidth / 2, mSeekBarHeight / 2 - mMinHeight / 2, mSeekBarWidth / 2, mSeekBarHeight / 2 + mMinHeight / 2);
         }
-        mProgressDrawable.draw(canvas);
+        mProgressDrawable.draw(canvas);*/
+        if (mThumbCenterPosition > mSeekBarWidth / 2) {
+            mBackground_rect.left =mSeekBarWidth / 2;
+            mBackground_rect.top = mSeekBarHeight / 2 - mMinHeight / 2;
+            mBackground_rect.right = mThumbCenterPosition;
+            mBackground_rect.bottom = mSeekBarHeight / 2 + mMinHeight / 2;
+        } else if (mThumbCenterPosition < mSeekBarWidth / 2) {
+            mBackground_rect.left =mThumbCenterPosition;
+            mBackground_rect.top = mSeekBarHeight / 2 - mMinHeight / 2;
+            mBackground_rect.right = mSeekBarWidth / 2;
+            mBackground_rect.bottom = mSeekBarHeight / 2 + mMinHeight / 2;
+        } else {
+            mBackground_rect.left =mThumbCenterPosition + mThumbWidth / 2;
+            mBackground_rect.top = mSeekBarHeight / 2 - mMinHeight / 2;
+            mBackground_rect.right = mSeekBarWidth / 2;
+            mBackground_rect.bottom = mSeekBarHeight / 2 + mMinHeight / 2;
+        }
+        canvas.drawRoundRect(mBackground_rect,8,8,paint);
         mThumb.setBounds(mThumbCenterPosition - mThumbWidth / 2, 0, mThumbCenterPosition + mThumbWidth / 2, mThumbHeight);
         mThumb.draw(canvas);
     }
@@ -145,8 +172,9 @@ public class CenterSeekBar extends View {
                     }
                     int progressPosition = (int) ((maxProgress - minProgress) * scale);
                     mThumbCenterPosition = progressPosition * (mSeekBarWidth - mThumbWidth) / (maxProgress - minProgress) + mThumbWidth / 2;
+
                     this.progress = progressPosition + minProgress;
-                    if (progressPosition > maxProgress) {
+                    if (progress > maxProgress) {
                         progress = maxProgress;
                     } else if (progress < minProgress) {
                         progress = minProgress;
@@ -220,5 +248,9 @@ public class CenterSeekBar extends View {
         void onStartTrackingTouch(CenterSeekBar seekBar);
 
         void onStopTrackingTouch(CenterSeekBar seekBar);
+    }
+    //设置背景颜色
+    public void setBackgroundColor(int color){
+        this.paint.setColor(color);
     }
 }

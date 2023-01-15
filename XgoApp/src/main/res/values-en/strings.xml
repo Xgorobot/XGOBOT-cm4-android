@@ -109,7 +109,7 @@
     <string name="zhuaqu">Grab</string>
     <string name="connect">Confirm</string>
     <string name="motion_mode">Motion Mode</string>
-    <string name="pose_mode">Motion Mode</string>
+    <string name="pose_mode">Pose Mode</string>
     <string name="X_axistranslation">X-axis translation</string>
     <string name="Y_axistranslation">Y-axis translation</string>
     <string name="Z_axistranslation">Z-axis translation</string>
@@ -129,4 +129,7 @@
     <string name="devdesc">Run this project as developer</string>
     <string name="devoptions">Development options</string>
     <string name="deviceinfo">Device Information</string>
+    <string name="debugdesc_1">Click [Calibrate] to unload the steering gear. At this time, you can rotate the joint to the specified position</string>
+    <string name="debugdesc_2">Click [Calibrated] to record the current position as the initial position and return to the default standing posture after 10 seconds</string>
+    <string name="Confirm">Confirm</string>
 </resources>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -36,18 +37,13 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
-                <SeekBar
+                <com.luwu.xgobot.weight.CenterSeekBar
                     android:id="@+id/xyz_translate_x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="50"
-                    android:maxHeight="7dp"
-                    android:min="-50"
-                    android:minHeight="7dp"
-                    android:progress="0"
-                    android:layout_marginTop="22dp"
-                    android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -93,18 +89,13 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
-                <SeekBar
+                <com.luwu.xgobot.weight.CenterSeekBar
                     android:id="@+id/xyz_translate_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="50"
-                    android:maxHeight="7dp"
-                    android:min="-50"
-                    android:minHeight="7dp"
-                    android:progress="0"
-                    android:layout_marginTop="22dp"
-                    android:progressDrawable="@drawable/seekbar_progress_drawable_green28"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -152,18 +143,13 @@
                     android:textSize="28sp" />
 
 
-                <SeekBar
+                <com.luwu.xgobot.weight.CenterSeekBar
                     android:id="@+id/xyz_translate_z"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="50"
-                    android:maxHeight="7dp"
-                    android:min="-50"
-                    android:minHeight="7dp"
-                    android:progress="0"
-                    android:layout_marginTop="22dp"
-                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -226,19 +212,13 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
-                <SeekBar
+                <com.luwu.xgobot.weight.CenterSeekBar
                     android:id="@+id/xyz_scroll_x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:max="50"
-                    android:maxHeight="7dp"
-                    android:min="-50"
-                    android:minHeight="7dp"
-                    android:progress="0"
-                    android:layout_marginTop="22dp"
-                    android:progressDrawable="@drawable/seekbar_progress_drawable_redca"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -285,19 +265,13 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
-                <SeekBar
+                <com.luwu.xgobot.weight.CenterSeekBar
                     android:id="@+id/xyz_scroll_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:max="50"
-                    android:maxHeight="7dp"
-                    android:min="-50"
-                    android:minHeight="7dp"
-                    android:progress="0"
-                    android:layout_marginTop="22dp"
-                    android:progressDrawable="@drawable/seekbar_progress_drawable_green28"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -344,8 +318,15 @@
                     android:textColor="@color/gray_8b"
                     android:textSize="28sp" />
 
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_scroll_z"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
 
-                <SeekBar
+                <!--<SeekBar
                     android:id="@+id/xyz_scroll_z"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -357,7 +338,7 @@
                     android:progress="0"
                     android:layout_marginTop="22dp"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
-                    android:thumb="@drawable/seekbar_white_shape" />
+                    android:thumb="@drawable/seekbar_white_shape" />-->
 
                 <RelativeLayout
                     android:layout_width="match_parent"

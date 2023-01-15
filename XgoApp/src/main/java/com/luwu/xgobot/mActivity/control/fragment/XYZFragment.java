@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.RobotFunction;
+import com.luwu.xgobot.weight.CenterSeekBar;
 
 /**
  * <p>文件描述：<p>
@@ -23,7 +25,7 @@ import com.luwu.xgobot.data.RobotFunction;
  */
 public class XYZFragment extends Fragment {
     private TextView mReset_tv;
-    private SeekBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y,mScroll_z;
+    private CenterSeekBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y, mScroll_z;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,104 +60,135 @@ public class XYZFragment extends Fragment {
         * X轴平移
         * */
         //todo XYZ平移 滚动已分类
-        mTranslate_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mTranslate_x.setBackgroundColor(this.getResources().getColor(R.color.redca));
+
+        mTranslate_x.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatex_value = progress;
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                updateXYZTranslate();
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
+                updateXYZScroll();
+
             }
         });
         /*
          * Y轴平移
          * */
-        mTranslate_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mTranslate_y.setBackgroundColor(this.getResources().getColor(R.color.green12));
+
+        mTranslate_y.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatey_value = progress;
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                updateXYZTranslate();
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
+                updateXYZScroll();
+
             }
         });
         /*
          * Z轴平移
          * */
-        mTranslate_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mTranslate_z.setBackgroundColor(this.getResources().getColor(R.color.blue28));
+
+        mTranslate_z.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatez_value = progress;
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                updateXYZTranslate();
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
+                updateXYZScroll();
+
             }
         });
 
         /*
          * X轴滚动
          * */
-        mScroll_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        mScroll_x.setBackgroundColor(this.getResources().getColor(R.color.redca));
 
+        mScroll_x.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrollx_value = progress;
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
                 updateXYZScroll();
+
             }
         });
         /*
          * Y轴滚动
          * */
-        mScroll_y.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mScroll_y.setBackgroundColor(this.getResources().getColor(R.color.green12));
+        mScroll_y.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrolly_value = progress;
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
                 updateXYZScroll();
+
             }
         });
         /*
          * Z轴滚动
          * */
-        mScroll_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mScroll_z.setBackgroundColor(this.getResources().getColor(R.color.blue28));
+        mScroll_z.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
+                mScrollz_value = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(CenterSeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(CenterSeekBar seekBar) {
+                updateXYZScroll();
+
+            }
+        });
+       /* mScroll_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mScrollz_value = progress;
@@ -170,7 +203,7 @@ public class XYZFragment extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 updateXYZScroll();
             }
-        });
+        });*/
     }
 
     private void updateXYZTranslate(){
