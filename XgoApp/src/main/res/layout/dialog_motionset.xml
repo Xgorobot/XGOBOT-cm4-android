@@ -131,21 +131,26 @@
                     android:layout_height="wrap_content"
                     android:max="100"
                     android:maxHeight="7dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:min="0"
                     android:layout_gravity="center_vertical"
                     android:minHeight="7dp"
-                    android:progress="40"
+                    android:progress="50"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
                     android:thumb="@drawable/seekbar_white_shape"/>
 
                 <TextView
+                    android:id="@+id/text_height"
                     android:layout_width="wrap_content"
+                    android:minWidth="40dp"
                     android:layout_height="wrap_content"
-                    android:text="60"
+                    android:text="50"
                     android:textColor="@color/blue3e"
                     android:textSize="24sp" />
 
                 <ImageView
+                    android:id="@+id/iv_reset_height"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="24dp"
@@ -183,25 +188,31 @@
                     android:textSize="24sp" />
 
                 <SeekBar
+                    android:id="@+id/robot_step"
                     android:layout_width="296dp"
                     android:layout_height="wrap_content"
                     android:max="100"
                     android:maxHeight="7dp"
                     android:min="0"
                     android:layout_gravity="center_vertical"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:minHeight="7dp"
-                    android:progress="40"
+                    android:progress="50"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
                     android:thumb="@drawable/seekbar_white_shape"/>
 
                 <TextView
+                    android:id="@+id/text_step"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60"
+                    android:minWidth="40dp"
+                    android:text="50"
                     android:textColor="@color/blue3e"
                     android:textSize="24sp" />
 
                 <ImageView
+                    android:id="@+id/iv_reset_step"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="24dp"

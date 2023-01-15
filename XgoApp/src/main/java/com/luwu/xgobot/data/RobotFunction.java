@@ -18,6 +18,13 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
+    //步幅
+    public static void setStepLength(int length){//0-100
+        byte[] datas = new byte[]{(byte) length, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BFKD,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
     //方向：0=停止，1=向前，2=向后，3=向左，4=向右，5=左旋，6=右旋
     public static void btnControl(int direction){
         byte[] datas = new byte[]{(byte) direction, 0x00};
@@ -89,13 +96,13 @@ public class RobotFunction {
     //步态调整
     //0 trot 1 walk
     public static void setStepState(int state){
-        Log.d(TAG, "setStepState: " + state);
-//        if (state != 1 && state!=0)
-//            return;
-//
-//        byte[] datas = new byte[]{(byte) state, 0x00};
-//        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BTTZ,datas);
-//        SocketManager.getInstance().write(sendData);
+//        Log.d(TAG, "setStepState: " + state);
+        if (state != 1 && state!=0)
+            return;
+
+        byte[] datas = new byte[]{(byte) state, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BTTZ,datas);
+        SocketManager.getInstance().write(sendData);
     }
 
 

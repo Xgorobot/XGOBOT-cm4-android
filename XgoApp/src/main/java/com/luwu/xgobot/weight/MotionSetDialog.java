@@ -4,8 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -35,7 +37,9 @@ public class MotionSetDialog extends Dialog {
     private RelativeLayout mMain_layout;
 
     Switch tuoluoyi;
-    SeekBar robotHeight;
+    SeekBar robotHeight,robotStep;
+    TextView textHeight,textStep;
+    ImageView resetHeight,resetStep;
 
     public MotionSetDialog(@NonNull Context context) {
         super(context, R.style.ios_style_dialog);
@@ -88,7 +92,8 @@ public class MotionSetDialog extends Dialog {
         robotHeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                height = progress;
+                textHeight.setText(String.valueOf(progress));
+                RobotFunction.heightControl(75 + progress * 2 / 5);
             }
 
             @Override
@@ -98,13 +103,35 @@ public class MotionSetDialog extends Dialog {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                int targetSet = (int) (75+ 40 * (height) / 100f);
-                RobotFunction.heightControl(targetSet);
+
             }
         });
-    }
+        robotStep.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textStep.setText(String.valueOf(progress));
+                RobotFunction.setStepLength(progress);
+            }
 
-    int height = 50;
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        resetStep.setOnClickListener(v -> {
+            robotStep.setProgress(50);
+        });
+
+        resetHeight.setOnClickListener(v -> {
+            robotHeight.setProgress(50);
+        });
+    }
 
     String[] titles = {"低速", "中速", "高速"};
     String[] titlesEnglish = {"Low", "Normal", "High"};
@@ -121,5 +148,10 @@ public class MotionSetDialog extends Dialog {
         }
         tuoluoyi = findViewById(R.id.tuoluoyi);
         robotHeight = findViewById(R.id.robot_height);
+        robotStep = findViewById(R.id.robot_step);
+        textHeight = findViewById(R.id.text_height);
+        textStep = findViewById(R.id.text_step);
+        resetHeight = findViewById(R.id.iv_reset_height);
+        resetStep = findViewById(R.id.iv_reset_step);
     }
 }
