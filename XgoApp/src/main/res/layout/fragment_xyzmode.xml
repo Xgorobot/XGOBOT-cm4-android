@@ -73,8 +73,9 @@
             </LinearLayout>
 
             <View
-                android:layout_width="0dp"
-                android:layout_height="84dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,9 +127,9 @@
             </LinearLayout>
 
             <View
-                android:layout_width="0dp"
-                android:layout_height="84dp" />
-
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,13 +192,14 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/xyz_toolbox_bg"
             android:orientation="vertical"
             android:paddingLeft="55dp"
             android:paddingTop="48dp"
-            android:paddingRight="55dp">
+            android:paddingRight="55dp"
+            android:paddingBottom="48dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -249,8 +251,9 @@
             </LinearLayout>
 
             <View
-                android:layout_width="0dp"
-                android:layout_height="84dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -302,9 +305,9 @@
             </LinearLayout>
 
             <View
-                android:layout_width="0dp"
-                android:layout_height="84dp" />
-
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -367,9 +370,6 @@
                 </RelativeLayout>
 
             </LinearLayout>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="65dp"/>
 
         </LinearLayout>
 
