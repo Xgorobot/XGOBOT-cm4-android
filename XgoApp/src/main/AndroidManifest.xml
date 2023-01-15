@@ -30,7 +30,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".mActivity.splash.SplashActivity"
             android:screenOrientation="sensorLandscape"
-            android:label="splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +40,6 @@
         <activity
             android:name=".mActivity.NetSettingActivity"
             android:screenOrientation="sensorLandscape"
-            android:label="@string/title_activity_net_setting"
             android:exported="true">
 
         </activity>

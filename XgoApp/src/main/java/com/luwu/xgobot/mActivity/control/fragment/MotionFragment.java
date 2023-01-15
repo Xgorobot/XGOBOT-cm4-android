@@ -122,6 +122,8 @@ public class MotionFragment extends Fragment {
         upBtn = view.findViewById(R.id.btn_grap_up);
         middleBtn = view.findViewById(R.id.btn_grap_middle);
         downBtn = view.findViewById(R.id.btn_grap_down);
+        turnLeftBtn = view.findViewById(R.id.btn_turn_left);
+        turnRightBtn = view.findViewById(R.id.btn_turn_right);
     }
 
     public void WebSettingsConfiguration(WebView webView) {
