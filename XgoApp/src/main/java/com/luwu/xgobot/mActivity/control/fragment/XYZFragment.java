@@ -1,6 +1,7 @@
 package com.luwu.xgobot.mActivity.control.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.luwu.xgobot.weight.CenterSeekBar;
  * 位姿模式
  */
 public class XYZFragment extends Fragment {
+    private static final String TAG = "XYZFragment";
     private TextView mReset_tv;
     private CenterSeekBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y, mScroll_z;
     @Nullable
@@ -66,6 +68,8 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatex_value = progress;
+                RobotFunction.xyzControl(mTranslatex_value,mTranslatey_value);
+                Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
             }
 
             @Override
@@ -75,7 +79,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
+
 
             }
         });
@@ -88,6 +92,8 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatey_value = progress;
+                RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
+                Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
             }
 
             @Override
@@ -110,6 +116,8 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatez_value = progress;
+                RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
+                Log.d(TAG, "onProgressChanged: " + mTranslatez_value );
             }
 
             @Override
