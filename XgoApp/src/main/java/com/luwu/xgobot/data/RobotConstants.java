@@ -7,6 +7,9 @@ public class RobotConstants {
 
     public static final byte GET_POWER = 0x02;//获取电量
 
+    //视频控制
+    public static final byte SET_SPKZ = 0x0F;//控制视频流
+
     //遥控界面
     public static final byte RECEIVE_YKJML = 0x10;//遥控界面 仅回执？
     public static final byte SET_YGKZ = 0x11;//摇杆控制
@@ -37,4 +40,6 @@ public class RobotConstants {
 
     //单腿控制
     public static final byte SET_KZDT = 0x51;//控制单腿
+
+
 }

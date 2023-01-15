@@ -127,6 +127,12 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
+    //开启摄像头 1标准模式 2 全屏模式
+    public static void startCamera(int state) {
+        byte[] datas = new byte[]{(byte) state, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_SPKZ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
 //    //速度：0-100%,相对速度最大值的百分比。 调整单步步长
 //    public static void stepLength(int speed){
 //        byte[] datas = new byte[]{(byte) speed, 0x00};

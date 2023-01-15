@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.data.RobotFunction;
 import com.luwu.xgobot.mActivity.control.fragment.MotionFragment;
 import com.luwu.xgobot.mActivity.control.fragment.SingleLegFragment;
 import com.luwu.xgobot.mActivity.control.fragment.XYZFragment;
@@ -110,6 +111,7 @@ public class ControlActivity extends AppCompatActivity {
         FragmentUtils.hide(singlegFragment);
         FragmentUtils.hide(xyzFragment);*/
         switchFragment(motionFragment);
+        RobotFunction.startCamera(1);
     }
 
 
