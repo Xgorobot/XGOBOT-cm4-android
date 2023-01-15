@@ -174,10 +174,11 @@ public class XYZFragment extends Fragment {
     }
 
     private void updateXYZTranslate(){
-//        RobotFunction.servoControl();
+        RobotFunction.xyzControl(mScrollx_value,mScrolly_value);
     }
+
     private void updateXYZScroll(){
-//        RobotFunction.servoControl();
+        RobotFunction.xyzControl(mScrollz_value);
     }
     /*
     * 初始化view

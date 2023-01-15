@@ -23,12 +23,14 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/btn_turn_left"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_marginLeft="13dp"
                     android:background="@drawable/motionmode_upleft_selector" />
 
                 <ImageButton
+                    android:id="@+id/btn_turn_right"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_alignParentRight="true"

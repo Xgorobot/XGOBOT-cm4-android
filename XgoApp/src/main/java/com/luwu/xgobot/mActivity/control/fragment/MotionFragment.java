@@ -3,6 +3,7 @@ package com.luwu.xgobot.mActivity.control.fragment;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +37,13 @@ import static com.luwu.xgobot.mView.ButtonView.UPPRESS;
  * <p>创建时间：2022/11/6<p>
  */
 public class MotionFragment extends Fragment {
+    private static final String TAG = "MotionFragment";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_motionmode, null);
         initView(view);
+        Log.d(TAG, "onCreateView: " + RobotFunction.getWebUrl());
         mWeb.loadUrl(RobotFunction.getWebUrl());
         return view;
     }

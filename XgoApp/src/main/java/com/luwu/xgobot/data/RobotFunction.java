@@ -30,6 +30,7 @@ public class RobotFunction {
         String hostIp = SPUtils.getInstance().getString("host");
         int cameraPort = SPUtils.getInstance().getInt("cameraPort");
         return hostIp + ":" + cameraPort;
+//        return "http://www.baidu.com";
     }
 
 
@@ -47,6 +48,17 @@ public class RobotFunction {
         byte[] datas = new byte[]{(byte) legID,(byte) up,(byte) middle,(byte) down, 0x00};
         byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDJ,datas);
         SocketManager.getInstance().write(sendData);
+    }
+
+    //身体姿态控制
+    public static void xyzControl(int x,int y){
+        byte[] datas = new byte[]{(byte) x,(byte) y, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDJ,datas);
+        SocketManager.getInstance().write(sendData);
+    }
+
+    public static void xyzControl(int z){
+        heightControl(z);
     }
 
     //单腿控制
