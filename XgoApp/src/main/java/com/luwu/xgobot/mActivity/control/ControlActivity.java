@@ -113,7 +113,7 @@ public class ControlActivity extends AppCompatActivity {
         FragmentUtils.hide(xyzFragment);*/
         switchFragment(motionFragment);
         RobotFunction.startCamera(1);
-//        new Handler().postDelayed(()->RobotFunction.startCamera(1),500);
+        new Handler().postDelayed(()->RobotFunction.startCamera(1),1000);
     }
 
 

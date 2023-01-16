@@ -37,7 +37,9 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         ipEdit = findViewById(R.id.edit_host);
-        ipEdit.setText("192.168.45.195");
+        String host = SPUtils.getInstance().getString("host","");
+        ipEdit.setText(host);
+
         portEdit = findViewById(R.id.edit_tcp_port);
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
@@ -50,6 +52,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
 
     private void onClick(View view){
         String hostIp = ipEdit.getText().toString();
+        SPUtils.getInstance().put("ipHost",ipEdit.getText().toString());
         int tcpPort = -1;
         int cameraPort = -1;
         try {
