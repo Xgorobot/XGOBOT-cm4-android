@@ -19,6 +19,7 @@ import com.luwu.xgobot.mActivity.main.XgoMainActivity;
 import com.luwu.xgobot.socket.SocketManager;
 import com.luwu.xgobot.socket.SocketStateListener;
 
+import java.time.Duration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,7 +70,9 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             connect(hostIp,tcpPort);
         }else {
             if (!isCorrectIp(hostIp)){
-                ToastUtils.showLong("IP address is illegal");
+                Toast toast = Toast.makeText(NetSettingActivity.this,"IP address is illegal" , Toast.LENGTH_LONG);
+                toast.show();
+
             }
         }
     }
@@ -103,7 +106,11 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             startActivity(intent);
             finish();
         }else {
-            ToastUtils.showShort("Connect Fail，please check your network。");
+            String host = SPUtils.getInstance().getString("host","hostIp");
+            int tcpPort = SPUtils.getInstance().getInt("tcpPort",9999);
+            int cameraPort = SPUtils.getInstance().getInt("cameraPort",9999);
+            Toast toast = Toast.makeText(NetSettingActivity.this,"Connect Fail，please check your network。\n host:" + host + "\ntcpPort:" + tcpPort +"\n cameraPort:" + cameraPort , Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 }
