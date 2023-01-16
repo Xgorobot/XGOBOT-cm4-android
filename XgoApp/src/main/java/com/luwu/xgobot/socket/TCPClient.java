@@ -10,6 +10,7 @@ import com.luwu.xgobot.utils.ByteUtile;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -226,13 +227,13 @@ public class TCPClient {
     public boolean sendMsgToServer(byte[] data, ChannelFutureListener listener) {
         boolean flag = channel != null && isConnect;
         if (flag) {
-            Log.d(TAG, "writeAndFlush: String:" + new String(data));
+            Log.d(TAG, "writeAndFlush: String:" + new String(data).toUpperCase(Locale.ROOT));
             Log.d(TAG, "writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data));
 //            this.listener.onServiceStateMsgChanged("writeAndFlush: String:" + new String(data), isConnect);
 //            this.listener.onServiceStateMsgChanged("writeAndFlush: bytes:" + ByteUtile.byteArrayToHex(data), isConnect);
 //            byte[] dataToSend = new byte[1024];
 //            System.arraycopy(data,0,dataToSend,0,data.length);
-            channel.writeAndFlush(new String(data)).addListener(listener);
+            channel.writeAndFlush(new String(data).toUpperCase(Locale.ROOT)).addListener(listener);
         }
         return flag;
     }

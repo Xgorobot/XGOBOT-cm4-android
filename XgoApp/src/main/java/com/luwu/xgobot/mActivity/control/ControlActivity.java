@@ -3,6 +3,7 @@ package com.luwu.xgobot.mActivity.control;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -112,6 +113,7 @@ public class ControlActivity extends AppCompatActivity {
         FragmentUtils.hide(xyzFragment);*/
         switchFragment(motionFragment);
         RobotFunction.startCamera(1);
+//        new Handler().postDelayed(()->RobotFunction.startCamera(1),500);
     }
 
 

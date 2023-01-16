@@ -17,8 +17,8 @@ android {
         applicationId "com.luwu.xgobot"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 2
-        versionName "0.2"
+        versionCode 4
+        versionName "0.35"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
