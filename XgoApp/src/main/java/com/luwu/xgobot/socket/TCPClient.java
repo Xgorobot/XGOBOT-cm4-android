@@ -133,7 +133,7 @@ public class TCPClient {
                         }
                     }
                     group.shutdownGracefully();
-                    reconnect();//重新连接
+//                    reconnect();//重新连接
                 }
             }
         }
@@ -154,7 +154,7 @@ public class TCPClient {
             SystemClock.sleep(reconnectIntervalTime);
             if (isNeedReconnect && reconnectNum > 0 && !isConnect) {
                 Log.e(TAG, "重新连接");
-                listener.onServiceStateMsgChanged("重新连接", true);
+                listener.onServiceStateMsgChanged("重新连接", false);
                 connectServer();
             }
         }

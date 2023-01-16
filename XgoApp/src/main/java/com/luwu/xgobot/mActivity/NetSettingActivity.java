@@ -37,6 +37,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         ipEdit = findViewById(R.id.edit_host);
+        ipEdit.setText("192.168.45.195");
         portEdit = findViewById(R.id.edit_tcp_port);
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
@@ -68,6 +69,9 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             SPUtils.getInstance().put("tcpPort",tcpPort);
             SPUtils.getInstance().put("cameraPort",cameraPort);
             connect(hostIp,tcpPort);
+            connectBtn.setEnabled(false);
+            Toast toast = Toast.makeText(NetSettingActivity.this,"Connecting ,please wait" , Toast.LENGTH_SHORT);
+            toast.show();
         }else {
             if (!isCorrectIp(hostIp)){
                 Toast toast = Toast.makeText(NetSettingActivity.this,"IP address is illegal" , Toast.LENGTH_LONG);
@@ -101,16 +105,27 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         runOnUiThread(() -> stateText.setText(testString));
 
         if (connected){
+            String host = SPUtils.getInstance().getString("host","hostIp");
+            runOnUiThread(() -> Toast.makeText(NetSettingActivity.this,"Robot Connected : " + host , Toast.LENGTH_LONG).show());
             Intent intent = new Intent(NetSettingActivity.this, XgoMainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         }else {
+
             String host = SPUtils.getInstance().getString("host","hostIp");
             int tcpPort = SPUtils.getInstance().getInt("tcpPort",9999);
             int cameraPort = SPUtils.getInstance().getInt("cameraPort",9999);
-            Toast toast = Toast.makeText(NetSettingActivity.this,"Connect Fail，please check your network。\n host:" + host + "\ntcpPort:" + tcpPort +"\n cameraPort:" + cameraPort , Toast.LENGTH_LONG);
-            toast.show();
+            runOnUiThread(() -> {
+                connectBtn.setEnabled(true);
+                Toast.makeText(NetSettingActivity.this,"Connect Fail，please check your network。  host:" + host , Toast.LENGTH_LONG).show();
+            });
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SocketManager.getInstance().setListener(null);
     }
 }

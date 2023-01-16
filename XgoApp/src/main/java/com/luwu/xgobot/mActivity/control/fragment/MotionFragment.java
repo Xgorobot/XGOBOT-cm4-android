@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -158,6 +159,7 @@ public class MotionFragment extends Fragment {
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 super.onReceivedError(view, request, error);
                 //加载失败
+                Toast.makeText(getContext(),"url loading Fail",Toast.LENGTH_LONG).show();
                 if (request.isForMainFrame()) {
                     mWeb_errorLayout.setVisibility(View.VISIBLE);
                 }
