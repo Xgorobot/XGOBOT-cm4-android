@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -76,6 +77,7 @@ public class ControlActivity extends AppCompatActivity {
         mXYZ_tv.setOnClickListener(v -> {
             initTvColor();
             switchFragment(xyzFragment);
+            mDebug_img.setVisibility(View.GONE);
             mXYZ_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
             mXYZ_tv.setTextColor(Color.WHITE);
         });
@@ -83,6 +85,7 @@ public class ControlActivity extends AppCompatActivity {
         mMotion_tv.setOnClickListener(v -> {
             initTvColor();
             switchFragment(motionFragment);
+            mDebug_img.setVisibility(View.VISIBLE);
             mMotion_tv.setBackgroundResource(R.drawable.gradient_blue_bg);
             mMotion_tv.setTextColor(Color.WHITE);
         });
