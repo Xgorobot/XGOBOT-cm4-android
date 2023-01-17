@@ -1,8 +1,14 @@
 package com.luwu.xgobot.mActivity;
 
+import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +27,7 @@ import com.luwu.xgobot.socket.SocketManager;
 import com.luwu.xgobot.socket.SocketStateListener;
 
 import java.time.Duration;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,6 +42,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        updateLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         ipEdit = findViewById(R.id.edit_host);
@@ -48,6 +56,11 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
 
         connectBtn.setOnClickListener(this::onClick);
         SocketManager.getInstance().setListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void onClick(View view){
@@ -132,4 +145,34 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         super.onDestroy();
         SocketManager.getInstance().setListener(null);
     }
+
+    private void updateLocale() {
+        SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        String setting_language = languageInfo.getString("setting_language", "auto");
+        if (setting_language.equals("zh")) {
+            localeLanguage = "zh";
+        } else if (setting_language.equals("en")) {
+            localeLanguage = "en";
+        } else {//auto
+            localeLanguage = Locale.getDefault().getLanguage();
+            if (!localeLanguage.equals("zh")) {
+                localeLanguage = "en";
+            }
+        }
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        if (configuration.locale.getLanguage() != localeLanguage) {
+            if (localeLanguage.equals("zh")) {
+                configuration.setLocale(Locale.CHINESE); // 设置为中文
+            } else {
+                configuration.setLocale(Locale.ENGLISH); // 设置为英文
+                localeLanguage = "en";
+            }
+            DisplayMetrics metrics = new DisplayMetrics();
+            resources.updateConfiguration(configuration, metrics); // 更新配置文件
+        } else {
+
+        }
+    }
+
 }
