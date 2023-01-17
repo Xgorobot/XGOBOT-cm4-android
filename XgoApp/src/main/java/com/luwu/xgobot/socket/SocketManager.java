@@ -73,6 +73,12 @@ public class SocketManager implements TCPListener {
         context.sendBroadcast(intent);
     }
 
+    public boolean isConnected(){
+        if (tcpSocket == null)
+            return false;
+        return tcpSocket.isConnected();
+    }
+
     public boolean connect(final String address,final int port) {
         if (tcpSocket == null) {
             tcpSocket = new TCPClient();

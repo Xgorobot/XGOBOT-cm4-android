@@ -134,7 +134,7 @@ public class TCPClient {
                         }
                     }
                     group.shutdownGracefully();
-//                    reconnect();//重新连接
+                    reconnect();//重新连接
                 }
             }
         }

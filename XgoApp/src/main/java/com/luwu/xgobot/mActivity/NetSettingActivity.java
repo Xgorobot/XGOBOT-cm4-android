@@ -2,6 +2,7 @@ package com.luwu.xgobot.mActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +50,6 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
         SocketManager.getInstance().setListener(this);
     }
 
-
     private void onClick(View view){
         String hostIp = ipEdit.getText().toString();
         SPUtils.getInstance().put("ipHost",ipEdit.getText().toString());
@@ -73,6 +73,7 @@ public class NetSettingActivity extends AppCompatActivity implements SocketState
             SPUtils.getInstance().put("cameraPort",cameraPort);
             connect(hostIp,tcpPort);
             connectBtn.setEnabled(false);
+            new Handler().postDelayed(() -> runOnUiThread(() -> connectBtn.setEnabled(true)),5000);
             Toast toast = Toast.makeText(NetSettingActivity.this,"Connecting ,please wait" , Toast.LENGTH_SHORT);
             toast.show();
         }else {
