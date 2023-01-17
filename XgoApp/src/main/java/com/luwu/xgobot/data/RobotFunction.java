@@ -61,7 +61,7 @@ public class RobotFunction {
     //身体姿态控制
     public static void xyzControl(int x,int y){
         byte[] datas = new byte[]{(byte) x,(byte) y, 0x00};
-        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZDJ,datas);
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZSTZT,datas);
         SocketManager.getInstance().write(sendData);
     }
 

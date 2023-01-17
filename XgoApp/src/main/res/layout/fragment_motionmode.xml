@@ -68,13 +68,9 @@
                 android:layout_height="400dp"
                 android:layout_gravity="center_horizontal">
                 <RelativeLayout
+                    android:id="@+id/layout_webview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <WebView
-                        android:id="@+id/motionmode_web"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:overScrollMode="never" />
                 </RelativeLayout>
 
 

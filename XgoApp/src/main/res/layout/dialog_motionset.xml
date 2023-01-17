@@ -136,7 +136,7 @@
                     android:min="0"
                     android:layout_gravity="center_vertical"
                     android:minHeight="7dp"
-                    android:progress="50"
+                    android:progress="60"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
                     android:thumb="@drawable/seekbar_white_shape"/>
 
@@ -145,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:minWidth="40dp"
                     android:layout_height="wrap_content"
-                    android:text="50"
+                    android:text="60"
                     android:textColor="@color/blue3e"
                     android:textSize="24sp" />
 
@@ -198,7 +198,7 @@
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     android:minHeight="7dp"
-                    android:progress="50"
+                    android:progress="60"
                     android:progressDrawable="@drawable/seekbar_progress_drawable_blue36_dialog"
                     android:thumb="@drawable/seekbar_white_shape"/>
 
@@ -207,7 +207,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="40dp"
-                    android:text="50"
+                    android:text="60"
                     android:textColor="@color/blue3e"
                     android:textSize="24sp" />
 

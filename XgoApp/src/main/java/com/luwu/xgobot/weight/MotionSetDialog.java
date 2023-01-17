@@ -125,11 +125,11 @@ public class MotionSetDialog extends Dialog {
         });
 
         resetStep.setOnClickListener(v -> {
-            robotStep.setProgress(50);
+            robotStep.setProgress(60);
         });
 
         resetHeight.setOnClickListener(v -> {
-            robotHeight.setProgress(50);
+            robotHeight.setProgress(60);
         });
     }
 

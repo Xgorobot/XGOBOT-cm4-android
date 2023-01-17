@@ -1,10 +1,13 @@
 package com.luwu.xgobot.mActivity.control.fragment;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebResourceError;
@@ -16,6 +19,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.RobotFunction;
 import com.luwu.xgobot.mView.ButtonView;
@@ -50,6 +55,7 @@ public class MotionFragment extends Fragment {
     }
 
     private ButtonView btnView;
+    private RelativeLayout mWebLayout;
     private WebView mWeb;
     private TextView mWalk_tv, mTrot_tv;
     private ImageButton upBtn,middleBtn,downBtn,turnLeftBtn,turnRightBtn;
@@ -62,6 +68,7 @@ public class MotionFragment extends Fragment {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initListener() {
         btnView.setButtonViewListener(new ButtonView.IButtonViewListener() {
             @Override
@@ -87,12 +94,47 @@ public class MotionFragment extends Fragment {
                 RobotFunction.btnControl(0);
             }
         });
-        turnLeftBtn.setOnClickListener(v -> {
-            RobotFunction.btnControl(5);
+        turnLeftBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        RobotFunction.btnControl(5);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        RobotFunction.btnControl(0);
+                        break;
+                    case MotionEvent.ACTION_OUTSIDE:
+                        RobotFunction.btnControl(0);
+                        break;
+                    default:
+                        RobotFunction.btnControl(0);
+                        break;
+                }
+                return false;
+            }
         });
-        turnRightBtn.setOnClickListener(v -> {
-            RobotFunction.btnControl(6);
+        turnRightBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        RobotFunction.btnControl(6);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        RobotFunction.btnControl(0);
+                        break;
+                    case MotionEvent.ACTION_OUTSIDE:
+                        RobotFunction.btnControl(0);
+                        break;
+                    default:
+                        RobotFunction.btnControl(0);
+                        break;
+                }
+                return false;
+            }
         });
+
         mWalk_tv.setOnClickListener(v -> {
             mWalk_tv.setTextColor(this.getResources().getColor(R.color.white));
             mWalk_tv.setBackgroundResource(R.drawable.bg_text_blue);
@@ -115,9 +157,15 @@ public class MotionFragment extends Fragment {
 
     private void initView(View view) {
         btnView = view.findViewById(R.id.motionmode_btn_view);
-        mWeb = view.findViewById(R.id.motionmode_web);
-        mWeb_errorLayout = view.findViewById(R.id.web_error_layout);
+
+        mWebLayout = view.findViewById(R.id.layout_webview);
+        mWeb = new WebView(AppContext.getappContext());
+        LinearLayout.LayoutParams params = new  LinearLayout.LayoutParams
+                (ViewGroup.LayoutParams.MATCH_PARENT,  ViewGroup.LayoutParams.MATCH_PARENT);
+        mWeb.setLayoutParams(params);
+        mWebLayout.addView(mWeb);
         WebSettingsConfiguration(mWeb);
+        mWeb_errorLayout = view.findViewById(R.id.web_error_layout);
         mWalk_tv = view.findViewById(R.id.motionmode_walk_tv);
         mTrot_tv = view.findViewById(R.id.motionmode_trot_tv);
         upBtn = view.findViewById(R.id.btn_grap_up);
@@ -165,5 +213,17 @@ public class MotionFragment extends Fragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mWeb != null) {
+            mWeb.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            mWeb.clearHistory();
+            mWebLayout.removeView(mWeb);
+            mWeb.destroy();
+            mWeb = null;
+        }
     }
 }

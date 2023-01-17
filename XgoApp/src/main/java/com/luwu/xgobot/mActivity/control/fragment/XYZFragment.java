@@ -1,6 +1,7 @@
 package com.luwu.xgobot.mActivity.control.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,7 @@ public class XYZFragment extends Fragment {
     private static final String TAG = "XYZFragment";
     private TextView mReset_tv;
     private CenterSeekBar mTranslate_x,mTranslate_y,mTranslate_z,mScroll_x,mScroll_y, mScroll_z;
+    long lastTime = 0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,6 +56,14 @@ public class XYZFragment extends Fragment {
             mTranslate_x.setProgress(0);
             mTranslate_y.setProgress(0);
             mTranslate_z.setProgress(0);
+
+
+            RobotFunction.xyzControl(0,0);
+            RobotFunction.xyzControl(95);
+            new Handler().postDelayed(()->{
+                RobotFunction.xyzControl(0,0);
+                RobotFunction.xyzControl(95);
+            },100);
             mScroll_x.setProgress(0);
             mScroll_y.setProgress(0);
             mScroll_z.setProgress(0);
@@ -68,8 +78,14 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatex_value = progress;
-                RobotFunction.xyzControl(mTranslatex_value,mTranslatey_value);
-                Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
+                long now = System.currentTimeMillis();
+                if (now - lastTime > 100){
+//                    lastTime = now;
+                    RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
+                    Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
+                }
+
+
             }
 
             @Override
@@ -92,8 +108,12 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatey_value = progress;
-                RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
-                Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
+                long now = System.currentTimeMillis();
+                if (now - lastTime > 100) {
+//                    lastTime = now;
+                    RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
+                    Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
+                }
             }
 
             @Override
@@ -116,8 +136,13 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatez_value = progress;
-                RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
-                Log.d(TAG, "onProgressChanged: " + mTranslatez_value );
+
+                long now = System.currentTimeMillis();
+                if (now - lastTime > 100){
+//                    lastTime = now;
+                    RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
+                    Log.d(TAG, "onProgressChanged: " + mTranslatez_value );
+                }
             }
 
             @Override
