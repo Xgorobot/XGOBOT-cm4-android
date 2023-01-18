@@ -37,7 +37,7 @@ public class RobotFunction {
 //        webviewReference = new WeakReference<>(webView);
         String hostIp = SPUtils.getInstance().getString("host");
         int cameraPort = SPUtils.getInstance().getInt("cameraPort");
-        return hostIp + ":" + cameraPort;
+        return hostIp + ":" + cameraPort + "/video_feed";
 //        return "http://www.baidu.com";
     }
 

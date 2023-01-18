@@ -59,18 +59,26 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical"
             >
 
             <FrameLayout
+                android:paddingStart="55dp"
+                android:paddingEnd="55dp"
                 android:layout_width="750dp"
-                android:layout_height="400dp"
+                android:layout_height="480dp"
                 android:layout_gravity="center_horizontal">
                 <RelativeLayout
                     android:id="@+id/layout_webview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/icon_weberror" />
                 </RelativeLayout>
 
 
@@ -81,11 +89,7 @@
                     android:orientation="vertical"
                     android:background="@color/blue_142"
                     >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/icon_weberror"
-                        android:scaleType="centerCrop"/>
+
                 </LinearLayout>
 
             </FrameLayout>
@@ -132,6 +136,9 @@
             </LinearLayout>
         </LinearLayout>
 
+        <View
+            android:layout_width="69dp"
+            android:layout_height="0dp" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
