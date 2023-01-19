@@ -9,6 +9,7 @@ import android.view.ContextThemeWrapper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 
 import java.util.Locale;
@@ -20,7 +21,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         //你需要切换的语言
 //        SpUtils.getSpUtils(MyApplication.getContext(), MyApplication.ACCOUNT_NAME).getStringValue(MyApplication.USER_LANGUAGE, null);
-        Locale locale = Locale.US;
+        Locale locale = getLocal();
         Context context = AppLanguageUtils.attachBaseContext(newBase, locale);
         final Configuration configuration = context.getResources().getConfiguration();
         // 此处的ContextThemeWrapper是androidx.appcompat.view包下的
@@ -41,7 +42,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private Locale getLocal(){
-        SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        SharedPreferences languageInfo = AppContext.getappContext().getSharedPreferences("xgo_setting", MODE_PRIVATE);
         String setting_language = languageInfo.getString("setting_language", "auto");
         if (setting_language.equals("zh")) {
             return Locale.CHINESE;
