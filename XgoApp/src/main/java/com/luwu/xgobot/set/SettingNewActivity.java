@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.mActivity.BaseActivity;
 import com.luwu.xgobot.mActivity.SettingActivity;
 import com.luwu.xgobot.mMothed.mToast;
 
@@ -21,7 +22,7 @@ import com.luwu.xgobot.mMothed.mToast;
  * <p>创建时间：2023/1/8<p>
  *     设置页面
  */
-public class SettingNewActivity extends AppCompatActivity {
+public class SettingNewActivity extends BaseActivity {
 
 
     @Override

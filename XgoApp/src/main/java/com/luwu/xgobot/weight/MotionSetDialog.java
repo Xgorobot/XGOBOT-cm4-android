@@ -1,9 +1,15 @@
 package com.luwu.xgobot.weight;
 
+import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
+
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,6 +24,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.SPUtils;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.RobotFunction;
 
@@ -31,7 +38,7 @@ import java.util.Locale;
 public class MotionSetDialog extends Dialog {
     private static final String TAG = "DebugDialog";
 
-    private Context mContext;
+//    private Context mContext;
     private TextView mLow_tv, mNormal_tv, mHeight_tv;
     private SegmentTabLayout mlayout;
     private RelativeLayout mMain_layout;
@@ -43,7 +50,7 @@ public class MotionSetDialog extends Dialog {
 
     public MotionSetDialog(@NonNull Context context) {
         super(context, R.style.ios_style_dialog);
-        this.mContext = context;
+//        this.mContext = context;
     }
 
     @Override
@@ -52,9 +59,13 @@ public class MotionSetDialog extends Dialog {
         setContentView(R.layout.dialog_motionset);
         Window dialogWindow = getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        DisplayMetrics d = mContext.getResources().getDisplayMetrics(); // 获取屏幕宽、高用
-        lp.width = d.widthPixels;
-        lp.height = d.heightPixels;
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int screenWidth = dm.widthPixels;
+        int screenHeight = dm.heightPixels;
+        lp.width = screenWidth;
+        lp.height = screenHeight;
+        Log.d(TAG, "onCreate: width:" + lp.width + " height:" + lp.height);
         dialogWindow.setAttributes(lp);
         initView();
         initListener();
@@ -139,11 +150,10 @@ public class MotionSetDialog extends Dialog {
     private void initView() {
         mlayout = findViewById(R.id.dialog_tablayout);
         mMain_layout = findViewById(R.id.debug_main);
-        Locale local = mContext.getResources().getConfiguration().locale;
+        Locale local = getContext().getResources().getConfiguration().locale;
         if("CN".equals(local.getCountry())){
             mlayout.setTabData(titles);
-        }
-        if("UK".equals(local.getCountry())||"TW".equals(local.getCountry())){
+        }else {
             mlayout.setTabData(titlesEnglish);
         }
         tuoluoyi = findViewById(R.id.tuoluoyi);

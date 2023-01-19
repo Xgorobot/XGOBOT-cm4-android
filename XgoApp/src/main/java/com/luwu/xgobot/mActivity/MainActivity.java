@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        updateLocale();
+//        updateLocale();
         super.onCreate(savedInstanceState);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            updateLocale();
+//            updateLocale();
             switch (v.getId()) {
                 case R.id.mainBtnConnect:
                     BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
     public class OnBannerListener implements BannerViewLayout.OnBannerListener {
         @Override
         public void OnBannerClick(final int position) {
-            updateLocale();
+//            updateLocale();
             Intent intent;
             if (position == 0 - 1) {
 //                intent = new Intent(MainActivity.this, ProgramActivity.class);

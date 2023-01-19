@@ -137,4 +137,8 @@
     <string name="debugdesc_1">Click [Calibrate] to unload the steering gear. At this time, you can rotate the joint to the specified position</string>
     <string name="debugdesc_2">Click [Calibrated] to record the current position as the initial position and return to the default standing posture after 10 seconds</string>
     <string name="Confirm">Confirm</string>
+    <string name="mode_debug">debug mode</string>
+    <string name="speed_low">Low</string>
+    <string name="speed_medium">Normal</string>
+    <string name="speed_high">High</string>
 </resources>

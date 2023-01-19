@@ -25,12 +25,14 @@
 
             <TextView
                 android:id="@+id/control_motion_tv"
-                android:layout_width="280dp"
+                android:layout_width="wrap_content"
+                android:minWidth="282dp"
                 android:layout_height="92dp"
                 android:background="@drawable/shape_bottom_blue1b"
                 android:gravity="center"
                 android:paddingLeft="40dp"
                 android:paddingTop="17dp"
+                android:lines="1"
                 android:paddingRight="40dp"
                 android:paddingBottom="17dp"
                 android:text="@string/motion_mode"
@@ -60,7 +62,9 @@
 
             <TextView
                 android:id="@+id/control_xyz_tv"
-                android:layout_width="280dp"
+                android:layout_width="wrap_content"
+                android:minWidth="282dp"
+                android:lines="1"
                 android:layout_height="92dp"
                 android:background="@drawable/shape_bottom_blue1b"
                 android:gravity="center"

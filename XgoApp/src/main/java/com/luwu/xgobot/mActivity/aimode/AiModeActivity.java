@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.AiModeBean;
+import com.luwu.xgobot.mActivity.BaseActivity;
 import com.luwu.xgobot.mActivity.aimode.adapter.AiModeAdapter;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.List;
  * <p>作者：zhangyibin<p>
  * <p>创建时间：2022/9/12<p>
  */
-public class AiModeActivity extends AppCompatActivity {
+public class AiModeActivity extends BaseActivity {
     private List<AiModeBean> mList = new ArrayList<>();
     private RecyclerView mRv;
     private ImageView mBack_img;

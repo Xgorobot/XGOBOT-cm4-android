@@ -15,8 +15,10 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.ActorActivity;
+import com.luwu.xgobot.mActivity.BaseActivity;
 import com.luwu.xgobot.mActivity.DebugActivity;
 import com.luwu.xgobot.mActivity.MainActivity;
 import com.luwu.xgobot.mActivity.NetSettingActivity;
@@ -32,7 +34,7 @@ import java.util.Locale;
  * <p>作者：zhangyibin<p>
  * <p>创建时间：2022/9/04<p>
  */
-public class XgoMainActivity extends AppCompatActivity {
+public class XgoMainActivity extends BaseActivity {
     private static final String TAG = "XgoMainActivity";
 
     private ImageView mSetImg;
@@ -41,7 +43,7 @@ public class XgoMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        updateLocale();
+//        updateLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainnew);
 
@@ -91,7 +93,7 @@ public class XgoMainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        updateLocale();
+//        updateLocale();
         SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
         String setting_develop = info.getString("setting_develop", "no");
         if (setting_develop.equals("yes")) {
@@ -114,7 +116,7 @@ public class XgoMainActivity extends AppCompatActivity {
                 localeLanguage = "en";
             }
         }
-        Resources resources = getResources();
+        Resources resources = AppContext.getappContext().getResources();
         Configuration configuration = resources.getConfiguration();
         if (configuration.locale.getLanguage() != localeLanguage) {
             if (localeLanguage.equals("zh")) {

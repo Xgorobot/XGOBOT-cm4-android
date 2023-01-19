@@ -45,7 +45,7 @@ public class LegActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        updateLocale();
+//        updateLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leg);
         mButtonListener = new ButtonListener();

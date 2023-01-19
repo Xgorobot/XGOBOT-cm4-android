@@ -21,7 +21,7 @@ import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIDialog;
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIMenu;
 import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 
-public class DebugActivity extends AppCompatActivity {
+public class DebugActivity extends BaseActivity {
 
     private ImageView debugBtnBack,debugImgMsg;
     private long mlastClickTime;

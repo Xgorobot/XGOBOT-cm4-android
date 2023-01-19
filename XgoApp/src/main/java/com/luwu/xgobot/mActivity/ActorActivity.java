@@ -17,7 +17,7 @@ import com.luwu.xgobot.mMothed.PublicMethod;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.hideBottomUIMenu;
 
-public class ActorActivity extends AppCompatActivity {
+public class ActorActivity extends BaseActivity {
 
     private Button  actorResetBtn;
     private ImageView actorBtnExit;

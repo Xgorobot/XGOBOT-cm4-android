@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 import com.luwu.xgobot.data.RobotFunction;
+import com.luwu.xgobot.mActivity.BaseActivity;
 import com.luwu.xgobot.mActivity.control.fragment.MotionFragment;
 import com.luwu.xgobot.mActivity.control.fragment.SingleLegFragment;
 import com.luwu.xgobot.mActivity.control.fragment.XYZFragment;
@@ -30,7 +32,7 @@ import me.jessyan.autosize.AutoSizeCompat;
  * <p>作者：zhangyibin<p>
  * <p>创建时间：2022/9/08<p>
  */
-public class ControlActivity extends AppCompatActivity {
+public class ControlActivity extends BaseActivity {
     private Fragment /*advancedFragment,normalFramgent,*/singlegFragment, xyzFragment, motionFragment;
     private TextView mNormal_tv, mAdvance_tv, mSingleg_tv, mXYZ_tv, mMotion_tv;
     private ImageView mDebug_img,mBack_img;

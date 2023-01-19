@@ -23,7 +23,7 @@ public class AnimationActivity extends AppCompatActivity {
     final private int timeDelay = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        updateLocale();
+//        updateLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
 
