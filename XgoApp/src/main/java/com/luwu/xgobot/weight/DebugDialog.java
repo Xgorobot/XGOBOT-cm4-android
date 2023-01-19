@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -43,9 +44,12 @@ public class DebugDialog extends Dialog {
         setContentView(R.layout.dialog_debug);
         Window dialogWindow = getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        DisplayMetrics d = mContext.getResources().getDisplayMetrics(); // 获取屏幕宽、高用
-        lp.width = d.widthPixels;
-        lp.height = d.heightPixels;
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int screenWidth = dm.widthPixels;
+        int screenHeight = dm.heightPixels;
+        lp.width = screenWidth;
+        lp.height = screenHeight;
         dialogWindow.setAttributes(lp);
         initView();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -59,4 +63,24 @@ public class DebugDialog extends Dialog {
         });
     }
 
+    @Override
+    public void hide() {
+        super.hide();
+    }
+
+    @Override
+    public void show() {
+        super.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+    
 }
