@@ -78,14 +78,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatex_value = progress;
-                long now = System.currentTimeMillis();
-                if (now - lastTime > 100){
-//                    lastTime = now;
-                    RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
-                    Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
-                }
-
-
+                RobotFunction.setXTrans(mTranslatex_value);
             }
 
             @Override
@@ -108,12 +101,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatey_value = progress;
-                long now = System.currentTimeMillis();
-                if (now - lastTime > 100) {
-//                    lastTime = now;
-                    RobotFunction.xyzControl(mTranslatex_value*2,mTranslatey_value*2);
-                    Log.d(TAG, "onProgressChanged: " + mTranslatex_value + "   "+mTranslatey_value);
-                }
+                RobotFunction.setYTrans(mTranslatey_value);
             }
 
             @Override
@@ -123,7 +111,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
+
 
             }
         });
@@ -136,13 +124,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatez_value = progress;
-
-                long now = System.currentTimeMillis();
-                if (now - lastTime > 100){
-//                    lastTime = now;
-                    RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
-                    Log.d(TAG, "onProgressChanged: " + mTranslatez_value );
-                }
+                RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
             }
 
             @Override
@@ -152,7 +134,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
+
 
             }
         });
@@ -166,6 +148,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrollx_value = progress;
+                RobotFunction.xyzControl(mScrollx_value*2,mScrolly_value*2);
             }
 
             @Override
@@ -175,7 +158,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
+
 
             }
         });
@@ -187,6 +170,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrolly_value = progress;
+                RobotFunction.xyzControl(mScrollx_value*2,mScrolly_value*2);
             }
 
             @Override
@@ -196,7 +180,6 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
 
             }
         });
@@ -208,6 +191,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrollz_value = progress;
+                RobotFunction.xyzControl(95 + mScrollz_value * 2 / 10);
             }
 
             @Override

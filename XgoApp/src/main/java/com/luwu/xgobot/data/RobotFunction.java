@@ -63,10 +63,12 @@ public class RobotFunction {
         byte[] datas = new byte[]{(byte) x,(byte) y, 0x00};
         byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZSTZT,datas);
         SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "xyzControl: " + "xy Control" + x + " - " +  y);
     }
 
     public static void xyzControl(int z){
         heightControl(z);
+        Log.d(TAG, "xyzControl: " + "z Control" + z);
     }
 
     //单腿控制
@@ -155,4 +157,25 @@ public class RobotFunction {
 //        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_BFPL,datas);
 //        SocketManager.getInstance().write(sendData);
 //    }
+
+
+    //步幅
+    public static void setXTrans(int length){//-35 - +35
+        length = Math.max(-35,length);
+        length = Math.min(35,length);
+        byte[] datas = new byte[]{(byte) length, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_XZPY,datas);
+        SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "setXTrans: " + "setXTrans" + length);
+    }
+
+    //步幅
+    public static void setYTrans(int length){//-35 - +35
+        length = Math.max(-18,length);
+        length = Math.min(18,length);
+        byte[] datas = new byte[]{(byte) length, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_YZPY,datas);
+        SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "setXTrans: " + "setYTrans" + length);
+    }
 }

@@ -41,8 +41,8 @@
                     android:id="@+id/xyz_translate_x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:max="50"
-                    app:min="-50"
+                    app:max="35"
+                    app:min="-35"
                     android:layout_marginTop="22dp" />
 
                 <RelativeLayout
@@ -94,8 +94,8 @@
                     android:id="@+id/xyz_translate_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:max="50"
-                    app:min="-50"
+                    app:max="18"
+                    app:min="-18"
                     android:layout_marginTop="22dp" />
 
                 <RelativeLayout

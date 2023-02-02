@@ -21,6 +21,8 @@ public class RobotConstants {
     public static final byte SET_BTTZ = 0x16;//步幅设置
     public static final byte SET_DJXZ = 0x17;//标定模式
 
+    public static final byte SET_XZPY = 0x18;//x轴平移
+    public static final byte SET_YZPY = 0x19;//y轴平移
     //身体姿态
     public static final byte RECEIVE_STZT = 0x20;//身体姿态
     public static final byte SET_KZSTZT = 0x21;//控制身体姿态
