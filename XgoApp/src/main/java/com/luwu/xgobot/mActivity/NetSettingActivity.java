@@ -111,9 +111,8 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         SocketManager socketManager = SocketManager.getInstance();
         if (socketManager.isConnected()){
             socketManager.disconnect();
-        }else {
-            socketManager.connect(hostIp,port);
         }
+        socketManager.connect(hostIp,port);
 
     }
 
