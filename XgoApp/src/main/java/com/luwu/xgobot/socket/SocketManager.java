@@ -206,7 +206,7 @@ public class SocketManager implements TCPListener {
     public void onServiceStatusConnectChanged(int statusCode) {
         switch (statusCode){
             case TCPListener.STATUS_CONNECT_SUCCESS:
-                startHeartBeat();
+//                startHeartBeat();
                 break;
             case TCPListener.STATUS_CONNECT_ERROR:
                 stopHeartBeat();
