@@ -2,13 +2,17 @@ package com.luwu.xgobot.mActivity;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -36,7 +40,7 @@ import java.util.regex.Pattern;
 public class NetSettingActivity extends BaseActivity implements SocketStateListener {
     private static final String TAG = "NetSettingActivity";
     private EditText ipEdit,portEdit,cameraPortEdit;
-    private TextView stateText;
+    private TextView stateText,versionText;
     private Button connectBtn;
 
     private static final boolean TEST = true;
@@ -54,6 +58,8 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
         stateText = findViewById(R.id.text_state);
+        versionText =findViewById(R.id.text_version);
+        versionText.setText(getAppVersionName(getApplicationContext()));
 
         connectBtn.setOnClickListener(this::onClick);
         SocketManager.getInstance().setListener(this);
@@ -148,5 +154,27 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     }
 
 
+    /**
+     * 获取版本号
+     * @return 版本号
+     */
 
+    public static String getAppVersionName(Context context) {
+
+        String versionName = "";
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo p1 = pm.getPackageInfo(context.getPackageName(), 0);
+            versionName = p1.versionName;
+            if (TextUtils.isEmpty(versionName) || versionName.length() <= 0) {
+                return "";
+            }else {
+                versionName = "v" + versionName;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionName;
+
+    }
 }

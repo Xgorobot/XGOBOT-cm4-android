@@ -1,101 +1,121 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/background"
-    android:gravity="center">
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/url_ip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:layout_margin="8dp"
-            android:textColor="@color/white"
-            android:text="@string/ip_input" />
-
-        <EditText
-            android:id="@+id/edit_host"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="15"
-            android:textSize="40sp"
-            android:padding="8dp"
-            android:layout_margin="8dp"
-            android:background="@drawable/shape_edittext"
-            android:inputType="textPersonName"
-            android:textColor="@color/white"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/button_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/url_ip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:layout_margin="8dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="53dp"
-                android:background="@drawable/shape_btn_background_selector"
-                android:textSize="34sp"
-                android:paddingStart="62dp"
-                android:paddingEnd="62dp"
-                android:paddingTop="22dp"
-                android:paddingBottom="22dp"
-                android:visibility="visible"
-                android:text="@string/connect" />
+                android:text="@string/ip_input" />
+
+            <EditText
+                android:id="@+id/edit_host"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:textSize="40sp"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/shape_edittext"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="53dp"
+                    android:background="@drawable/shape_btn_background_selector"
+                    android:textSize="34sp"
+                    android:paddingStart="62dp"
+                    android:paddingEnd="62dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="22dp"
+                    android:visibility="visible"
+                    android:text="@string/connect" />
+            </LinearLayout>
+
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="通信端口 无特殊设置使用默认值" />
+
+        <EditText
+            android:id="@+id/edit_tcp_port"
+            android:layout_width="match_parent"
+            android:textSize="40sp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:visibility="gone"
+            android:text="6000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="40sp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="Camera 端口 无特殊设置使用默认值" />
+
+        <EditText
+            android:id="@+id/edit_camera_port"
+            android:layout_width="match_parent"
+            android:textSize="40sp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:visibility="gone"
+            android:inputType="number"
+            android:text="6500" />
+
+        <TextView
+            android:id="@+id/text_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="true"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:gravity="left"
+            android:layout_marginTop="20dp"
+            android:background="@color/toast_color"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
-        android:textSize="40sp"
+        android:id="@+id/text_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="通信端口 无特殊设置使用默认值" />
-
-    <EditText
-        android:id="@+id/edit_tcp_port"
-        android:layout_width="match_parent"
-        android:textSize="40sp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:visibility="gone"
-        android:text="6000" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:textSize="40sp"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="Camera 端口 无特殊设置使用默认值" />
-
-    <EditText
-        android:id="@+id/edit_camera_port"
-        android:layout_width="match_parent"
-        android:textSize="40sp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:visibility="gone"
-        android:inputType="number"
-        android:text="6500" />
-
-    <TextView
-        android:id="@+id/text_state"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="true"
-        android:textSize="20sp"
-        android:visibility="gone"
-        android:gravity="left"
-        android:layout_marginTop="20dp"
-        android:background="@color/toast_color"/>
-</LinearLayout>
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:text="ver1.0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
