@@ -43,7 +43,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private TextView stateText,versionText;
     private Button connectBtn;
 
-    private static final boolean TEST = true;
+    private static final boolean TEST = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +109,12 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private void connect(String hostIp,int port){
         Log.d(TAG, "connect host: " + hostIp + "   port:" + port);
         SocketManager socketManager = SocketManager.getInstance();
-        socketManager.disconnect();
-        socketManager.connect(hostIp,port);
+        if (socketManager.isConnected()){
+            socketManager.disconnect();
+        }else {
+            socketManager.connect(hostIp,port);
+        }
+
     }
 
     /** * 判断是否为合法IP **/

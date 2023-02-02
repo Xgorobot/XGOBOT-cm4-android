@@ -87,16 +87,8 @@ public class SocketManager implements TCPListener {
         tcpSocket.setListener(this);
 
         // Previously connected device.  Try to reconnect.
-        if (mRobotAddress != null
-                && address.equals(mRobotAddress)
-                && tcpSocket != null) {
-            Log.d(TAG, "Trying to use an existing mBluetoothGatt for connection.");
-            if (tcpSocket.isConnecting()) {
-                mConnectionState = STATE_CONNECTING;
-                return true;
-            } else {
-                return false;
-            }
+        if (address.equals(mRobotAddress) && tcpSocket != null && tcpSocket.isConnecting()) {
+           return true;
         }
 
         tcpSocket.setConfig(address,port);
