@@ -22,7 +22,7 @@
     <string name="normal">Normal</string>
     <string name="superior">Advanced</string>
     <string name="executing">Executing</string>
-    <string name="calibration">Calibration Mode</string>
+    <string name="calibration">Calibrate</string>
     <string name="calibrationMode">Calibrate</string>
     <string name="calibrated">Calibrated</string>
     <string name="leg">Foot Position Utility</string>
