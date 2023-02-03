@@ -201,7 +201,7 @@ public class XYZFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
-                updateXYZScroll();
+//                updateXYZScroll();
 
             }
         });
