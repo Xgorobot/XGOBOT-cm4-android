@@ -45,8 +45,10 @@ public class BaseActivity extends AppCompatActivity {
         SharedPreferences languageInfo = AppContext.getappContext().getSharedPreferences("xgo_setting", MODE_PRIVATE);
         String setting_language = languageInfo.getString("setting_language", "auto");
         if (setting_language.equals("zh")) {
+            localeLanguage = "zh";
             return Locale.CHINESE;
         } else if (setting_language.equals("en")) {
+            localeLanguage = "en";
             return Locale.US;
         } else {//auto
             localeLanguage = Locale.getDefault().getLanguage();

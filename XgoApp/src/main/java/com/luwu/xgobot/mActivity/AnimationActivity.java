@@ -44,32 +44,4 @@ public class AnimationActivity extends AppCompatActivity {
         hideBottomUIMenu(AnimationActivity.this);
     }
 
-    private void updateLocale(){
-        SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
-        String setting_language = languageInfo.getString("setting_language", "auto");
-        if (setting_language.equals("zh")) {
-            localeLanguage = "zh";
-        } else if(setting_language.equals("en")) {
-            localeLanguage = "en";
-        } else {//auto
-            localeLanguage = Locale.getDefault().getLanguage();
-            if (!localeLanguage.equals("zh")){
-                localeLanguage = "en";
-            }
-        }
-        Resources resources = getResources();
-        Configuration configuration = resources.getConfiguration();
-        if (configuration.locale.getLanguage() != localeLanguage){
-            if (localeLanguage.equals("zh")) {
-                configuration.setLocale(Locale.CHINESE); // 设置为中文
-            } else {
-                configuration.setLocale(Locale.ENGLISH); // 设置为英文
-                localeLanguage = "en";
-            }
-            DisplayMetrics metrics = new DisplayMetrics();
-            resources.updateConfiguration(configuration, metrics); // 更新配置文件
-        } else {
-
-        }
-    }
 }

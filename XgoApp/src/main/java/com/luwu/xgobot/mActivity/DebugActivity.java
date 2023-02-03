@@ -118,6 +118,8 @@ public class DebugActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.debugBtnConfirm:
+                    debugBtnConfirm.setBackgroundResource(R.drawable.bg_text_blue);
+                    debugBtnFinish.setBackgroundResource(R.drawable.debug_text_border);
                     RobotFunction.setDebugMode(true);
                     switch(localeLanguage){
                         case "zh":
@@ -129,6 +131,8 @@ public class DebugActivity extends BaseActivity {
                     break;
                 case R.id.debugBtnFinish:
                     if(!isFastDoubleClick()){
+                        debugBtnFinish.setBackgroundResource(R.drawable.bg_text_blue);
+                        debugBtnConfirm.setBackgroundResource(R.drawable.debug_text_border);
                         RobotFunction.setDebugMode(false);
                         switch(localeLanguage){
                             case "zh":

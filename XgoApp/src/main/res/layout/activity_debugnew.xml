@@ -52,7 +52,7 @@
             android:paddingBottom="18dp"
             android:paddingLeft="84dp"
             android:paddingRight="84dp"
-            android:background="@drawable/bg_text_blue" />
+            android:background="@drawable/debug_text_border" />
         <View
             android:layout_width="110dp"
             android:layout_height="0dp"/>
