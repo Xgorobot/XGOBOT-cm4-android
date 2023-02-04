@@ -170,7 +170,7 @@ public class RobotFunction {
     }
 
     //步幅
-    public static void setYTrans(int length){//-35 - +35
+    public static void setYTrans(int length){//-18 - +18
         length = Math.max(-18,length);
         length = Math.min(18,length);
         byte[] datas = new byte[]{(byte) length, 0x00};
