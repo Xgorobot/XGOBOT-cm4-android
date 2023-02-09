@@ -45,7 +45,7 @@ public class TCPClient {
     private boolean isConnect = false;//判断是否连接了
 
     private static int reconnectNum = Integer.MAX_VALUE;//定义的重连到时候用
-    private boolean isNeedReconnect = true;//是否需要重连
+    private boolean isNeedReconnect = false;//是否需要重连
     private boolean isConnecting = false;//是否正在连接
     private long reconnectIntervalTime = 5000;//重连的时间
 
@@ -70,7 +70,7 @@ public class TCPClient {
             @Override
             public void run() {
                 super.run();
-                isNeedReconnect = true;
+                isNeedReconnect = false;
                 reconnectNum = Integer.MAX_VALUE;
                 connectServer();
             }
@@ -126,7 +126,7 @@ public class TCPClient {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    isConnect = false;
+                    isConnect  = false;
                     listener.onServiceStatusConnectChanged(TCPListener.STATUS_CONNECT_CLOSED);//STATUS_CONNECT_CLOSED 这我自己定义的 接口标识
                     if (null != channelFuture) {
                         if (channelFuture.channel() != null && channelFuture.channel().isOpen()) {
@@ -134,7 +134,7 @@ public class TCPClient {
                         }
                     }
                     group.shutdownGracefully();
-                    reconnect();//重新连接
+//                    reconnect();//重新连接
                 }
             }
         }

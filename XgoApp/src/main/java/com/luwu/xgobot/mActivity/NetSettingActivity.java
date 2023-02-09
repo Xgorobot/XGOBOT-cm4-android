@@ -68,6 +68,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume: isConnected:" +SocketManager.getInstance().isConnected() );
     }
 
     private void onClick(View view){
@@ -148,6 +149,11 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
                 Toast.makeText(NetSettingActivity.this,"Connect Fail，please check your network。  host:" + host , Toast.LENGTH_LONG).show();
             });
         }
+    }
+
+    @Override
+    public void onMsgReceived(String msg) {
+
     }
 
     @Override

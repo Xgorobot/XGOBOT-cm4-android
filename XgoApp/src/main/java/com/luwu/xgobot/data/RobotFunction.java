@@ -178,4 +178,10 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
         Log.d(TAG, "setXTrans: " + "setYTrans" + length);
     }
+
+    public static void loadDeviceVersion(){
+        byte[] datas = new byte[]{ 0x01, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_DQBBH,datas);
+        SocketManager.getInstance().write(sendData);
+    }
 }

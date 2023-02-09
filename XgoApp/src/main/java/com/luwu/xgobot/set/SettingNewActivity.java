@@ -2,6 +2,7 @@ package com.luwu.xgobot.set;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -12,9 +13,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luwu.xgobot.R;
+import com.luwu.xgobot.data.RobotFunction;
 import com.luwu.xgobot.mActivity.BaseActivity;
+import com.luwu.xgobot.mActivity.NetSettingActivity;
 import com.luwu.xgobot.mActivity.SettingActivity;
 import com.luwu.xgobot.mMothed.mToast;
+import com.luwu.xgobot.socket.SocketManager;
+import com.luwu.xgobot.socket.SocketStateListener;
 
 /**
  * <p>文件描述：<p>
@@ -22,8 +27,9 @@ import com.luwu.xgobot.mMothed.mToast;
  * <p>创建时间：2023/1/8<p>
  *     设置页面
  */
-public class SettingNewActivity extends BaseActivity {
+public class SettingNewActivity extends BaseActivity implements SocketStateListener {
 
+    private static final String TAG = "SettingNewActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,7 +37,21 @@ public class SettingNewActivity extends BaseActivity {
         setContentView(R.layout.activity_settingnew);
 
         initView();
+        SocketManager.getInstance().setListener(this);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SocketManager.getInstance().setListener(null);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RobotFunction.loadDeviceVersion();
+    }
+
     private ImageView mBack_img;
     private RadioButton mFolwSys_btn,mChinese_btn,mEnglish_btn,mConfirm_btn,mNo_btn;
     private TextView mDeviceinfo_tv;
@@ -118,5 +138,31 @@ public class SettingNewActivity extends BaseActivity {
         //设备信息
         mDeviceinfo_tv = findViewById(R.id.setting_deviceinfo_tv);
 
+    }
+
+    @Override
+    public void onStateChange(String newState, boolean connected) {
+
+    }
+
+    @Override
+    public void onMsgReceived(String msg) {
+        try {
+            String tag = msg.substring(3,5);
+            String data = msg.substring(7,9);
+            String name = "loading";
+            Log.d(TAG, "onMsgReceived: tag:" + tag + "  data:" + data );
+            if (tag.equals("20")){
+                if (data.equals("00")){
+                    name = "XGO-lite2";
+                }else if (data.equals("01")){
+                    name = "XGO-mini2";
+                }
+            }
+            String finalName = name;
+            runOnUiThread(() -> mDeviceinfo_tv.setText(finalName));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

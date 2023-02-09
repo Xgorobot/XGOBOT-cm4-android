@@ -200,13 +200,16 @@ public class SocketManager implements TCPListener {
         byte[] hexBytes = asciiString.getBytes();
         String hexString = ByteUtile.byteArrayToHex(hexBytes);
         Log.d(TAG, "onMessageResponse: 收到来自服务器的消息:" + msg);
+        if (listener.get()!=null){
+            listener.get().onMsgReceived((String) msg);
+        }
     }
 
     @Override
     public void onServiceStatusConnectChanged(int statusCode) {
         switch (statusCode){
             case TCPListener.STATUS_CONNECT_SUCCESS:
-//                startHeartBeat();
+                startHeartBeat();
                 break;
             case TCPListener.STATUS_CONNECT_ERROR:
                 stopHeartBeat();
