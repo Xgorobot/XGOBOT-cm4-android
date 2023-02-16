@@ -24,7 +24,6 @@ public class RobotConstants {
     public static final byte SET_XZPY = 0x18;//x轴平移
     public static final byte SET_YZPY = 0x19;//y轴平移
 
-    public static final byte SET_DQBBH = 0x20;//读取版本号
     //身体姿态
     public static final byte RECEIVE_STZT = 0x20;//身体姿态
     public static final byte SET_KZSTZT = 0x21;//控制身体姿态
@@ -36,6 +35,7 @@ public class RobotConstants {
     public static final byte SET_KZDZ = 0x31;//控制动作 0表示停止
     public static final byte SET_DZLB = 0x32;//动作轮播
     public static final byte SET_CSWZ = 0x33;//初始位置
+    public static final byte SET_DQBBH = 0x34;//读取版本号
 
     //舵机控制
     public static final byte RECEIVE_DJKZ = 0x40;//身体姿态

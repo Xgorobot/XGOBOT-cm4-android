@@ -128,7 +128,7 @@ public class MotionFragment extends Fragment {
                         RobotFunction.btnControl(0);
                         break;
                     default:
-                        RobotFunction.btnControl(0);
+//                        RobotFunction.btnControl(0);
                         break;
                 }
                 return false;
