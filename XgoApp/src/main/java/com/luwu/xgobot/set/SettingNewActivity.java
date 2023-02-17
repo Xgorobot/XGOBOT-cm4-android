@@ -152,7 +152,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             String data = msg.substring(7,9);
             String name = "loading";
             Log.d(TAG, "onMsgReceived: tag:" + tag + "  data:" + data );
-            if (tag.equals("20")){
+            if (tag.equals("34")){
                 if (data.equals("00")){
                     name = "XGO-lite2";
                 }else if (data.equals("01")){
