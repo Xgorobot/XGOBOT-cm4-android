@@ -22,85 +22,91 @@
             tools:text="XGO\nwifi已连接" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="129dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
             <LinearLayout
-                android:id="@+id/main_show_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="450dp"
-                    android:layout_height="450dp"
-                    android:src="@drawable/icon_performance" />
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/main_show_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/performance"
-                    android:textColor="@color/blue36"
-                    android:textSize="48sp" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="450dp"
+                        android:layout_height="450dp"
+                        android:src="@drawable/icon_performance" />
 
-            <View
-                android:layout_width="160dp"
-                android:layout_height="0dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/performance"
+                        android:textColor="@color/blue36"
+                        android:textSize="48sp" />
 
-            <LinearLayout
-                android:id="@+id/main_contract_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="450dp"
-                    android:layout_height="450dp"
-                    android:src="@drawable/icon_control" />
+                <View
+                    android:layout_width="160dp"
+                    android:layout_height="0dp" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/main_contract_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/control"
-                    android:textColor="@color/blue36"
-                    android:textSize="48sp" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="450dp"
+                        android:layout_height="450dp"
+                        android:src="@drawable/icon_control" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/control"
+                        android:textColor="@color/blue36"
+                        android:textSize="48sp" />
 
-            <LinearLayout
-                android:visibility="gone"
-                android:id="@+id/main_aimode_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="450dp"
-                    android:layout_height="450dp"
-                    android:src="@drawable/icon_aimodule" />
-
-                <TextView
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/main_aimode_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/aimodule"
-                    android:textColor="@color/blue36"
-                    android:textSize="48sp" />
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="450dp"
+                        android:layout_height="450dp"
+                        android:src="@drawable/icon_aimodule" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/aimodule"
+                        android:textColor="@color/blue36"
+                        android:textSize="48sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
