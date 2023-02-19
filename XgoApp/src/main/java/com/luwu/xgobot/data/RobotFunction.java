@@ -58,17 +58,30 @@ public class RobotFunction {
         SocketManager.getInstance().write(sendData);
     }
 
-    //身体姿态控制
-    public static void xyzControl(int x,int y){
-        byte[] datas = new byte[]{(byte) x,(byte) y, 0x00};
-        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZSTZT,datas);
-        SocketManager.getInstance().write(sendData);
-        Log.d(TAG, "xyzControl: " + "xy Control" + x + " - " +  y);
-    }
-
     public static void xyzControl(int z){
         heightControl(z);
         Log.d(TAG, "xyzControl: " + "z Control" + z);
+    }
+
+    public static void rollControl(int roll){
+        byte[] datas = new byte[]{(byte) roll, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZROLL,datas);
+        SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "rollControl: " + "roll Control" + roll);
+    }
+
+    public static void pitchControl(int pitch){
+        byte[] datas = new byte[]{(byte) pitch, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZPITCH,datas);
+        SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "pitchControl: " + "pitch Control" + pitch);
+    }
+
+    public static void yawControl(int yaw){
+        byte[] datas = new byte[]{(byte) yaw, 0x00};
+        byte[] sendData = DataHelper.getSendBytes(RobotConstants.TYPE_DEFAULT, RobotConstants.SET_KZYAW,datas);
+        SocketManager.getInstance().write(sendData);
+        Log.d(TAG, "yawControl: " + "yaw Control" + yaw);
     }
 
     //单腿控制

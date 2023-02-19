@@ -138,12 +138,11 @@ public class XYZFragment extends Fragment {
          * X轴滚动
          * */
         mScroll_x.setBackgroundColor(this.getResources().getColor(R.color.redca));
-
         mScroll_x.setOnSeekBarChangeListener(new CenterSeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrollx_value = progress;
-                RobotFunction.xyzControl(mScrollx_value*2,mScrolly_value*2);
+                RobotFunction.rollControl(mScrollx_value);
             }
 
             @Override
@@ -157,6 +156,7 @@ public class XYZFragment extends Fragment {
 
             }
         });
+
         /*
          * Y轴滚动
          * */
@@ -165,7 +165,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrolly_value = progress;
-                RobotFunction.xyzControl(mScrollx_value*2,mScrolly_value*2);
+                RobotFunction.pitchControl(mScrolly_value);
             }
 
             @Override
@@ -178,6 +178,7 @@ public class XYZFragment extends Fragment {
 
             }
         });
+
         /*
          * Z轴滚动
          * */
@@ -186,7 +187,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mScrollz_value = progress;
-                RobotFunction.xyzControl(95 + mScrollz_value * 2 / 10);
+                RobotFunction.yawControl(mScrollz_value);
             }
 
             @Override
@@ -197,7 +198,6 @@ public class XYZFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(CenterSeekBar seekBar) {
 //                updateXYZScroll();
-
             }
         });
        /* mScroll_z.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -218,13 +218,6 @@ public class XYZFragment extends Fragment {
         });*/
     }
 
-    private void updateXYZTranslate(){
-        RobotFunction.xyzControl(mScrollx_value,mScrolly_value);
-    }
-
-    private void updateXYZScroll(){
-        RobotFunction.xyzControl(mScrollz_value);
-    }
     /*
     * 初始化view
     * */

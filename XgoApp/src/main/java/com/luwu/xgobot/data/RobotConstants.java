@@ -29,6 +29,9 @@ public class RobotConstants {
     public static final byte SET_KZSTZT = 0x21;//控制身体姿态
     public static final byte SET_KZGDZT = 0x22;//控制高低姿态
     public static final byte SET_KZJB = 0x23;//控制肩膀
+    public static final byte SET_KZROLL = 0x21;//控制身体姿态
+    public static final byte SET_KZPITCH = 0x24;//控制身体姿态
+    public static final byte SET_KZYAW = 0x25;//控制身体姿态
 
     //动作
     public static final byte RECEIVE_DZ = 0x30;//身体姿态
