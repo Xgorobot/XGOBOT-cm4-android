@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -156,6 +157,7 @@ public class MotionSetDialog extends Dialog {
         }else {
             mlayout.setTabData(titlesEnglish);
         }
+        mlayout.setCurrentTab(1);
         tuoluoyi = findViewById(R.id.tuoluoyi);
         robotHeight = findViewById(R.id.robot_height);
         robotStep = findViewById(R.id.robot_step);

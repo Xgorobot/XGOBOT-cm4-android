@@ -43,7 +43,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private TextView stateText,versionText;
     private Button connectBtn;
 
-    private static final boolean TEST = false;
+    private static final boolean TEST = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

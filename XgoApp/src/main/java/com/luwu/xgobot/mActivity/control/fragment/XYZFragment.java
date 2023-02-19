@@ -57,16 +57,11 @@ public class XYZFragment extends Fragment {
             mTranslate_y.setProgress(0);
             mTranslate_z.setProgress(0);
 
-
-            RobotFunction.xyzControl(0,0);
-            RobotFunction.xyzControl(95);
-            new Handler().postDelayed(()->{
-                RobotFunction.xyzControl(0,0);
-                RobotFunction.xyzControl(95);
-            },100);
             mScroll_x.setProgress(0);
             mScroll_y.setProgress(0);
             mScroll_z.setProgress(0);
+
+            RobotFunction.showMode(0);
         });
         /*
         * X轴平移

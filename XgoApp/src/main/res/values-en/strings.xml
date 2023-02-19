@@ -137,7 +137,7 @@
     <string name="debugdesc_1">Click [Calibrate] put the robot to the calibration position according to the instructions</string>
     <string name="debugdesc_2">Click [Calibrated] record the current calibration posture as the initial position, the robot will be the default state after 10 seconds</string>
     <string name="Confirm">Confirm</string>
-    <string name="mode_debug">debug mode</string>
+    <string name="mode_debug">Calibration Mode</string>
     <string name="speed_low">Low</string>
     <string name="speed_medium">Normal</string>
     <string name="speed_high">High</string>
