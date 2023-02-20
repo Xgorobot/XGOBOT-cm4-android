@@ -150,17 +150,17 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
         try {
             String tag = msg.substring(3,5);
             String data = msg.substring(7,9);
-            String name = "loading";
+
             Log.d(TAG, "onMsgReceived: tag:" + tag + "  data:" + data );
             if (tag.equals("34")){
                 if (data.equals("00")){
-                    name = "XGO-lite2";
+                    String finalName = "XGO-lite2";
+                    runOnUiThread(() -> mDeviceinfo_tv.setText(finalName));
                 }else if (data.equals("01")){
-                    name = "XGO-mini2";
+                    String finalName = "XGO-mini2";
+                    runOnUiThread(() -> mDeviceinfo_tv.setText(finalName));
                 }
             }
-            String finalName = name;
-            runOnUiThread(() -> mDeviceinfo_tv.setText(finalName));
         }catch (Exception e){
             e.printStackTrace();
         }
