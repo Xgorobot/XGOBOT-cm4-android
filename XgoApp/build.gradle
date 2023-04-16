@@ -77,6 +77,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    implementation 'com.google.zxing:zxing-parent:3.4.1'
+    implementation 'com.google.zxing:core:3.3.3'
 }
 
 //allprojects {

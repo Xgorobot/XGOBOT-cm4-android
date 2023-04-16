@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private EditText ipEdit,portEdit,cameraPortEdit;
     private TextView stateText,versionText;
     private Button connectBtn;
+    private ImageView settingBtn;
 
     private static final boolean TEST = false;
 
@@ -55,17 +57,33 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         String host = SPUtils.getInstance().getString("host","");
         ipEdit.setText(host);
 
+        settingBtn = findViewById(R.id.btn_setting);
         portEdit = findViewById(R.id.edit_tcp_port);
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
         findViewById(R.id.button_start).setOnClickListener(this::startBroadCastShow);
         findViewById(R.id.button_stop).setOnClickListener(this::stopBroadCastShow);
+        findViewById(R.id.btn_show).setOnLongClickListener(this::show2);
         stateText = findViewById(R.id.text_state);
         versionText =findViewById(R.id.text_version);
         versionText.setText(getAppVersionName(getApplicationContext()));
 
         connectBtn.setOnClickListener(this::onClick);
         SocketManager.getInstance().setListener(this);
+        settingBtn.setOnClickListener(this::onSettingClick);
+    }
+
+    private void onSettingClick(View view) {
+
+        Intent intent = new Intent(NetSettingActivity.this, WifiSettingActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private boolean show2(View view) {
+        findViewById(R.id.button_start).setVisibility(View.VISIBLE);
+        findViewById(R.id.button_stop).setVisibility(View.VISIBLE);
+        return true;
     }
 
     @Override

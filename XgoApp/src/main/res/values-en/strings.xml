@@ -111,8 +111,10 @@
     <string name="control">Radio Controll Mode</string>
     <string name="aimodule">AI模组</string>
     <string name="ip_input">Please enter IP address of the robot</string>
+    <string name="ip_input_wifi">Please enter SSID and password</string>
     <string name="zhuaqu">Grab</string>
     <string name="connect">Confirm</string>
+    <string name="get_code">get QR code</string>
     <string name="motion_mode">Motion Mode</string>
     <string name="pose_mode">Pose Mode</string>
     <string name="X_axistranslation">X-axis translation</string>
@@ -141,4 +143,5 @@
     <string name="speed_low">Low</string>
     <string name="speed_medium">Normal</string>
     <string name="speed_high">High</string>
+    <string name="scan_please">Please scan the QR code.</string>
 </resources>

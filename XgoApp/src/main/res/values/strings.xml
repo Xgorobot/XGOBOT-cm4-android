@@ -152,9 +152,11 @@
     <string name="control">控制模式</string>
     <string name="aimodule">AI模组</string>
     <string name="ip_input">请输入机器人IP地址</string>
+    <string name="ip_input_wifi">请输入SSID及密码</string>
 
     <string name="zhuaqu">抓取</string>
     <string name="connect">连接</string>
+    <string name="get_code">生成二维码</string>
     <string name="motion_mode">运动模式</string>
     <string name="pose_mode">位姿模式</string>
     <string name="X_axistranslation">X轴平移</string>
@@ -182,4 +184,5 @@
     <string name="speed_low">低速</string>
     <string name="speed_medium">中速</string>
     <string name="speed_high">高速</string>
+    <string name="scan_please">请扫码配网</string>
 </resources>
