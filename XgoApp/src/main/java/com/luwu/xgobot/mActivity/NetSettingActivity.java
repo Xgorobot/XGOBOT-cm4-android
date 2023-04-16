@@ -30,6 +30,7 @@ import com.luwu.xgobot.R;
 import com.luwu.xgobot.mActivity.main.XgoMainActivity;
 import com.luwu.xgobot.socket.SocketManager;
 import com.luwu.xgobot.socket.SocketStateListener;
+import com.luwu.xgobot.socket.UdpClient;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -57,6 +58,8 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         portEdit = findViewById(R.id.edit_tcp_port);
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
+        findViewById(R.id.button_start).setOnClickListener(this::startBroadCastShow);
+        findViewById(R.id.button_stop).setOnClickListener(this::stopBroadCastShow);
         stateText = findViewById(R.id.text_state);
         versionText =findViewById(R.id.text_version);
         versionText.setText(getAppVersionName(getApplicationContext()));
@@ -106,6 +109,23 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         }
     }
 
+    private void startBroadCastShow(View view){
+        try {
+            UdpClient.sendBroadCast("1",6001);
+        } catch (Exception e) {
+            Toast.makeText(this,"sendBroadCastFail",Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
+
+    private void stopBroadCastShow(View view){
+        try {
+            UdpClient.sendBroadCast("0",6001);
+        } catch (Exception e) {
+            Toast.makeText(this,"sendBroadCastFail",Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
 
     private void connect(String hostIp,int port){
         Log.d(TAG, "connect host: " + hostIp + "   port:" + port);

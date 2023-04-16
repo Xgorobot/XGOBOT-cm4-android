@@ -8,56 +8,46 @@ import java.util.concurrent.Executors;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 import io.netty.util.CharsetUtil;
 
-public class UdpClient extends UdpChannelInboundHandler implements Runnable{
-    private Bootstrap bootstrap;
-    private EventLoopGroup eventLoopGroup;
-    private UdpChannelInitializer udpChannelInitializer;
-    private ExecutorService executorService;
+public class UdpClient {
+    public static void sendBroadCast(String data,int port) throws Exception {
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.group(new NioEventLoopGroup())
+                .channel(NioDatagramChannel.class)
+                .handler(new
+                                 ChannelInitializer<NioDatagramChannel>() {
+                    @Override
+                    protected void initChannel(NioDatagramChannel ch) throws Exception {
+                        ch.pipeline().addLast(new SimpleChannelInboundHandler<DatagramPacket>() {
+                            @Override
+                            protected void channelRead0(ChannelHandlerContext ctx, DatagramPacket msg) throws Exception { }
+                        });
+                    }
+                })
+                .option(ChannelOption.SO_BROADCAST, true);
 
-    public UdpClient(){
-        init();
-    }
-
-    private void init(){
-        bootstrap = new Bootstrap();
-        eventLoopGroup = new NioEventLoopGroup();
-        bootstrap.group(eventLoopGroup);
-        bootstrap.channel(NioDatagramChannel.class)
-                .option(ChannelOption.SO_RCVBUF,1024)
-                .option(ChannelOption.SO_SNDBUF,1024);
-        udpChannelInitializer = new UdpChannelInitializer(this);
-        bootstrap.handler(udpChannelInitializer);
-
-        executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(this);
-    }
-
-    @Override
-    public void run() {
-        try {
-            ChannelFuture channelFuture = bootstrap.bind(0).sync();
-            channelFuture.channel().closeFuture().sync();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            eventLoopGroup.shutdownGracefully();
-        }
-    }
-
-    public void send(){
-        send(new DatagramPacket(Unpooled.copiedBuffer("echo", CharsetUtil.UTF_8),new InetSocketAddress("127.0.0.1",1112)));
-    }
-
-    @Override
-    public void onMessageReceive(String data) {
-        Log.d("nettyudp","receive" + data);
+        Channel channel = bootstrap.bind(0).sync().channel();
+        InetSocketAddress recipient = new InetSocketAddress("255.255.255.255", port);
+        channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(data, CharsetUtil.UTF_8), recipient)).addListener((ChannelFutureListener) future -> {
+            if (future.isSuccess()) {
+                System.out.println("UDP broadcast message sent.");
+            } else {
+                System.err.println("UDP broadcast message failed to send: " + future.cause());
+            }
+            channel.close();
+        }).await();
     }
 }
+

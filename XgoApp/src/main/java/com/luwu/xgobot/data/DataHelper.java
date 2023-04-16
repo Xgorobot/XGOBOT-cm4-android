@@ -17,36 +17,6 @@ public class DataHelper {
         //没个卵用的脏代码
     }
 
-
-    /**
-     * 处理收到的消息，去头去尾解析出数据内容
-     * @param message 收到的带包头包尾的完整消息
-     * @return 纯内容部分
-     */
-    public static byte[] dealMessage(byte[] message){
-        if (message.length < 7){
-            return null;
-        }
-//        if (message[0] != START){
-//            return null;
-//        }
-//        if (message[message.length-1] != END){
-//            return null;
-//        }
-        byte[] datas = new byte[2];
-        System.arraycopy(message,5,datas,0,2);
-        int dataLength = datas[1];
-
-        byte[] result = new byte[dataLength];
-        System.arraycopy(message,7,result,0,dataLength);
-
-        return result;
-    }
-
-    public static byte[] getPowerBytes(){
-        return getSendBytes(RobotConstants.TYPE_DEFAULT,(byte)0x02, new byte[]{0x01, 0x00});
-    }
-
     /**
      *
      * @param id 类型ID 好像只有 TYPE_DEFAULT
@@ -82,21 +52,6 @@ public class DataHelper {
         return resultByte;
     }
 
-    @SuppressLint("DefaultLocale")
-    public static byte[] hexStringToByteArray(String s) {
-        if (s.length() % 2 == 1){
-            int len = s.length()+1;
-            s = addZeroForNum(s,len);
-        }
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i + 1), 16));
-        }
-        return data;
-    }
-
     private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 
     public static String bytesToHex(byte[] bytes) {
@@ -120,25 +75,5 @@ public class DataHelper {
             }
         }
         return str;
-    }
-
-
-    public static void resloveRobotCallback(String request,RobotApi robot){
-        if (robot == null)
-            return;
-        if (!request.startsWith("$") || !request.endsWith("#"))
-            return;
-        if (request.length()<13)
-            return;
-        char[] requestDatas = request.toCharArray();
-        int length = Integer.parseInt(String.valueOf(requestDatas[5]) + requestDatas[6]);
-        String func = String.valueOf(requestDatas[3]) + requestDatas[4];
-        byte funcByte = hexStringToByteArray(func)[0];
-        switch (funcByte){
-            case RobotConstants.GET_POWER:
-                robot.onPowerCallback(100);
-                break;
-            case RobotConstants.SET_AJKZ:
-        }
     }
 }
