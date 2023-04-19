@@ -149,6 +149,16 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/text_version"
         app:layout_constraintEnd_toEndOf="parent" />
+    <ImageView
+        android:id="@+id/btn_control"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/transparent"
+        android:src="@drawable/qunkong"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_setting"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/btn_setting"
@@ -156,7 +166,7 @@
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
         android:background="@color/transparent"
-        android:src="@drawable/main_setting"
+        android:src="@drawable/peiwang"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

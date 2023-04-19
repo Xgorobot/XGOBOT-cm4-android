@@ -144,12 +144,19 @@
         app:layout_constraintStart_toEndOf="@id/layout_input"
         android:orientation="vertical"
         android:gravity="center">
-        <ImageView
-            android:id="@+id/image_qr"
+        <LinearLayout
             android:layout_width="360dp"
             android:layout_height="360dp"
-            android:src="@drawable/hint_scan"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:background="@drawable/kuang"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/image_qr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/hint_scan"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

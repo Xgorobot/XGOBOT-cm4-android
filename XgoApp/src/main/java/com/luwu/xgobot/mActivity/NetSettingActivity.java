@@ -44,7 +44,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private EditText ipEdit,portEdit,cameraPortEdit;
     private TextView stateText,versionText;
     private Button connectBtn;
-    private ImageView settingBtn;
+    private ImageView settingBtn,controlBtn;
 
     private static final boolean TEST = false;
 
@@ -58,6 +58,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         ipEdit.setText(host);
 
         settingBtn = findViewById(R.id.btn_setting);
+        controlBtn = findViewById(R.id.btn_control);
         portEdit = findViewById(R.id.edit_tcp_port);
         cameraPortEdit = findViewById(R.id.edit_camera_port);
         connectBtn = findViewById(R.id.button_connect);
@@ -71,6 +72,13 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         connectBtn.setOnClickListener(this::onClick);
         SocketManager.getInstance().setListener(this);
         settingBtn.setOnClickListener(this::onSettingClick);
+        controlBtn.setOnClickListener(this::onControlClick);
+    }
+
+    private void onControlClick(View view) {
+        Intent intent = new Intent(NetSettingActivity.this, UdpControlActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private void onSettingClick(View view) {
