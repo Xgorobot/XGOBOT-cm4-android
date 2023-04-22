@@ -48,6 +48,11 @@ public class WifiSettingActivity extends BaseActivity {
         getCodeBtn = findViewById(R.id.button_code);
         imageView = findViewById(R.id.image_qr);
         getCodeBtn.setOnClickListener(this::onClick);
+        findViewById(R.id.settingBtnBack).setOnClickListener(this::finish);
+    }
+
+    private void finish(View view) {
+        finish();
     }
 
     private void onClick(View view) {

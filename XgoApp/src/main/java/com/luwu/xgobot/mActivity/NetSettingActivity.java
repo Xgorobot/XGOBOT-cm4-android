@@ -64,7 +64,6 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
         connectBtn = findViewById(R.id.button_connect);
         findViewById(R.id.button_start).setOnClickListener(this::startBroadCastShow);
         findViewById(R.id.button_stop).setOnClickListener(this::stopBroadCastShow);
-        findViewById(R.id.settingBtnBack).setOnClickListener(this::finish);
 //        findViewById(R.id.btn_show).setOnLongClickListener(this::show2);
         stateText = findViewById(R.id.text_state);
         versionText =findViewById(R.id.text_version);
