@@ -58,7 +58,9 @@ public class WifiSettingActivity extends BaseActivity {
         }else {
             String qrCodeString = generateWiFiQRContent(ssidStr,passwordStr);
             try {
-                Bitmap qrCodeBitmap = QRCodeGenerator.generateQRCodeBitmap(qrCodeString,200,200);
+                int width = imageView.getWidth();
+                int height = imageView.getHeight();
+                Bitmap qrCodeBitmap = QRCodeGenerator.generateQRCodeBitmap(qrCodeString,width,height);
                 imageView.setImageBitmap(qrCodeBitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
