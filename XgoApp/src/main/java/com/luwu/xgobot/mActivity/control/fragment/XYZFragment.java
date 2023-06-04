@@ -119,7 +119,7 @@ public class XYZFragment extends Fragment {
             @Override
             public void onProgressChanged(CenterSeekBar seekBar, int progress, boolean fromUser) {
                 mTranslatez_value = progress;
-                RobotFunction.xyzControl(95 + mTranslatez_value * 2 / 10);
+                RobotFunction.xyzControl(95 + mTranslatez_value * 4 / 10);
             }
 
             @Override
