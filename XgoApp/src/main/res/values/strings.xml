@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">XGO</string>
+    <string name="app_name" translatable="false">XGOBOT</string>
     <!--    出现在file中的四个文件 分别为动作组和动作的工作区的保存文件-->
     <string name="wholeWorkspace" translatable="false">whole_robot_workspace.xml</string>
     <string name="wholeWorkspaceTemp" translatable="false">whole_robot_workspace_temp.xml</string>
@@ -61,7 +61,7 @@
     <string name="normal">普通</string>
     <string name="superior">高级</string>
     <string name="executing">正在执行</string>
-    <string name="calibration">标定初始位置</string>
+    <string name="calibration">开始标定</string>
     <string name="calibrationMode">进入标定模式</string>
     <string name="calibrated">完成标定</string>
     <string name="leg">单腿控制</string>
@@ -112,9 +112,14 @@
     <string name="wavebody">波浪</string>
     <string name="swing">摇摆</string>
     <string name="pray">求食</string>
-    <string name="seek">找食物</string>
+    <string name="lookingfood">找食物</string>
     <string name="handshake">握手</string>
-    <string name="actor">表演模式</string>
+    <string name="pushup">俯卧撑</string>
+    <string name="chickenhead">鸡头</string>
+    <string name="naughty">调皮</string>
+    <string name="dance">跳舞</string>
+    <string name="seek">张望</string>
+    <string name="actor">表演</string>
     <string name="xyz">XYZ-轴</string>
     <string name="pry">Roll/Pitch/Yaw</string>
     <string name="battery">电量</string>
@@ -137,4 +142,47 @@
     <string name="cancel">取消</string>
     <string name="renameText">最多4个中文字符或13个英文字符</string>
     <string name="all_rights_reserved">陆吾智能 版权所有 All Rights Reserved.</string>
+
+
+    <!--index-->
+    <string name="index_pleasechose">请选择您的设备:</string>
+    <string name="wifilist_seach">搜索中...</string>
+    <!--main-->
+    <string name="performance">表演模式</string>
+    <string name="control">控制模式</string>
+    <string name="aimodule">AI模组</string>
+    <string name="ip_input">请输入机器人IP地址</string>
+    <string name="ip_input_wifi">请输入SSID及密码</string>
+
+    <string name="zhuaqu">抓取</string>
+    <string name="connect">连接</string>
+    <string name="get_code">生成二维码</string>
+    <string name="motion_mode">运动模式</string>
+    <string name="pose_mode">位姿模式</string>
+    <string name="X_axistranslation">X轴平移</string>
+    <string name="Y_axistranslation">Y轴平移</string>
+    <string name="Z_axistranslation">Z轴平移</string>
+    <string name="roll">X轴滚动</string>
+    <string name="pitch">Y轴滚动</string>
+    <string name="yaw">Z轴滚动</string>
+    <string name="autostable">自稳模式</string>
+    <string name="frequency">整机速度</string>
+    <string name="height">整机高度</string>
+    <string name="xgostep">步   幅</string>
+    <string name="baseset">基础设置</string>
+    <string name="xgolanguage">语言选择</string>
+    <string name="flowsys">跟随系统</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="devdesc">以开发者身份运行此项目</string>
+    <string name="devoptions">开发选项</string>
+    <string name="deviceinfo">设备信息</string>
+    <string name="debugdesc_1">点击【开始标定】按照说明书将机器狗摆放为标定姿势</string>
+    <string name="debugdesc_2">点击【完成标定】记录当前标定姿势为初始位置，10秒后回复默认站姿</string>
+    <string name="Confirm">知道了</string>
+    <string name="mode_debug">标定模式</string>
+    <string name="speed_low">低速</string>
+    <string name="speed_medium">中速</string>
+    <string name="speed_high">高速</string>
+    <string name="scan_please">请扫码配网</string>
 </resources>

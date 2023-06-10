@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.luwu.xgobot.mView.ButtonView
+        android:id="@+id/buttonButtonLeft"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="211dp"
+        app:downPress="@drawable/button1_back_press"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLineHor2"
+        app:layout_constraintStart_toStartOf="@+id/buttonLineVer1"
+        app:leftPress="@drawable/button1_left_press"
+        app:noPress="@drawable/button1_nopress"
+        app:rightPress="@drawable/button1_right_press"
+        app:upPress="@drawable/button1_forward_press" />
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="109dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="417dp"
+            android:layout_height="227dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="42dp"
+                android:paddingTop="15dp"
+                android:paddingRight="42dp"
+                android:paddingBottom="15dp"
+                android:text="walk"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="29dp"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="42dp"
+                android:paddingTop="15dp"
+                android:paddingRight="42dp"
+                android:paddingBottom="15dp"
+                android:text="walk"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="29dp"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="42dp"
+                android:paddingTop="15dp"
+                android:paddingRight="42dp"
+                android:paddingBottom="15dp"
+                android:text="walk"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="40dp"
+        android:layout_height="0dp" />
+
+    <com.luwu.xgobot.mView.ButtonView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="211dp"
+        app:downPress="@drawable/button1_back_press"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLineHor2"
+        app:layout_constraintStart_toStartOf="@+id/buttonLineVer1"
+        app:leftPress="@drawable/button1_left_press"
+        app:noPress="@drawable/button1_nopress"
+        app:rightPress="@drawable/button1_right_press"
+        app:upPress="@drawable/button1_forward_press" />
+</LinearLayout>

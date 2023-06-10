@@ -2,32 +2,48 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    signingConfigs {
+        release {
+            storeFile file("xgo2021.jks")
+            storePassword "xgopublic"
+            keyAlias "key0"
+            keyPassword "xgopublic"
+        }
+    }
+
     compileSdkVersion 31
     defaultConfig {
-        applicationId "com.luwu.xgo_robot"
-        minSdkVersion 21
+        applicationId "com.luwu.xgobot"
+        minSdkVersion 23
         targetSdkVersion 31
-        versionCode 15
-        versionName "2.3.3"
+        versionCode 17
+        versionName "1.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
         }
         android.applicationVariants.all {
             variant ->
                 variant.outputs.all {
                     //在这里修改apk文件名，引号内的字符串都可以随便定义
                     if (variant.buildType.isDebuggable()) {
-                        outputFileName = "XGO_v${variant.versionName}_debug.apk"  //debug 名字
+                        outputFileName = "debug_v${variant.versionName}_debug.apk"  //debug 名字
                     } else {
-                        outputFileName = "XGO_v${variant.versionName}.apk" //release 名字
+                        outputFileName = "release_v${variant.versionName}.apk" //release 名字
                     }
                 }
         }
     }
+
     signingConfigs {
         debug {
             v1SigningEnabled true
@@ -46,17 +62,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation project(path: ':bannerlayout')
     implementation 'io.netty:netty-all:4.1.16.Final'
 //    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.5.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':blocklylib-vertical')
     implementation project(path: ':autosize')
+    //util工具包
+    implementation 'com.blankj:utilcode:1.30.7'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    implementation 'com.google.zxing:zxing-parent:3.4.1'
+    implementation 'com.google.zxing:core:3.3.3'
 }
 
 //allprojects {

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_main_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/icon_desc" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/index_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/index_pleasechose"
+        android:textColor="@color/white"
+        android:textSize="21sp" />
+
+    <ImageView
+        android:id="@+id/xgo_img"
+        android:layout_width="444dp"
+        android:layout_height="272dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="53dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_xgo" />
+
+</LinearLayout>

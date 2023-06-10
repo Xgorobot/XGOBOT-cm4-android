@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="41dp"
+        android:layout_marginRight="51dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/xyz_toolbox_bg"
+            android:orientation="vertical"
+            android:paddingLeft="55dp"
+            android:paddingTop="48dp"
+            android:paddingRight="55dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/X_axistranslation"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_translate_x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="35"
+                    app:min="-35"
+                    android:layout_marginTop="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/Y_axistranslation"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_translate_y"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="18"
+                    app:min="-18"
+                    android:layout_marginTop="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/Z_axistranslation"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_translate_z"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="50"
+                    app:min="-50"
+                    android:layout_marginTop="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="65dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/xyz_toolbox_bg"
+            android:orientation="vertical"
+            android:paddingLeft="55dp"
+            android:paddingTop="48dp"
+            android:paddingRight="55dp"
+            android:paddingBottom="48dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/roll"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_scroll_x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="100"
+                    app:min="-100"
+                    android:layout_marginTop="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/pitch"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_scroll_y"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="100"
+                    app:min="-100"
+                    android:layout_marginTop="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/yaw"
+                    android:textColor="@color/gray_8b"
+                    android:textSize="28sp" />
+
+                <com.luwu.xgobot.weight.CenterSeekBar
+                    android:id="@+id/xyz_scroll_z"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:max="100"
+                    app:min="-100"
+                    android:layout_marginTop="22dp" />
+
+                <!--<SeekBar
+                    android:id="@+id/xyz_scroll_z"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="50"
+                    android:maxHeight="7dp"
+                    android:min="-50"
+                    android:minHeight="7dp"
+                    android:progress="0"
+                    android:layout_marginTop="22dp"
+                    android:progressDrawable="@drawable/seekbar_progress_drawable_blue28"
+                    android:thumb="@drawable/seekbar_white_shape" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="0mm"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/xyz_reset_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="102dp"
+        android:paddingTop="14dp"
+        android:paddingRight="102dp"
+        android:paddingBottom="14dp"
+        android:text="RESET"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:background="@drawable/shape_gradient_blue" />
+</LinearLayout>

@@ -37,7 +37,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.83" />
 
-    <com.luwu.xgo_robot.mView.RockerView
+    <com.luwu.xgobot.mView.RockerView
         android:id="@+id/controlRockViewLeft"
         android:layout_width="230dp"
         android:layout_height="230dp"
@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="@id/rockerTxtSpeed"
         app:layout_constraintEnd_toEndOf="@id/rockerTxtSpeed" />
 
-    <com.luwu.xgo_robot.mView.VerticalSeekBar
+    <com.luwu.xgobot.mView.VerticalSeekBar
         android:id="@+id/heightSeekBar"
         android:layout_width="260dp"
         android:layout_height="40dp"

@@ -21,7 +21,7 @@
         android:gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp">
-        <com.luwu.xgo_robot.mView.SpaceEditText
+        <com.luwu.xgobot.mView.SpaceEditText
             android:id="@+id/testWriteEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:background="#CCCCCC"
             android:textSize="25sp"
             android:layout_marginBottom="5dp"/>
-        <com.luwu.xgo_robot.mView.SpaceEditText
+        <com.luwu.xgobot.mView.SpaceEditText
             android:id="@+id/testWriteRespondEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
             android:background="#CCCCCC"
             android:textSize="25sp"
             android:layout_marginBottom="5dp"/>
-        <com.luwu.xgo_robot.mView.SpaceEditText
+        <com.luwu.xgobot.mView.SpaceEditText
             android:id="@+id/testReadEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

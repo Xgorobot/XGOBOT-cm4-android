@@ -1,0 +1,181 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <ImageView
+        android:id="@+id/settingBtnBack"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layout_qr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/url_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/ip_input_wifi"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/edit_ssid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_edittext"
+                android:ems="15"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:hint="SSID"
+                android:textColorHint="@color/hint_white"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_edittext"
+                android:ems="15"
+                android:padding="8dp"
+                android:hint="PASSWORD"
+                android:textColorHint="@color/hint_white"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/button_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/shape_btn_background_selector"
+                    android:paddingStart="62dp"
+                    android:paddingTop="22dp"
+                    android:paddingEnd="62dp"
+                    android:paddingBottom="22dp"
+                    android:text="@string/get_code"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通信端口 无特殊设置使用默认值"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/edit_tcp_port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="6000"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Camera 端口 无特殊设置使用默认值"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/edit_camera_port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="6500"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/toast_color"
+            android:fadeScrollbars="true"
+            android:gravity="left"
+            android:scrollbars="vertical"
+            android:textSize="20sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_qr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layout_input"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/kuang"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/image_qr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/weichuma"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/scan_please"
+            android:textColor="#8BA4C7"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

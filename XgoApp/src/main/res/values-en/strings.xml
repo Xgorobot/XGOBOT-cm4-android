@@ -22,7 +22,7 @@
     <string name="normal">Normal</string>
     <string name="superior">Advanced</string>
     <string name="executing">Executing</string>
-    <string name="calibration">Calibration Mode</string>
+    <string name="calibration">Calibrate</string>
     <string name="calibrationMode">Calibrate</string>
     <string name="calibrated">Calibrated</string>
     <string name="leg">Foot Position Utility</string>
@@ -73,8 +73,13 @@
     <string name="wavebody">wave (body)</string>
     <string name="swing">wave (side)</string>
     <string name="pray">pray</string>
-    <string name="seek">happy</string>
+    <string name="lookingfood">Looking for food</string>
     <string name="handshake">handshake</string>
+    <string name="pushup">Push_up</string>
+    <string name="chickenhead">Chicken head</string>
+    <string name="naughty">Naughty</string>
+    <string name="dance">Dance</string>
+    <string name="seek">Seek</string>
     <string name="actor">Performance Mode</string>
     <string name="xyz">XYZ-axis</string>
     <string name="pry">Roll/Pitch/Yaw</string>
@@ -98,4 +103,45 @@
     <string name="cancel">cancel</string>
     <string name="renameText">Your Robot’s Name can have up to 4 Chinese or 13 English Characters</string>
     <string name="all_rights_reserved">Luwu Dynamics. All Rights Reserved.</string>
+    <!--index-->
+    <string name="index_pleasechose">请选择您的设备:</string>
+    <string name="wifilist_seach">Scaning...</string>
+    <!--main-->
+    <string name="performance">Performance Mode</string>
+    <string name="control">Radio Controll Mode</string>
+    <string name="aimodule">AI模组</string>
+    <string name="ip_input">Please enter IP address of the robot</string>
+    <string name="ip_input_wifi">Please enter SSID and password</string>
+    <string name="zhuaqu">Grab</string>
+    <string name="connect">Confirm</string>
+    <string name="get_code">get QR code</string>
+    <string name="motion_mode">Motion Mode</string>
+    <string name="pose_mode">Pose Mode</string>
+    <string name="X_axistranslation">X-axis translation</string>
+    <string name="Y_axistranslation">Y-axis translation</string>
+    <string name="Z_axistranslation">Z-axis translation</string>
+    <string name="roll">Roll</string>
+    <string name="pitch">Pitch</string>
+    <string name="yaw">Yaw</string>
+
+    <string name="autostable">Auto stable</string>
+    <string name="frequency">Frequency</string>
+    <string name="height">Height</string>
+    <string name="xgostep">Step</string>
+    <string name="baseset">Setting</string>
+    <string name="xgolanguage">Language</string>
+    <string name="flowsys">Auto</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="devdesc">Run this project as developer</string>
+    <string name="devoptions">Development options</string>
+    <string name="deviceinfo">Device Information</string>
+    <string name="debugdesc_1">Click [Calibrate] put the robot to the calibration position according to the instructions</string>
+    <string name="debugdesc_2">Click [Calibrated] record the current calibration posture as the initial position, the robot will be the default state after 10 seconds</string>
+    <string name="Confirm">Confirm</string>
+    <string name="mode_debug">Calibration Mode</string>
+    <string name="speed_low">Low</string>
+    <string name="speed_medium">Normal</string>
+    <string name="speed_high">High</string>
+    <string name="scan_please">Please scan the QR code.</string>
 </resources>
