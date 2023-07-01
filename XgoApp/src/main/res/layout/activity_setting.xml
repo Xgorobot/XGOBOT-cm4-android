@@ -267,6 +267,16 @@
                             android:text="@string/lan_en"
                             android:textColor="#92a1b6"
                             android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/settingLanJapanese"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radiobutton_selector"
+                            android:text="@string/lan_jp"
+                            android:textColor="#92a1b6"
+                            android:textSize="30sp" />
+
                     </RadioGroup>
                 </LinearLayout>
 

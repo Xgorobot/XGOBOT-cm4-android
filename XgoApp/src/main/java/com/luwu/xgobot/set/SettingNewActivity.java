@@ -53,7 +53,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
     }
 
     private ImageView mBack_img;
-    private RadioButton mFolwSys_btn,mChinese_btn,mEnglish_btn,mConfirm_btn,mNo_btn;
+    private RadioButton mFolwSys_btn,mChinese_btn,mEnglish_btn,mJapanese_btn,mConfirm_btn,mNo_btn;
     private TextView mDeviceinfo_tv;
     private void initView() {
         SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
@@ -67,6 +67,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
         mFolwSys_btn = findViewById(R.id.setting_flowsys_btn);
         mChinese_btn = findViewById(R.id.setting_chinese_btn);
         mEnglish_btn = findViewById(R.id.setting_english_btn);
+        mJapanese_btn = findViewById(R.id.setting_japanese_btn);
 
         //跟随系统
         mFolwSys_btn.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -74,6 +75,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             if(isChecked){
                 mChinese_btn.setChecked(false);
                 mEnglish_btn.setChecked(false);
+                mJapanese_btn.setChecked(false);
                 edit.putString("setting_language", "auto");
                 edit.apply();
             }
@@ -84,6 +86,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             if(isChecked){
                 mFolwSys_btn.setChecked(false);
                 mEnglish_btn.setChecked(false);
+                mJapanese_btn.setChecked(false);
                 edit.putString("setting_language", "zh");
                 edit.apply();
             }
@@ -94,11 +97,22 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             if(isChecked){
                 mFolwSys_btn.setChecked(false);
                 mChinese_btn.setChecked(false);
+                mJapanese_btn.setChecked(false);
                 edit.putString("setting_language", "en");
                 edit.apply();
             }
         });
-
+        //日语
+        mJapanese_btn.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            mJapanese_btn.setTextColor(isChecked?this.getResources().getColor(R.color.white):this.getResources().getColor(R.color.gray_8b));
+            if(isChecked){
+                mChinese_btn.setChecked(false);
+                mEnglish_btn.setChecked(false);
+                mFolwSys_btn.setChecked(false);
+                edit.putString("setting_language", "jp");
+                edit.apply();
+            }
+        });
         mConfirm_btn = findViewById(R.id.setting_yes_btn);
         mNo_btn = findViewById(R.id.setting_no_btn);
 

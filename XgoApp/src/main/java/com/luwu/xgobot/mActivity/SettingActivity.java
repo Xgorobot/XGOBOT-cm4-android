@@ -304,6 +304,10 @@ public class SettingActivity extends AppCompatActivity {
                         edit.commit();
                         settingLanEnglish.setTextColor(getResources().getColor(R.color.white));
                         break;
+                    case R.id.settingLanJapanese:
+                        edit.putString("setting_language", "jp");
+                        edit.commit();
+                        settingLanEnglish.setTextColor(getResources().getColor(R.color.white));
                 }
 //                updateLocale();
             }

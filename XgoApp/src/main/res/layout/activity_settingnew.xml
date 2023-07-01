@@ -66,6 +66,16 @@
                 android:textColor="@color/gray_8b"
                 android:textSize="40sp" />
 
+            <RadioButton
+                android:id="@+id/setting_japanese_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="69dp"
+                android:button="@drawable/radiobutton_selector"
+                android:text="@string/japanese"
+                android:textColor="@color/gray_8b"
+                android:textSize="40sp" />
+
         </LinearLayout>
 
         <LinearLayout

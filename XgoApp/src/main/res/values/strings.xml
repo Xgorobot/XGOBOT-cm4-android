@@ -47,6 +47,7 @@
     <string name="lanAuto">跟随系统</string>
     <string name="lan_zh" translatable="false">中文</string>
     <string name="lan_en" translatable="false">English</string>
+    <string name="lan_jp" translatable="false">日本語</string>
     <string name="developmentOptions">开发选项</string>
     <string name="developyes">是</string>
     <string name="developno">否</string>
@@ -174,6 +175,7 @@
     <string name="flowsys">跟随系统</string>
     <string name="chinese">中文</string>
     <string name="english">English</string>
+    <string name="japanese">日本語</string>
     <string name="devdesc">以开发者身份运行此项目</string>
     <string name="devoptions">开发选项</string>
     <string name="deviceinfo">设备信息</string>

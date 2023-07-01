@@ -46,7 +46,7 @@ public class NetSettingActivity extends BaseActivity implements SocketStateListe
     private Button connectBtn;
     private ImageView settingBtn,controlBtn;
 
-    private static final boolean TEST = false;
+    private static final boolean TEST = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
