@@ -1,9 +1,13 @@
 package com.luwu.xgobot.set;
 
+import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
+
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -20,6 +24,8 @@ import com.luwu.xgobot.mActivity.SettingActivity;
 import com.luwu.xgobot.mMothed.mToast;
 import com.luwu.xgobot.socket.SocketManager;
 import com.luwu.xgobot.socket.SocketStateListener;
+
+import java.util.Locale;
 
 /**
  * <p>文件描述：<p>
@@ -49,11 +55,13 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
     @Override
     protected void onResume() {
         super.onResume();
+        refreshState();
         RobotFunction.loadDeviceVersion();
     }
 
     private ImageView mBack_img;
     private RadioButton mFolwSys_btn,mChinese_btn,mEnglish_btn,mJapanese_btn,mConfirm_btn,mNo_btn;
+    private Button mLanguageSetBtn;
     private TextView mDeviceinfo_tv;
     private void initView() {
         SharedPreferences info = getSharedPreferences("xgo_setting", MODE_PRIVATE);
@@ -68,6 +76,7 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
         mChinese_btn = findViewById(R.id.setting_chinese_btn);
         mEnglish_btn = findViewById(R.id.setting_english_btn);
         mJapanese_btn = findViewById(R.id.setting_japanese_btn);
+        mLanguageSetBtn = findViewById(R.id.setting_launguage_btn);
 
         //跟随系统
         mFolwSys_btn.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -112,6 +121,9 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
                 edit.putString("setting_language", "jp");
                 edit.apply();
             }
+        });
+        mLanguageSetBtn.setOnClickListener(v -> {
+            attachBaseContext(this);
         });
         mConfirm_btn = findViewById(R.id.setting_yes_btn);
         mNo_btn = findViewById(R.id.setting_no_btn);
@@ -177,6 +189,23 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             }
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    private void refreshState(){
+        mChinese_btn.setChecked(false);
+        mEnglish_btn.setChecked(false);
+        mFolwSys_btn.setChecked(false);
+        SharedPreferences languageInfo = getSharedPreferences("xgo_setting", MODE_PRIVATE);
+        String setting_language = languageInfo.getString("setting_language", "auto");
+        if (setting_language.equals("zh")) {
+            mChinese_btn.setChecked(true);
+        } else if(setting_language.equals("en")) {
+            mEnglish_btn.setChecked(true);
+        } else if (setting_language.equals("jp")){//auto
+            mJapanese_btn.setChecked(true);
+        }else {
+            mFolwSys_btn.setChecked(true);
         }
     }
 }
