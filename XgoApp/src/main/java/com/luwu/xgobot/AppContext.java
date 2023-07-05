@@ -9,6 +9,8 @@ import android.os.Build;
 import android.os.LocaleList;
 import android.util.DisplayMetrics;
 
+import com.blankj.utilcode.util.LanguageUtils;
+
 import java.util.Locale;
 
 import me.jessyan.autosize.AutoSizeConfig;
@@ -26,6 +28,7 @@ public class AppContext extends Application {
         super.onCreate();
         appContext = this;
         AutoSizeConfig.getInstance().setCustomFragment(true);
+        LanguageUtils.applySystemLanguage();
     }
 
     @Override
