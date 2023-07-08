@@ -55,7 +55,7 @@ public class BaseActivity extends AppCompatActivity {
             return Locale.JAPAN;
         } else {//auto
             localeLanguage = Locale.getDefault().getLanguage();
-            return Locale.US;
+            return Locale.getDefault();
         }
     }
 }
