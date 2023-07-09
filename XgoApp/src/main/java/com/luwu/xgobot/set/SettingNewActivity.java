@@ -2,6 +2,9 @@ package com.luwu.xgobot.set;
 
 import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -123,7 +126,11 @@ public class SettingNewActivity extends BaseActivity implements SocketStateListe
             }
         });
         mLanguageSetBtn.setOnClickListener(v -> {
-            attachBaseContext(this);
+//
+            final Intent intent = getPackageManager().getLaunchIntentForPackage(getPackageName());
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
         });
         mConfirm_btn = findViewById(R.id.setting_yes_btn);
         mNo_btn = findViewById(R.id.setting_no_btn);

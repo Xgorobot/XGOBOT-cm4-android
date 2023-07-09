@@ -167,10 +167,10 @@
     <string name="roll">X軸回転</string>
     <string name="pitch">Y軸回転</string>
     <string name="yaw">Z軸回転</string>
-    <string name="autostable">自稳模式</string>
-    <string name="frequency">整机速度</string>
-    <string name="height">整机高度</string>
-    <string name="xgostep">步   幅</string>
+    <string name="autostable">自己安定モード</string>
+    <string name="frequency">全体の速さ</string>
+    <string name="height">全体の高さ</string>
+    <string name="xgostep">歩   幅</string>
     <string name="baseset">基本設定</string>
     <string name="xgolanguage">言語選択</string>
     <string name="flowsys">システムに従う</string>
