@@ -5,6 +5,7 @@ import static com.luwu.xgobot.mMothed.PublicMethod.localeLanguage;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.view.ContextThemeWrapper;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import com.luwu.xgobot.AppContext;
 import com.luwu.xgobot.R;
 
 import java.util.Locale;
+
+import me.jessyan.autosize.AutoSizeCompat;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -57,5 +60,12 @@ public class BaseActivity extends AppCompatActivity {
             localeLanguage = Locale.getDefault().getLanguage();
             return Locale.getDefault();
         }
+    }
+
+    @Override
+    public Resources getResources() {
+        Resources resources = super.getResources();
+        AutoSizeCompat.autoConvertDensityOfGlobal(resources);
+        return resources;
     }
 }
