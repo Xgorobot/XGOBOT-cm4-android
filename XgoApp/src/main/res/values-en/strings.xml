@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    出现在file中的四个文件 分别为动作组和动作的工作区的保存文件-->
+    <string name="wholeWorkspace" translatable="false">whole_robot_workspace.xml</string>
+    <string name="wholeWorkspaceTemp" translatable="false">whole_robot_workspace_temp.xml</string>
+    <string name="singleWorkspace" translatable="false">single_robot_workspace.xml</string>
+    <string name="singleWorkspaceTemp" translatable="false">single_robot_workspace_temp.xml</string>
+    <!--    在BlocklyActivityHelper #resetBlockFactory #reloadToolbox中更改了代码 但因为不属于同一个包 因此不再引用 此处仅做记录-->
+    <!--    从assets中读取动作组toolbox文件 以实现自定义blockly-->
+    <string name="wholeAssetsToolbox" translatable="false">assets_whole/whole_robot_toolbox.xml</string>
+    <!--    从assets中读取动作组json文件 系统自带的动作-->
+    <string name="wholeAssetsJson" translatable="false">assets_whole/whole_robot_blocks_self.json</string>
+    <!--    加载到file中的toolbox文件-->
+    <string name="wholeFileToolbox" translatable="false">whole_file_toolbox.xml</string>
+    <!--    加载到file中的json文件-->
+    <string name="wholeFileBlocks" translatable="false">whole_file_blocks_self.json</string>
+    <!--    记录结束-->
+    <!--    系统自带动作组文件名 自动添加用于识别的字符串前缀-->
+    <string name="wholexmlHeadAuto" translatable="false">autowholexml</string>
+    <!--    用户新增动作组文件名 自动添加用于识别的字符串前缀-->
+    <string name="wholexmlHead" translatable="false">wholexml</string>
+    <!--    用户新增动作组文件名 用于补全文件名的字符串后缀-->
+    <string name="wholexmlTail" translatable="false">.xml</string>
+    <!--    系统自带动作文件名 自动添加用于识别的字符串前缀-->
+    <string name="singlexmlHeadAuto" translatable="false">autosinglexml</string>
+    <!--    用户新增动作文件名 自动添加用于识别的字符串前缀-->
+    <string name="singlexmlHead" translatable="false">singlexml</string>
+    <!--    用户新增动作文件名 用于补全文件名的字符串后缀-->
+    <string name="singlexmlTail" translatable="false">.xml</string>
+    <!--    添加到控制界面的编程程序 存储在shareperference中的文件名-->
+    <string name="controlProgramSp" translatable="false">control_program</string>
+    <!--    添加到控制界面的编程程序 存储在shareperference中的键值 后面还要加0-4中的一个数字表示顺序-->
+    <string name="controlProgramKey" translatable="false">pro</string>
+    <!--    打开预览界面传输文件名的key值-->
+    <string name="previewKey" translatable="false">preview</string>
+    <!--    动作和动作组Fragment界面打开到Activity界面传输文件名的key值-->
+    <string name="fragment2ActivityKey" translatable="false">kind</string>
     <!-- language-English-->
     <string name="about">About</string>
     <string name="setting">Setting</string>
@@ -145,4 +180,8 @@
     <string name="speed_medium">Normal</string>
     <string name="speed_high">High</string>
     <string name="scan_please">Please scan the QR code.</string>
+    <string name="lan_zh" translatable="false">Chinese</string>
+    <string name="lan_en" translatable="false">English</string>
+    <string name="lan_jp" translatable="false">Japanese</string>
+    <string name="version" translatable="false">version 2.3.3</string>
 </resources>
