@@ -184,4 +184,6 @@
     <string name="lan_en" translatable="false">English</string>
     <string name="lan_jp" translatable="false">Japanese</string>
     <string name="version" translatable="false">version 2.3.3</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
 </resources>

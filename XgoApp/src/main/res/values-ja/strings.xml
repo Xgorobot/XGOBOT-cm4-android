@@ -120,7 +120,7 @@
     <string name="naughty">いたずら</string>
     <string name="dance">ダンス</string>
     <string name="seek">見回す</string>
-    <string name="actor">表演</string>
+    <string name="actor">パフォーマンスモード</string>
     <string name="xyz">XYZ-轴</string>
     <string name="pry">ロール/ピッチ/ヨー</string>
     <string name="battery">バッテリー</string>
@@ -188,4 +188,6 @@
     <string name="speed_medium">中速</string>
     <string name="speed_high">高速</string>
     <string name="scan_please">スキャンしてください</string>
+    <string name="start">開始</string>
+    <string name="stop">修了</string>
 </resources>

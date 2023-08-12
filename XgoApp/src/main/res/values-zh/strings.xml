@@ -187,4 +187,6 @@
     <string name="speed_medium">中速</string>
     <string name="speed_high">高速</string>
     <string name="scan_please">请扫码配网</string>
+    <string name="start">开始</string>
+    <string name="stop">结束</string>
 </resources>
