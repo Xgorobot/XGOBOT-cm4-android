@@ -16,33 +16,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:src="@drawable/start"
-        android:background="@color/transparent"
+        android:background="@drawable/start"
+        android:text="@string/start"
+        android:textSize="70dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-    </ImageButton>
+    </Button>
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/end"
-        android:background="@color/transparent"
+        android:background="@drawable/end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_start"
         android:orientation="vertical"
+        android:text="@string/stop"
+        android:textSize="70dp"
+        android:textColor="@color/white"
         android:gravity="center">
-    </ImageButton>
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

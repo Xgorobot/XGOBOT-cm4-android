@@ -20,7 +20,7 @@ import com.luwu.xgobot.utils.QRCodeGenerator;
 
 public class UdpControlActivity extends BaseActivity {
     private static final String TAG = "NetSettingActivity";
-    private ImageButton startBtn,stopBtn;
+    private Button startBtn,stopBtn;
     private ImageView backImg;
 
     private static final boolean TEST = false;
@@ -43,8 +43,8 @@ public class UdpControlActivity extends BaseActivity {
     private void startUdp(View view) {
         try {
             UdpClient.sendBroadCast("1",6001);
-            startBtn.setImageResource(R.drawable.start1);
-            stopBtn.setImageResource(R.drawable.end);
+            startBtn.setBackgroundResource(R.drawable.start1);
+            stopBtn.setBackgroundResource(R.drawable.end);
         } catch (Exception e) {
             Toast.makeText(this,"sendBroadCastFail",Toast.LENGTH_LONG).show();
             e.printStackTrace();
@@ -54,14 +54,13 @@ public class UdpControlActivity extends BaseActivity {
     private void stopUdp(View view) {
         try {
             UdpClient.sendBroadCast("0",6001);
-            startBtn.setImageResource(R.drawable.start);
-            stopBtn.setImageResource(R.drawable.end1);
+            startBtn.setBackgroundResource(R.drawable.start);
+            stopBtn.setBackgroundResource(R.drawable.end1);
         } catch (Exception e) {
             Toast.makeText(this,"sendBroadCastFail",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
-
 
     @Override
     protected void onResume() {
