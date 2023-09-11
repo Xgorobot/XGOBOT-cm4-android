@@ -1,0 +1,193 @@
+<resources>
+    <string name="app_name" translatable="false">XGOBOT</string>
+    <!--    出现在file中的四个文件 分别为动作组和动作的工作区的保存文件-->
+    <string name="wholeWorkspace" translatable="false">whole_robot_workspace.xml</string>
+    <string name="wholeWorkspaceTemp" translatable="false">whole_robot_workspace_temp.xml</string>
+    <string name="singleWorkspace" translatable="false">single_robot_workspace.xml</string>
+    <string name="singleWorkspaceTemp" translatable="false">single_robot_workspace_temp.xml</string>
+    <!--    在BlocklyActivityHelper #resetBlockFactory #reloadToolbox中更改了代码 但因为不属于同一个包 因此不再引用 此处仅做记录-->
+    <!--    从assets中读取动作组toolbox文件 以实现自定义blockly-->
+    <string name="wholeAssetsToolbox" translatable="false">assets_whole/whole_robot_toolbox.xml</string>
+    <!--    从assets中读取动作组json文件 系统自带的动作-->
+    <string name="wholeAssetsJson" translatable="false">assets_whole/whole_robot_blocks_self.json</string>
+    <!--    加载到file中的toolbox文件-->
+    <string name="wholeFileToolbox" translatable="false">whole_file_toolbox.xml</string>
+    <!--    加载到file中的json文件-->
+    <string name="wholeFileBlocks" translatable="false">whole_file_blocks_self.json</string>
+    <!--    记录结束-->
+    <!--    系统自带动作组文件名 自动添加用于识别的字符串前缀-->
+    <string name="wholexmlHeadAuto" translatable="false">autowholexml</string>
+    <!--    用户新增动作组文件名 自动添加用于识别的字符串前缀-->
+    <string name="wholexmlHead" translatable="false">wholexml</string>
+    <!--    用户新增动作组文件名 用于补全文件名的字符串后缀-->
+    <string name="wholexmlTail" translatable="false">.xml</string>
+    <!--    系统自带动作文件名 自动添加用于识别的字符串前缀-->
+    <string name="singlexmlHeadAuto" translatable="false">autosinglexml</string>
+    <!--    用户新增动作文件名 自动添加用于识别的字符串前缀-->
+    <string name="singlexmlHead" translatable="false">singlexml</string>
+    <!--    用户新增动作文件名 用于补全文件名的字符串后缀-->
+    <string name="singlexmlTail" translatable="false">.xml</string>
+    <!--    添加到控制界面的编程程序 存储在shareperference中的文件名-->
+    <string name="controlProgramSp" translatable="false">control_program</string>
+    <!--    添加到控制界面的编程程序 存储在shareperference中的键值 后面还要加0-4中的一个数字表示顺序-->
+    <string name="controlProgramKey" translatable="false">pro</string>
+    <!--    打开预览界面传输文件名的key值-->
+    <string name="previewKey" translatable="false">preview</string>
+    <!--    动作和动作组Fragment界面打开到Activity界面传输文件名的key值-->
+    <string name="fragment2ActivityKey" translatable="false">kind</string>
+
+    <!--语言-中文-->
+    <string name="about">关于</string>
+    <string name="setting">设置</string>
+    <string name="preferences">我的爱好</string>
+    <string name="turnoffBluetooth">退出App时关闭蓝牙</string>
+    <string name="btyes">はい</string>
+    <string name="btno">いいえ</string>
+    <string name="language">语言设置</string>
+    <string name="lanAuto">跟随系统</string>
+    <string name="lan_zh" translatable="false">中文</string>
+    <string name="lan_en" translatable="false">English</string>
+    <string name="lan_jp" translatable="false">日本語</string>
+    <string name="developmentOptions">开发选项</string>
+    <string name="developyes">はい</string>
+    <string name="developno">いいえ</string>
+    <string name="developer">以开发者身份运行此项目</string>
+    <string name="version" translatable="false">version 2.3.3</string>
+    <string name="btShake">请打开蓝牙和定位\n摇一摇手机，蓝牙将自动连接</string>
+    <string name="btConnected">连接成功</string>
+    <string name="btDisconnect">断开连接</string>
+    <string name="btRename">重命名</string>
+    <string name="selectDevice">请选择要连接的设备</string>
+    <string name="searching">正在搜索，请稍等…… 如持续搜索不到或多次无法连接，请尝试重新启动主板或手机蓝牙</string>
+    <string name="normal">普通</string>
+    <string name="superior">高级</string>
+    <string name="executing">正在执行</string>
+    <string name="calibration">キャリブレーションを開始</string>
+    <string name="calibrationMode">进入标定模式</string>
+    <string name="calibrated">キャリブレーション完了</string>
+    <string name="leg">单腿控制</string>
+    <string name="reset">恢复初始状态</string>
+    <string name="leftforeleg">左前腿</string>
+    <string name="rightforeleg">右前腿</string>
+    <string name="righthindleg">右后腿</string>
+    <string name="lefthindleg">左后腿</string>
+    <string name="motor">舵机控制</string>
+    <string name="top">上</string>
+    <string name="middle">中</string>
+    <string name="Bottom">下</string>
+    <string name="actionGroup">动作组</string>
+    <string name="action">动作</string>
+    <string name="recordtick">记录勾选项</string>
+    <string name="uninstall">卸载</string>
+    <string name="recovery">恢复</string>
+    <string name="viewAngle">观测角度</string>
+    <string name="teachingModel">示教模式</string>
+    <string name="hexadecimal">十六进制输入 不需要输入0x 格式：Addr+Order</string>
+    <string name="noResponseWrite">无应答写</string>
+    <string name="responseWrite">有应答写</string>
+    <string name="readData">读数据</string>
+    <string name="mdefault">默认</string>
+    <string name="mcustom">自定义</string>
+    <string name="setText">设置文字：</string>
+    <string name="inputText">请输入你的文字</string>
+    <string name="connectnow">现在连接</string>
+    <string name="presentproject">这里展示项目</string>
+    <string name="myProject">我的程序</string>
+    <string name="morefc">更多功能</string>
+    <string name="autoPowerOn">开机动作自启动：</string>
+    <string name="carousel">アクション再生</string>
+    <string name="liedown">うつぶせる</string>
+    <string name="standup">立つ</string>
+    <string name="crawl">這い進む</string>
+    <string name="turnAround">ぐるぐる回る</string>
+    <string name="marktime">原地踏步</string>
+    <string name="squat">しゃがむ</string>
+    <string name="turnroll">ロール</string>
+    <string name="turnpitch">ピッチ</string>
+    <string name="turnyaw">ヨー</string>
+    <string name="threeAxis">3軸リンク</string>
+    <string name="pee">おしっこをする</string>
+    <string name="sitdown">座る</string>
+    <string name="wavehand">手を振る</string>
+    <string name="stretch">あくびをする</string>
+    <string name="wavebody">波</string>
+    <string name="swing">揺れる</string>
+    <string name="pray">お願いする</string>
+    <string name="lookingfood">食べ物を探す</string>
+    <string name="handshake">握手する</string>
+    <string name="pushup">腕立て伏せる</string>
+    <string name="chickenhead">鶏の頭</string>
+    <string name="naughty">いたずら</string>
+    <string name="dance">ダンス</string>
+    <string name="seek">見回す</string>
+    <string name="actor">パフォーマンスモード</string>
+    <string name="xyz">XYZ-轴</string>
+    <string name="pry">ロール/ピッチ/ヨー</string>
+    <string name="battery">バッテリー</string>
+    <string name="speed">速度</string>
+    <string name="resetheight">高さをリセット</string>
+    <string name="gyroscope">ジャイロスコープ</string>
+    <string name="gyroscopeOn">オン</string>
+    <string name="gyroscopeOff">オフ</string>
+    <string name="motion">全体の速度</string>
+    <string name="lowspeed">低速</string>
+    <string name="normalspeed">通常</string>
+    <string name="highspeed">高速</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="updatehex">ファームウェアの更新</string>
+    <string name="updatehexbtn">更新を開始</string>
+    <string name="hexversion">最新バージョン 2.3.3</string>
+    <string name="rename">重命名</string>
+    <string name="only_supports_english_and_numbers">Only_supports_English_and_Numbers</string>
+    <string name="confim">確認</string>
+    <string name="cancel">取消</string>
+    <string name="renameText">最多4个中文字符或13个英文字符</string>
+    <string name="all_rights_reserved">陆吾智能 版权所有 All Rights Reserved.</string>
+
+
+    <!--index-->
+    <string name="index_pleasechose">请选择您的设备:</string>
+    <string name="wifilist_seach">搜索中...</string>
+    <!--main-->
+    <string name="performance">パフォーマンスモード</string>
+    <string name="control">リモートコントロールモード</string>
+    <string name="aimodule">AIモジュール</string>
+    <string name="ip_input">ロボットのIPアドレスを入力してください</string>
+    <string name="ip_input_wifi">SSIDとパスワードを入力してください</string>
+
+
+    <string name="zhuaqu">つかむ</string>
+    <string name="connect">接続</string>
+    <string name="get_code">QRコードを生成する</string>
+    <string name="motion_mode">運動モード</string>
+    <string name="pose_mode">ポーズモード</string>
+    <string name="X_axistranslation">X軸移動</string>
+    <string name="Y_axistranslation">Y軸移動</string>
+    <string name="Z_axistranslation">Z軸移動</string>
+    <string name="roll">X軸回転</string>
+    <string name="pitch">Y軸回転</string>
+    <string name="yaw">Z軸回転</string>
+    <string name="autostable">自己安定モード</string>
+    <string name="frequency">全体の速さ</string>
+    <string name="height">全体の高さ</string>
+    <string name="xgostep">歩   幅</string>
+    <string name="baseset">基本設定</string>
+    <string name="xgolanguage">言語選択</string>
+    <string name="flowsys">システムに従う</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="japanese">日本語</string>
+    <string name="devdesc">開発者としてこのプロジェクトを実行する</string>
+    <string name="devoptions">開発オプション</string>
+    <string name="deviceinfo">デバイス情報</string>
+    <string name="debugdesc_1">【キャリブレーションを開始】をクリックして、説明書に従ってロボット犬をキャリブレーションポーズにセットし、</string>
+    <string name="debugdesc_2">【キャリブレーション完了】をクリックして現在のキャリブレーションポーズを初期位置として記録し、10秒後にデフォルトの立ちポーズに戻ります。</string>
+    <string name="Confirm">OK</string>
+    <string name="mode_debug">キャリブレーションモード</string>
+    <string name="speed_low">低速</string>
+    <string name="speed_medium">中速</string>
+    <string name="speed_high">高速</string>
+    <string name="scan_please">スキャンしてください</string>
+    <string name="start">開始</string>
+    <string name="stop">修了</string>
+</resources>
